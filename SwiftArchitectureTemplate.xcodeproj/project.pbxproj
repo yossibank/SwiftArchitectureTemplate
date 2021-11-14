@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		789A4E5E2741440000DD4661 /* Utility in Frameworks */ = {isa = PBXBuildFile; productRef = 789A4E5D2741440000DD4661 /* Utility */; };
+		789A4E5F2741440000DD4661 /* Utility in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 789A4E5D2741440000DD4661 /* Utility */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		78A386FC27401A9D00DF51CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A386FB27401A9D00DF51CF /* AppDelegate.swift */; };
 		78A386FE27401A9D00DF51CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A386FD27401A9D00DF51CF /* SceneDelegate.swift */; };
 		78A3870027401A9D00DF51CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A386FF27401A9D00DF51CF /* ViewController.swift */; };
@@ -35,7 +37,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		789A4E602741440000DD4661 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				789A4E5F2741440000DD4661 /* Utility in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		789A4E5B27413FD300DD4661 /* Utility */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utility; sourceTree = "<group>"; };
 		78A386F827401A9D00DF51CF /* SwiftArchitectureTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArchitectureTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A386FB27401A9D00DF51CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A386FD27401A9D00DF51CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789A4E5E2741440000DD4661 /* Utility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +94,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		789A4E5927413DA100DD4661 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				789A4E5B27413FD300DD4661 /* Utility */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		789A4E5C2741440000DD4661 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		78A386EF27401A9D00DF51CF = {
 			isa = PBXGroup;
 			children = (
+				789A4E5927413DA100DD4661 /* Packages */,
 				78A386FA27401A9D00DF51CF /* SwiftArchitectureTemplate */,
 				78A3871127401A9F00DF51CF /* SwiftArchitectureTemplateTests */,
 				78A3871B27401A9F00DF51CF /* SwiftArchitectureTemplateUITests */,
 				78A386F927401A9D00DF51CF /* Products */,
+				789A4E5C2741440000DD4661 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,12 +172,17 @@
 				78A386F427401A9D00DF51CF /* Sources */,
 				78A386F527401A9D00DF51CF /* Frameworks */,
 				78A386F627401A9D00DF51CF /* Resources */,
+				789A4E602741440000DD4661 /* Embed Frameworks */,
+				789A4E612741448A00DD4661 /* Swift Format */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SwiftArchitectureTemplate;
+			packageProductDependencies = (
+				789A4E5D2741440000DD4661 /* Utility */,
+			);
 			productName = SwiftArchitectureTemplate;
 			productReference = 78A386F827401A9D00DF51CF /* SwiftArchitectureTemplate.app */;
 			productType = "com.apple.product-type.application";
@@ -231,8 +271,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A3870827401A9F00DF51CF /* LaunchScreen.storyboard in Resources */,
 				78A3870527401A9F00DF51CF /* Assets.xcassets in Resources */,
+				78A3870827401A9F00DF51CF /* LaunchScreen.storyboard in Resources */,
 				78A3870327401A9D00DF51CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +292,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		789A4E612741448A00DD4661 /* Swift Format */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Format";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		78A386F427401A9D00DF51CF /* Sources */ = {
@@ -624,6 +685,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		789A4E5D2741440000DD4661 /* Utility */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utility;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78A386F027401A9D00DF51CF /* Project object */;
 }

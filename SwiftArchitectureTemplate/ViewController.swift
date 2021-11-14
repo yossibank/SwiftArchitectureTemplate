@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  SwiftArchitectureTemplate
-//
-//  Created by Kamiyama Yoshihito on 2021/11/14.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,7 +6,4 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
 }
-

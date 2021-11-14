@@ -1,10 +1,3 @@
-//
-//  SwiftArchitectureTemplateUITests.swift
-//  SwiftArchitectureTemplateUITests
-//
-//  Created by Kamiyama Yoshihito on 2021/11/14.
-//
-
 import XCTest
 
 class SwiftArchitectureTemplateUITests: XCTestCase {

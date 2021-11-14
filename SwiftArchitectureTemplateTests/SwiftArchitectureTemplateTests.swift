@@ -1,12 +1,5 @@
-//
-//  SwiftArchitectureTemplateTests.swift
-//  SwiftArchitectureTemplateTests
-//
-//  Created by Kamiyama Yoshihito on 2021/11/14.
-//
-
-import XCTest
 @testable import SwiftArchitectureTemplate
+import XCTest
 
 class SwiftArchitectureTemplateTests: XCTestCase {
 
@@ -29,5 +22,4 @@ class SwiftArchitectureTemplateTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }
