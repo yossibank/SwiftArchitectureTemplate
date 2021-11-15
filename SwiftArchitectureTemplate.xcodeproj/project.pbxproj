@@ -18,6 +18,7 @@
 		78A3871327401A9F00DF51CF /* SwiftArchitectureTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871227401A9F00DF51CF /* SwiftArchitectureTemplateTests.swift */; };
 		78A3871D27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871C27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift */; };
 		78A3871F27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */; };
+		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		789A4E5B27413FD300DD4661 /* Utility */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Utility; sourceTree = "<group>"; };
+		789A4E6227414B3A00DD4661 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		78A386F827401A9D00DF51CF /* SwiftArchitectureTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftArchitectureTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A386FB27401A9D00DF51CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A386FD27401A9D00DF51CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DD432427415522006684D0 /* Data in Frameworks */,
 				789A4E5E2741440000DD4661 /* Utility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +100,7 @@
 		789A4E5927413DA100DD4661 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
+				789A4E6227414B3A00DD4661 /* Data */,
 				789A4E5B27413FD300DD4661 /* Utility */,
 			);
 			path = Packages;
@@ -182,6 +186,7 @@
 			name = SwiftArchitectureTemplate;
 			packageProductDependencies = (
 				789A4E5D2741440000DD4661 /* Utility */,
+				78DD432327415522006684D0 /* Data */,
 			);
 			productName = SwiftArchitectureTemplate;
 			productReference = 78A386F827401A9D00DF51CF /* SwiftArchitectureTemplate.app */;
@@ -690,6 +695,10 @@
 		789A4E5D2741440000DD4661 /* Utility */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Utility;
+		};
+		78DD432327415522006684D0 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
