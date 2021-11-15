@@ -1,6 +1,6 @@
 import Data
 
-public struct APPError: Error, Equatable {
+public struct AppError: Error, Equatable {
 
     private let error: APIError
 

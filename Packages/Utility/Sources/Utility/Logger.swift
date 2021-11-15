@@ -79,7 +79,8 @@ public struct Logger {
         #if DEBUG
         os_log(
             "❗️[%@] %@ %@ L:%d %@",
-            osLog,
+            log: osLog,
+            type: logType,
             String(describing: logType),
             file.split(separator: "/").last! as CVarArg,
             function,
