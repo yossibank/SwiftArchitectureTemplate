@@ -8,11 +8,11 @@ public final class Analytics {
 
     public static var shared: Analytics = .init()
 
-    var provider: AnalyticsProvider!
+    var provider: AnalyticsProvider?
 
     private init() {}
 
     public func sendEvent(title: String = #function) {
-        self.provider.sendEvent(title: title)
+        self.provider?.sendEvent(title: title)
     }
 }
