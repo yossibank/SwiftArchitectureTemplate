@@ -1,0 +1,8 @@
+BUNDLE_DISPLAY_NAME = DEVELOP
+PRODUCT_BUNDLE_IDENTIFIER = jp.co.yahoo.yossibank.swift-architecture-template.develop
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "DEBUG"
+OTHER_LDFLAGS = -ObjC
+TEST_TARGET_NAME = swift-architecture-template
+
+// API Settings
+API_DOMAIN_URL = jsonplaceholder.typicode.com
