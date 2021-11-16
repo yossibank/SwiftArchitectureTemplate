@@ -1,4 +1,4 @@
-struct Strings {
+struct StringResource {
 
     struct Button {
         @Localizable static var nextTitle = "next_button_title"

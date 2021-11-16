@@ -18,7 +18,7 @@ extension ViewStyle where T: UIButton {
     static var someStyle: ViewStyle<T> {
         ViewStyle<T> {
             $0.setTitleColor(.white, for: .normal)
-            $0.backgroundColor = .green
+            $0.backgroundColor = Resources.Colors.sampleColor
             $0.layer.cornerRadius = 4.0
         }
     }

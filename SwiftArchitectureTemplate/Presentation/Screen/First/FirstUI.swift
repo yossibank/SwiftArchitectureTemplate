@@ -4,7 +4,7 @@ final class FirstUI {
 
     let button: UIButton = .init(
         style: .someStyle,
-        title: Strings.Button.nextTitle
+        title: Resources.Strings.Button.nextTitle
     )
 
     let someSwitch: UISwitch = .init()

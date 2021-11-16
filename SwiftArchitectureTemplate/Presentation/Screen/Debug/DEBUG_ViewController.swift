@@ -14,15 +14,6 @@ final class DEBUG_ViewController: UIViewController {
     var ui: UI!
 }
 
-// MARK: - create instance
-
-extension DEBUG_ViewController {
-
-    static func createInstance() -> DEBUG_ViewController {
-        .init()
-    }
-}
-
 // MARK: - override methods
 
 extension DEBUG_ViewController {

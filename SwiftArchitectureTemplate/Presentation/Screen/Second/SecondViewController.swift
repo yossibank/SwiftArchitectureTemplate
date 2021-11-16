@@ -14,17 +14,6 @@ final class SecondViewController: UIViewController {
     var ui: UI!
 }
 
-// MARK: - create instance
-
-extension SecondViewController {
-
-    static func createInstance() -> SecondViewController {
-        let instance = SecondViewController()
-        instance.inject(viewModel: SecondViewModel(), ui: SecondUI())
-        return instance
-    }
-}
-
 // MARK: - override methods
 
 extension SecondViewController {

@@ -20,21 +20,6 @@ final class FirstViewController: UIViewController {
     private var cancellables: Set<AnyCancellable> = []
 }
 
-// MARK: - create instance
-
-extension FirstViewController {
-
-    static func createInstance() -> FirstViewController {
-        let instance = FirstViewController()
-        instance.inject(
-            routing: FirstRouting(),
-            viewModel: FirstViewModel(),
-            ui: FirstUI()
-        )
-        return instance
-    }
-}
-
 // MARK: - override methods
 
 extension FirstViewController {

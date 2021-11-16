@@ -8,7 +8,7 @@ extension FirstRouting {
 
     func showDetail() {
         self.viewController?.navigationController?.pushViewController(
-            FirstDetailViewController(),
+            Resources.ViewControllers.App.firstDetail(),
             animated: true
         )
     }

@@ -18,8 +18,21 @@ enum Tabs: Int, CaseIterable {
         }
     }
 
+    private var image: UIImage? {
+        switch self {
+            case .first:
+                return UIImage(systemName: "a.circle")
+
+            case .second:
+                return UIImage(systemName: "b.circle")
+
+            case .debug:
+                return UIImage(systemName: "c.circle")
+        }
+    }
+
     private var tabBarItem: UITabBarItem {
-        .init(title: self.title, image: nil, tag: self.rawValue)
+        .init(title: self.title, image: self.image, tag: self.rawValue)
     }
 
     private var baseViewController: UIViewController {
@@ -27,13 +40,13 @@ enum Tabs: Int, CaseIterable {
 
         switch self {
             case .first:
-                viewController = FirstViewController.createInstance()
+                viewController = Resources.ViewControllers.App.first()
 
             case .second:
-                viewController = SecondViewController.createInstance()
+                viewController = Resources.ViewControllers.App.second()
 
             case .debug:
-                viewController = DEBUG_ViewController.createInstance()
+                viewController = Resources.ViewControllers.App.debug()
         }
 
         let navVC = NavigationController(rootViewController: viewController)
