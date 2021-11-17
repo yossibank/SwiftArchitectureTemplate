@@ -17,7 +17,7 @@ final class FirstViewModel: ViewModel {
     }
 }
 
-// MARK: - internal method
+// MARK: - internal methods
 
 extension FirstViewModel {
 
