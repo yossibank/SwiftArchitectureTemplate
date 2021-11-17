@@ -1,24 +1,18 @@
 import UIKit
 
+extension BottomSheetViewController: VCInjectable {
+    typealias R = NoRouting
+    typealias VM = NoViewModel
+    typealias UI = BottomSheetUI
+}
+
 // MARK: - stored properties
 
 final class BottomSheetViewController: UIViewController {
 
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 16.0
-        view.layer.masksToBounds = true
-        return view
-    }()
-
-    private let bottomSheetLineImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = Resources.Images.General.bottomSheetBar
-        return imageView
-    }()
-
-    private let baseView = UIView()
+    var routing: R!
+    var viewModel: VM!
+    var ui: UI!
 
     private var contentView: UIView?
 
@@ -35,47 +29,6 @@ final class BottomSheetViewController: UIViewController {
     }
 }
 
-// temporary
-
-extension BottomSheetViewController {
-
-    func configureNavigationBar() {}
-
-    func setupView() {
-        self.view.addSubview(containerView)
-        self.view.addSubview(bottomSheetLineImageView)
-        self.view.addSubview(baseView)
-    }
-
-    func setupLayout() {
-        self.containerView.layout {
-            $0.centerX == self.view.centerXAnchor
-            $0.bottom == self.view.bottomAnchor
-            $0.width == self.view.widthAnchor
-            $0.height.lessThanOrEqual(to: self.view.heightAnchor)
-
-            let heightConstant = self.containerView.heightAnchor.constraint(equalToConstant: 152)
-            heightConstant.priority = .init(rawValue: 1)
-            heightConstant.isActive = true
-        }
-
-        self.bottomSheetLineImageView.layout {
-            $0.centerX == self.containerView.centerXAnchor
-            $0.top == self.containerView.topAnchor + 12
-            $0.widthConstant == 30
-            $0.heightConstant == 5
-        }
-
-        self.baseView.layout {
-            $0.centerX == self.containerView.centerXAnchor
-            $0.top == self.bottomSheetLineImageView.bottomAnchor + 16
-            $0.bottom == self.view.bottomAnchor - 40
-            $0.leading == self.containerView.leadingAnchor
-            $0.trailing == self.containerView.trailingAnchor
-        }
-    }
-}
-
 // MARK: - override methods
 
 extension BottomSheetViewController {
@@ -83,20 +36,13 @@ extension BottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setupView()
-        self.setupLayout()
-
         self.modalTransitionStyle = .coverVertical
         self.modalPresentationStyle = .formSheet
 
+        self.setupUI()
+
         if let view = contentView {
-            self.baseView.addSubview(view)
-            view.layout {
-                $0.top == self.baseView.topAnchor
-                $0.bottom == self.baseView.bottomAnchor
-                $0.leading == self.baseView.leadingAnchor
-                $0.trailing == self.baseView.trailingAnchor
-            }
+            self.ui.set(view: view)
         }
 
         let gestureRecognizer = UITapGestureRecognizer(
@@ -122,6 +68,12 @@ extension BottomSheetViewController {
 // MARK: - private methods
 
 private extension BottomSheetViewController {
+
+    func setupUI() {
+        self.ui.configureNavigationBar(viewController: self)
+        self.ui.setupView(rootView: self.view)
+        self.ui.setupLayout(rootView: self.view)
+    }
 
     @objc func viewTapped() {
         self.dismiss(animated: true) { [weak self] in

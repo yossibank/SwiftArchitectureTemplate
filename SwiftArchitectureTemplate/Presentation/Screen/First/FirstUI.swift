@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - stored properties
+
 final class FirstUI {
 
     let button: UIButton = .init(
@@ -9,6 +11,8 @@ final class FirstUI {
 
     let someSwitch: UISwitch = .init()
 }
+
+// MARK: - protocol
 
 extension FirstUI: UserInterface {
 

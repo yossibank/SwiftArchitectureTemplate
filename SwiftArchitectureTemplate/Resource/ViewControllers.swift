@@ -14,6 +14,18 @@ extension Resources {
 
         struct AppControllers {
 
+            func bottomSheet(dismissCallBack: VoidBlock? = nil) -> BottomSheetViewController {
+                let instance = BottomSheetViewController(dismissCallBack: dismissCallBack)
+                instance.inject(ui: BottomSheetUI())
+                return instance
+            }
+
+            func debug() -> DEBUG_ViewController {
+                let instance = DEBUG_ViewController()
+                instance.inject()
+                return instance
+            }
+
             func first() -> FirstViewController {
                 let instance = FirstViewController()
                 instance.inject(
@@ -33,12 +45,6 @@ extension Resources {
             func second() -> SecondViewController {
                 let instance = SecondViewController()
                 instance.inject(viewModel: SecondViewModel(), ui: SecondUI())
-                return instance
-            }
-
-            func debug() -> DEBUG_ViewController {
-                let instance = DEBUG_ViewController()
-                instance.inject()
                 return instance
             }
         }
