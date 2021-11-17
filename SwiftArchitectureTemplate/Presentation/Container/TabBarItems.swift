@@ -54,8 +54,8 @@ enum Tabs: Int, CaseIterable {
     }
 
     var viewController: UIViewController {
-        let viewController = baseViewController
-        viewController.tabBarItem = tabBarItem
+        let viewController = self.baseViewController
+        viewController.tabBarItem = self.tabBarItem
         return viewController
     }
 }

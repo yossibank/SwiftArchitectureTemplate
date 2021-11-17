@@ -54,7 +54,7 @@ extension BottomSheetViewController {
             $0.width == self.view.widthAnchor
             $0.height.lessThanOrEqual(to: self.view.heightAnchor)
 
-            let heightConstant = containerView.heightAnchor.constraint(equalToConstant: 152)
+            let heightConstant = self.containerView.heightAnchor.constraint(equalToConstant: 152)
             heightConstant.priority = .init(rawValue: 1)
             heightConstant.isActive = true
         }
@@ -83,19 +83,19 @@ extension BottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupView()
-        setupLayout()
+        self.setupView()
+        self.setupLayout()
 
         self.modalTransitionStyle = .coverVertical
         self.modalPresentationStyle = .formSheet
 
         if let view = contentView {
-            baseView.addSubview(view)
+            self.baseView.addSubview(view)
             view.layout {
-                $0.top == baseView.topAnchor
-                $0.bottom == baseView.bottomAnchor
-                $0.leading == baseView.leadingAnchor
-                $0.trailing == baseView.trailingAnchor
+                $0.top == self.baseView.topAnchor
+                $0.bottom == self.baseView.bottomAnchor
+                $0.leading == self.baseView.leadingAnchor
+                $0.trailing == self.baseView.trailingAnchor
             }
         }
 

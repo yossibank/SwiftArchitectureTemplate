@@ -26,6 +26,8 @@
 		78A3871F27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */; };
 		78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */; };
 		78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */; };
+		78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */; };
+		78BA64CB2744E479005B2D61 /* CommonBottomSheetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
 		78DD432D274234FE006684D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD432C274234FE006684D0 /* Configuration.swift */; };
@@ -115,6 +117,8 @@
 		78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTemplateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoadingViewController.swift; sourceTree = "<group>"; };
+		78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+StateConvenience.swift"; sourceTree = "<group>"; };
+		78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBottomSheetContentView.swift; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		78DD432E27423592006684D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -281,6 +285,22 @@
 			path = BottomSheet;
 			sourceTree = "<group>";
 		};
+		78BA64C62744DA52005B2D61 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		78BA64C92744E461005B2D61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		78DD432827423475006684D0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +308,7 @@
 				78DD4350274247C3006684D0 /* Container */,
 				78DD434F274247BF006684D0 /* Core */,
 				78DD4352274247DF006684D0 /* Screen */,
+				78BA64C92744E461005B2D61 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -296,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				78844F962743476B00A02E9B /* AppUtil */,
+				78BA64C62744DA52005B2D61 /* Extension */,
 				78DD433727423995006684D0 /* FirebaseProvider.swift */,
 				78DD4341274240A1006684D0 /* Layout.swift */,
 				78DD43432742440D006684D0 /* LoadingState.swift */,
@@ -635,6 +657,8 @@
 				78DD435A274249CC006684D0 /* VCInjectable.swift in Sources */,
 				78DD4368274251D3006684D0 /* SecondUI.swift in Sources */,
 				78DD436E27425455006684D0 /* FirstViewController.swift in Sources */,
+				78BA64CB2744E479005B2D61 /* CommonBottomSheetContentView.swift in Sources */,
+				78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */,
 				78844FAD2743AEAC00A02E9B /* ResourcesSupport.swift in Sources */,
 				78DD434A274246E1006684D0 /* Localizable.swift in Sources */,
 				78DD435827424842006684D0 /* UserInterface.swift in Sources */,
