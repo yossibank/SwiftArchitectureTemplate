@@ -29,6 +29,8 @@
 		78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */; };
 		78BA64CB2744E479005B2D61 /* CommonBottomSheetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */; };
 		78BA64CD2744F609005B2D61 /* BottomSheetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */; };
+		78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */; };
+		78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
 		78DD432D274234FE006684D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD432C274234FE006684D0 /* Configuration.swift */; };
@@ -121,6 +123,8 @@
 		78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+StateConvenience.swift"; sourceTree = "<group>"; };
 		78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBottomSheetContentView.swift; sourceTree = "<group>"; };
 		78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetUI.swift; sourceTree = "<group>"; };
+		78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-IBInspectable+Extension.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		78DD432E27423592006684D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -291,7 +295,9 @@
 		78BA64C62744DA52005B2D61 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */,
 				78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */,
+				78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -638,8 +644,10 @@
 				78DD436A27425445006684D0 /* FirstViewModel.swift in Sources */,
 				78844FA427435C2800A02E9B /* ViewControllers.swift in Sources */,
 				78844F9A2743490200A02E9B /* Array+Util.swift in Sources */,
+				78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */,
 				78DD437827425B6F006684D0 /* NavigationController.swift in Sources */,
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
+				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
 				78DD436C2742544C006684D0 /* FirstRouting.swift in Sources */,
 				78844F98274348C200A02E9B /* String+Util.swift in Sources */,
 				78DD437A27425B92006684D0 /* TabBarItems.swift in Sources */,
