@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - stored properties
+
 final class SecondUI {
 
     let button: UIButton = .init(
@@ -7,6 +9,8 @@ final class SecondUI {
         title: Resources.Strings.Button.cancelButtonTitle
     )
 }
+
+// MARK: - protocol
 
 extension SecondUI: UserInterface {
 
