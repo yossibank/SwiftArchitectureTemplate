@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */; };
+		781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */; };
+		781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */; };
 		78625645274635C200472228 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78625644274635C200472228 /* DEBUG_UI.swift */; };
 		78844F98274348C200A02E9B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F97274348C200A02E9B /* String+Util.swift */; };
 		78844F9A2743490200A02E9B /* Array+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F992743490200A02E9B /* Array+Util.swift */; };
@@ -101,6 +103,8 @@
 
 /* Begin PBXFileReference section */
 		781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
+		781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListViewController.swift; sourceTree = "<group>"; };
+		781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListUI.swift; sourceTree = "<group>"; };
 		78625644274635C200472228 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
 		78844F97274348C200A02E9B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		78844F992743490200A02E9B /* Array+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Util.swift"; sourceTree = "<group>"; };
@@ -195,6 +199,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		781F9C9D274758C40034F911 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */,
+				781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 		78844F962743476B00A02E9B /* AppUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +447,7 @@
 		78DD435E27424E5C006684D0 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				781F9C9D274758C40034F911 /* Contents */,
 				781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */,
 				78625644274635C200472228 /* DEBUG_UI.swift */,
 				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
@@ -647,6 +661,7 @@
 			files = (
 				78DD436227424E7C006684D0 /* DEBUG_ViewController.swift in Sources */,
 				78625645274635C200472228 /* DEBUG_UI.swift in Sources */,
+				781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */,
 				78844FA227434B6E00A02E9B /* Colors.swift in Sources */,
 				78DD433827423995006684D0 /* FirebaseProvider.swift in Sources */,
 				78DD437C27425D69006684D0 /* TabBarController.swift in Sources */,
@@ -674,6 +689,7 @@
 				78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */,
 				781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */,
 				78DD434C27424739006684D0 /* Strings.swift in Sources */,
+				781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */,
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
 				78DD4336274238DC006684D0 /* API.swift in Sources */,

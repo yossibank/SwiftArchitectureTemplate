@@ -78,12 +78,6 @@ extension DEBUG_ViewController: UITableViewDelegate {
         let section = DEBUG_UI.SectionKind.allCases[indexPath.section]
         let item = section.initialItems[indexPath.row]
 
-        switch section {
-            case .view:
-                self.routing.showDebugView(item: item)
-
-            case .viewController:
-                self.routing.showDebugViewController(item: item)
-        }
+        self.routing.showDebugScreen(item: item)
     }
 }

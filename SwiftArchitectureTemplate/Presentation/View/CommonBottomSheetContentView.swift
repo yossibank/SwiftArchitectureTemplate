@@ -2,13 +2,13 @@ import Combine
 import CombineCocoa
 import UIKit
 
-struct ButtonSheetAction {
-    var title: String
+struct BottomSheetAction {
+    var title: String?
     var style: ButtonStyle
     var handler: VoidBlock
 }
 
-extension ButtonSheetAction {
+extension BottomSheetAction {
 
     enum ButtonStyle: CaseIterable {
         case `default`
@@ -25,6 +25,19 @@ extension ButtonSheetAction {
 
                 case .alert:
                     return .bottomSheetAlertStyle
+            }
+        }
+
+        var value: String {
+            switch self {
+                case .default:
+                    return "DEFAULT"
+
+                case .cancel:
+                    return "CANCEL"
+
+                case .alert:
+                    return "ALERT"
             }
         }
     }
@@ -86,7 +99,7 @@ extension CommonBottomSheetContentView {
     func set(
         title: String?,
         body: String?,
-        actions: [ButtonSheetAction]
+        actions: [BottomSheetAction]
     ) {
         self.configureTitleLabel(title: title)
         self.configureMessageBodyLabel(body: body)
@@ -147,14 +160,14 @@ private extension CommonBottomSheetContentView {
         }
     }
 
-    func configureButtons(_ actions: [ButtonSheetAction]) {
+    func configureButtons(_ actions: [BottomSheetAction]) {
         actions.map { makeButton(by: $0) }.forEach {
             self.buttonContainerStackView.addArrangedSubview($0)
             $0.layout { $0.heightConstant == 52 }
         }
     }
 
-    func makeButton(by action: ButtonSheetAction) -> UIButton {
+    func makeButton(by action: BottomSheetAction) -> UIButton {
         let button = UIButton(style: action.style.type)
         button.setTitle(action.title, for: .normal)
         button.tapPublisher.sink { _ in

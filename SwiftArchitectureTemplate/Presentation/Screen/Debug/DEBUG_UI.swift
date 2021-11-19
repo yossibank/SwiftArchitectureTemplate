@@ -6,6 +6,7 @@ final class DEBUG_UI {
 
     private let tableView = UITableView()
 
+    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<SectionKind, ItemKind>()
     private var dataSource: UITableViewDiffableDataSource<SectionKind, ItemKind>!
 }
 
@@ -25,12 +26,16 @@ extension DEBUG_UI {
     }
 
     func loadTableItems() {
-        var snapShot = NSDiffableDataSourceSnapshot<SectionKind, ItemKind>()
-        snapShot.appendSections(SectionKind.allCases)
+        self.dataSourceSnapshot.appendSections(SectionKind.allCases)
+
         SectionKind.allCases.forEach {
-            snapShot.appendItems($0.initialItems, toSection: $0)
+            self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
-        self.dataSource.apply(snapShot, animatingDifferences: false)
+
+        self.dataSource.apply(
+            self.dataSourceSnapshot,
+            animatingDifferences: false
+        )
     }
 }
 
