@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */; };
+		781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */; };
+		781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */; };
+		78625645274635C200472228 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78625644274635C200472228 /* DEBUG_UI.swift */; };
 		78844F98274348C200A02E9B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F97274348C200A02E9B /* String+Util.swift */; };
 		78844F9A2743490200A02E9B /* Array+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F992743490200A02E9B /* Array+Util.swift */; };
 		78844F9E27434B3C00A02E9B /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F9D27434B3C00A02E9B /* Resources.swift */; };
@@ -24,6 +28,14 @@
 		78A3870827401A9F00DF51CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A3870627401A9F00DF51CF /* LaunchScreen.storyboard */; };
 		78A3871D27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871C27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift */; };
 		78A3871F27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */; };
+		78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */; };
+		78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */; };
+		78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */; };
+		78BA64CB2744E479005B2D61 /* CommonBottomSheetContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */; };
+		78BA64CD2744F609005B2D61 /* BottomSheetUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */; };
+		78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */; };
+		78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */; };
+		78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
 		78DD432D274234FE006684D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD432C274234FE006684D0 /* Configuration.swift */; };
@@ -90,6 +102,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
+		781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListViewController.swift; sourceTree = "<group>"; };
+		781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListUI.swift; sourceTree = "<group>"; };
+		78625644274635C200472228 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
 		78844F97274348C200A02E9B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		78844F992743490200A02E9B /* Array+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Util.swift"; sourceTree = "<group>"; };
 		78844F9D27434B3C00A02E9B /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
@@ -111,6 +127,14 @@
 		78A3871827401A9F00DF51CF /* SwiftArchitectureTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftArchitectureTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A3871C27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTemplateUITests.swift; sourceTree = "<group>"; };
 		78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTemplateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoadingViewController.swift; sourceTree = "<group>"; };
+		78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+StateConvenience.swift"; sourceTree = "<group>"; };
+		78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonBottomSheetContentView.swift; sourceTree = "<group>"; };
+		78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetUI.swift; sourceTree = "<group>"; };
+		78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-IBInspectable+Extension.swift"; sourceTree = "<group>"; };
+		78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		78DD432E27423592006684D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -175,6 +199,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		781F9C9D274758C40034F911 /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */,
+				781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 		78844F962743476B00A02E9B /* AppUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +302,34 @@
 			path = SwiftArchitectureTemplateUITests;
 			sourceTree = "<group>";
 		};
+		78BA64C12744C812005B2D61 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */,
+				78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		78BA64C62744DA52005B2D61 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */,
+				78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */,
+				78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */,
+				78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		78BA64C92744E461005B2D61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CA2744E479005B2D61 /* CommonBottomSheetContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		78DD432827423475006684D0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +337,7 @@
 				78DD4350274247C3006684D0 /* Container */,
 				78DD434F274247BF006684D0 /* Core */,
 				78DD4352274247DF006684D0 /* Screen */,
+				78BA64C92744E461005B2D61 /* View */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -284,11 +346,13 @@
 			isa = PBXGroup;
 			children = (
 				78844F962743476B00A02E9B /* AppUtil */,
+				78BA64C62744DA52005B2D61 /* Extension */,
 				78DD433727423995006684D0 /* FirebaseProvider.swift */,
 				78DD4341274240A1006684D0 /* Layout.swift */,
 				78DD43432742440D006684D0 /* LoadingState.swift */,
-				78844FA6274367C900A02E9B /* TopViewControllerAccessible.swift */,
+				78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */,
 				78DD434727424536006684D0 /* Style.swift */,
+				78844FA6274367C900A02E9B /* TopViewControllerAccessible.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -364,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				78DD437D27425E60006684D0 /* Launch */,
+				78BA64C12744C812005B2D61 /* BottomSheet */,
 				78DD435E27424E5C006684D0 /* Debug */,
 				78DD435F27424E64006684D0 /* First */,
 				78DD436027424E69006684D0 /* Second */,
@@ -382,6 +447,9 @@
 		78DD435E27424E5C006684D0 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				781F9C9D274758C40034F911 /* Contents */,
+				781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */,
+				78625644274635C200472228 /* DEBUG_UI.swift */,
 				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
 			);
 			path = Debug;
@@ -592,6 +660,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78DD436227424E7C006684D0 /* DEBUG_ViewController.swift in Sources */,
+				78625645274635C200472228 /* DEBUG_UI.swift in Sources */,
+				781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */,
 				78844FA227434B6E00A02E9B /* Colors.swift in Sources */,
 				78DD433827423995006684D0 /* FirebaseProvider.swift in Sources */,
 				78DD437C27425D69006684D0 /* TabBarController.swift in Sources */,
@@ -599,28 +669,38 @@
 				78DD436A27425445006684D0 /* FirstViewModel.swift in Sources */,
 				78844FA427435C2800A02E9B /* ViewControllers.swift in Sources */,
 				78844F9A2743490200A02E9B /* Array+Util.swift in Sources */,
+				78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */,
 				78DD437827425B6F006684D0 /* NavigationController.swift in Sources */,
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
+				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
 				78DD436C2742544C006684D0 /* FirstRouting.swift in Sources */,
 				78844F98274348C200A02E9B /* String+Util.swift in Sources */,
 				78DD437A27425B92006684D0 /* TabBarItems.swift in Sources */,
 				78DD432F27423592006684D0 /* Package.swift in Sources */,
+				78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */,
 				78A386FC27401A9D00DF51CF /* AppDelegate.swift in Sources */,
 				78DD437027425487006684D0 /* FirstUI.swift in Sources */,
 				78DD432D274234FE006684D0 /* Configuration.swift in Sources */,
 				78DD436627424F5E006684D0 /* SecondViewModel.swift in Sources */,
 				78DD4342274240A1006684D0 /* Layout.swift in Sources */,
+				78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */,
 				78DD436427424F55006684D0 /* SecondViewController.swift in Sources */,
 				78DD43442742440D006684D0 /* LoadingState.swift in Sources */,
+				78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */,
+				781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */,
 				78DD434C27424739006684D0 /* Strings.swift in Sources */,
+				781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */,
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
 				78DD4336274238DC006684D0 /* API.swift in Sources */,
 				78DD435A274249CC006684D0 /* VCInjectable.swift in Sources */,
 				78DD4368274251D3006684D0 /* SecondUI.swift in Sources */,
 				78DD436E27425455006684D0 /* FirstViewController.swift in Sources */,
+				78BA64CB2744E479005B2D61 /* CommonBottomSheetContentView.swift in Sources */,
+				78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */,
 				78844FAD2743AEAC00A02E9B /* ResourcesSupport.swift in Sources */,
 				78DD434A274246E1006684D0 /* Localizable.swift in Sources */,
+				78BA64CD2744F609005B2D61 /* BottomSheetUI.swift in Sources */,
 				78DD435827424842006684D0 /* UserInterface.swift in Sources */,
 				78DD435D27424D6D006684D0 /* ButtonStyle.swift in Sources */,
 				78844FA027434B6100A02E9B /* Images.swift in Sources */,

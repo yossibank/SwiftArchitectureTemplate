@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - stored properties
+
 final class SecondUI {
 
     let button: UIButton = .init(
@@ -7,6 +9,8 @@ final class SecondUI {
         title: Resources.Strings.Button.cancelButtonTitle
     )
 }
+
+// MARK: - protocol
 
 extension SecondUI: UserInterface {
 
@@ -16,11 +20,11 @@ extension SecondUI: UserInterface {
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-        rootView.addSubview(button)
+        rootView.addSubview(self.button)
     }
 
     func setupLayout(rootView: UIView) {
-        button.layout {
+        self.button.layout {
             $0.centerX == rootView.centerXAnchor
             $0.centerY == rootView.centerYAnchor
             $0.widthConstant == 100

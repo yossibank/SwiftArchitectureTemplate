@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - stored properties
+
 final class FirstUI {
 
     let button: UIButton = .init(
@@ -10,6 +12,8 @@ final class FirstUI {
     let someSwitch: UISwitch = .init()
 }
 
+// MARK: - protocol
+
 extension FirstUI: UserInterface {
 
     func configureNavigationBar(viewController: UIViewController) {
@@ -18,19 +22,19 @@ extension FirstUI: UserInterface {
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-        rootView.addSubview(button)
-        rootView.addSubview(someSwitch)
+        rootView.addSubview(self.button)
+        rootView.addSubview(self.someSwitch)
     }
 
     func setupLayout(rootView: UIView) {
-        button.layout {
+        self.button.layout {
             $0.centerX == rootView.centerXAnchor
             $0.centerY == rootView.centerYAnchor
             $0.widthConstant == 100
             $0.heightConstant == 100
         }
 
-        someSwitch.layout {
+        self.someSwitch.layout {
             $0.top == self.button.bottomAnchor
             $0.centerX == rootView.centerXAnchor
         }

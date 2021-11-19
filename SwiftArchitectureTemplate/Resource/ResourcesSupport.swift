@@ -1,5 +1,7 @@
 import UIKit
 
+typealias VoidBlock = () -> Void
+
 protocol Initializable: AnyObject {
     static var className: String { get }
     static var resourceName: String { get }
@@ -17,7 +19,6 @@ extension NSObject: ClassInitializable {
         self.className
     }
 }
-
 
 extension Initializable where Self: UIViewController {
 
