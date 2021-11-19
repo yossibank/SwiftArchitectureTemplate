@@ -53,7 +53,7 @@ private extension DEBUG_UI {
     func makeCell(index _: IndexPath, item: ItemKind) -> UITableViewCell? {
         let cell = UITableViewCell()
         cell.textLabel?.font = .italicSystemFont(ofSize: 18)
-        cell.textLabel?.text = item.rawValue
+        cell.textLabel?.text = item.rawValue.addSpaceAfterUppercase().uppercased()
         return cell
     }
 }
