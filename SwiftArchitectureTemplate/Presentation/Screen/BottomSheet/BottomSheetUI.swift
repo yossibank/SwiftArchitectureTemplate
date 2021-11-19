@@ -27,12 +27,7 @@ extension BottomSheetUI {
 
     func set(view: UIView) {
         self.baseView.addSubview(view)
-        view.layout {
-            $0.top == self.baseView.topAnchor
-            $0.bottom == self.baseView.bottomAnchor
-            $0.leading == self.baseView.leadingAnchor
-            $0.trailing == self.baseView.trailingAnchor
-        }
+        view.pin(to: self.baseView)
     }
 }
 
