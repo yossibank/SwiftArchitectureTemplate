@@ -35,7 +35,7 @@ extension FirstUI: UserInterface {
         }
 
         self.someSwitch.layout {
-            $0.top == self.button.bottomAnchor
+            $0.top == self.button.bottomAnchor + 10
             $0.centerX == rootView.centerXAnchor
         }
     }
