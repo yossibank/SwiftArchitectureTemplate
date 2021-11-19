@@ -7,7 +7,7 @@ extension UIViewController {
         dismissCallBack: VoidBlock? = nil,
         completion: VoidBlock? = nil
     ) {
-        let bottomSheetVC = BottomSheetViewController(
+        let bottomSheetVC = Resources.ViewControllers.App.bottomSheet(
             dismissCallBack: dismissCallBack
         )
         bottomSheetVC.set(view: view)

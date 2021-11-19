@@ -1,7 +1,7 @@
 import UIKit
 
 extension DEBUG_ViewController: VCInjectable {
-    typealias R = NoRouting
+    typealias R = DEBUG_Routing
     typealias VM = NoViewModel
     typealias UI = DEBUG_UI
 }
@@ -9,7 +9,7 @@ extension DEBUG_ViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_ViewController: UIViewController {
-    var routing: R!
+    var routing: R! { didSet { self.routing.viewController = self } }
     var viewModel: VM!
     var ui: UI!
 }
@@ -45,7 +45,10 @@ private extension DEBUG_ViewController {
 
 extension DEBUG_ViewController: UITableViewDelegate {
 
-    func tableView(_: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(
+        _: UITableView,
+        viewForHeaderInSection section: Int
+    ) -> UIView? {
         let header = UITableViewHeaderFooterView()
         let section = DEBUG_UI.SectionKind.allCases[section]
 
@@ -61,5 +64,26 @@ extension DEBUG_ViewController: UITableViewDelegate {
         header.textLabel?.text = section.rawValue.uppercased()
 
         return header
+    }
+
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        tableView.deselectRow(
+            at: indexPath,
+            animated: true
+        )
+
+        let section = DEBUG_UI.SectionKind.allCases[indexPath.section]
+        let item = section.initialItems[indexPath.row]
+
+        switch section {
+            case .view:
+                self.routing.showDebugView(item: item)
+
+            case .viewController:
+                self.routing.showDebugViewController(item: item)
+        }
     }
 }

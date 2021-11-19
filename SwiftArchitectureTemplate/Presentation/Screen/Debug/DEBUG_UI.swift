@@ -93,7 +93,7 @@ extension DEBUG_UI {
                     return [.bottomSheetContent]
 
                 case .viewController:
-                    return [.bottomSheet, .first, .second]
+                    return [.bottomSheet, .first, .firstDetail, .second]
             }
         }
     }
@@ -106,6 +106,7 @@ extension DEBUG_UI {
         /* ViewController */
         case bottomSheet
         case first
+        case firstDetail
         case second
     }
 }

@@ -28,10 +28,10 @@ extension BottomSheetUI {
     func set(view: UIView) {
         self.baseView.addSubview(view)
         view.layout {
-            $0.top == baseView.topAnchor
-            $0.bottom == baseView.bottomAnchor
-            $0.leading == baseView.leadingAnchor
-            $0.trailing == baseView.trailingAnchor
+            $0.top == self.baseView.topAnchor
+            $0.bottom == self.baseView.bottomAnchor
+            $0.leading == self.baseView.leadingAnchor
+            $0.trailing == self.baseView.trailingAnchor
         }
     }
 }
@@ -43,13 +43,13 @@ extension BottomSheetUI: UserInterface {
     func configureNavigationBar(viewController _: UIViewController) {}
 
     func setupView(rootView: UIView) {
-        let views = [
+        let viewList = [
             self.containerView,
             self.bottomSheetLineImageView,
             self.baseView
         ]
 
-        views.forEach {
+        viewList.forEach {
             rootView.addSubview($0)
         }
     }

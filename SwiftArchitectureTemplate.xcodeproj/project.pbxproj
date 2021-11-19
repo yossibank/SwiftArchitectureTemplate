@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */; };
 		78625645274635C200472228 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78625644274635C200472228 /* DEBUG_UI.swift */; };
 		78844F98274348C200A02E9B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F97274348C200A02E9B /* String+Util.swift */; };
 		78844F9A2743490200A02E9B /* Array+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F992743490200A02E9B /* Array+Util.swift */; };
@@ -99,6 +100,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
 		78625644274635C200472228 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
 		78844F97274348C200A02E9B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		78844F992743490200A02E9B /* Array+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Util.swift"; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 		78DD435E27424E5C006684D0 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
+				781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */,
 				78625644274635C200472228 /* DEBUG_UI.swift */,
 				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
 			);
@@ -669,6 +672,7 @@
 				78DD436427424F55006684D0 /* SecondViewController.swift in Sources */,
 				78DD43442742440D006684D0 /* LoadingState.swift in Sources */,
 				78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */,
+				781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */,
 				78DD434C27424739006684D0 /* Strings.swift in Sources */,
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
