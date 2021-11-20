@@ -1,5 +1,5 @@
 BUNDLE_DISPLAY_NAME = RELEASE
-PRODUCT_BUNDLE_IDENTIFIER = jp.ne.yahoo.yossibank.swift-architecture-template
+PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yossibank07.swift-architecture-template
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "RELEASE"
 OTHER_LDFLAGS = -ObjC
 TEST_TARGET_NAME = swift-architecture-template
