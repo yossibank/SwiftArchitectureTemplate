@@ -7,38 +7,32 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      /* Githubリポジトリからソースを取得 */
-      - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      /* Xcodeの一覧取得 */
-      - name: Show Xcode list
-        run: ls /Applications | grep 'Xcode'
+    - name: Show Xcode list
+      run: ls /Applications | grep 'Xcode'
 
-      /* Xcodeのバージョン出力 */
-      - name: Show Xcode Version
-        run: xcodebuild -version
+    - name: Show Xcode Version
+      run: xcodebuild -version
 
-      /* SPMのcache */
-      - name: Cache Swift Packages
-        uses: actions/cache@v1
-        with:
-          path: SourcePackages
-          key: ${{ runner.os }}-spm-${{ hashFiles('*.xcodeproj/project.xcworkspace/ xcshareddata/swiftpm/Package.resolved') }}
-          restore-keys: ${{ runner.os }}-spm-
+    - name: Cache Swift Packages
+      uses: actions/cache@v1
+      with:
+        path: SourcePackages
+        key: ${{ runner.os }}-spm-${{ hashFiles('*.xcodeproj/project.xcworkspace/ xcshareddata/swiftpm/Package.resolved') }}
+        restore-keys: ${{ runner.os }}-spm-
 
-      /* シミュレーションでビルド */
-      - name: Build
-        run: xcodebuild
-          -scheme SwiftArchitectureTemplate
-          -sdk iphonesimulator
-          -configuration Debug
-          -clonedSourcePackagesDirPath SourcePackages
-          build
+    - name: Build
+      run: xcodebuild
+        -scheme SwiftArchitectureTemplate
+        -sdk iphonesimulator
+        -configuration Debug
+        -clonedSourcePackagesDirPath SourcePackages
+        build
 
-      /* シミュレーションでテスト */
-      - name: Run tests
-        run: xcodebuild
-          -scheme SwiftArchitectureTemplate
-          -sdk iphonesimulator
-          -destination 'platform=iOS Simulator,name=iPhone 13'
-          clean test
+    - name: Run tests
+      run: xcodebuild
+        -scheme SwiftArchitectureTemplate
+        -sdk iphonesimulator
+        -destination 'platform=iOS Simulator,name=iPhone 13'
+        clean test
