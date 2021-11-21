@@ -15,6 +15,12 @@ jobs:
     - name: Show Xcode Version
       run: xcodebuild -version
 
+    - uses: fwal/setup-swift@v1
+      with:
+        swift-version: "5.5"
+    - name: Get Swfit Version
+      run: swift --version
+
     - name: Cache Swift Packages
       uses: actions/cache@v1
       with:
