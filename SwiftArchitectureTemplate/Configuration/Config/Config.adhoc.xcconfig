@@ -1,5 +1,5 @@
 BUNDLE_DISPLAY_NAME = ADHOC
-PRODUCT_BUNDLE_IDENTIFIER = jp.co.yahoo.yossibank.swift-architecture-template.adhoc
+PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yossibank07.swift-architecture-template.adhoc
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "ADHOC"
 OTHER_LDFLAGS = -ObjC
 TEST_TARGET_NAME = swift-architecture-template

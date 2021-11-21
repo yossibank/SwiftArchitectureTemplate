@@ -1,5 +1,5 @@
 BUNDLE_DISPLAY_NAME = DEVELOP
-PRODUCT_BUNDLE_IDENTIFIER = jp.co.yahoo.yossibank.swift-architecture-template.develop
+PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yossibank07.swift-architecture-template.develop
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "DEBUG"
 OTHER_LDFLAGS = -ObjC
 TEST_TARGET_NAME = swift-architecture-template
