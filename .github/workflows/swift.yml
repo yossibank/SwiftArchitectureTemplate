@@ -27,7 +27,7 @@ jobs:
         -scheme SwiftArchitectureTemplate
         -sdk iphonesimulator
         -configuration Debug
-        -clonedSourcePackagesDirPath SourcePackages
+        # -clonedSourcePackagesDirPath SourcePackages
         build
 
     - name: Run tests
