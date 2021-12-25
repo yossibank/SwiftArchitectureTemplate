@@ -1,5 +1,4 @@
 import Combine
-import CombineCocoa
 import UIKit
 
 struct BottomSheetAction {
@@ -170,7 +169,7 @@ private extension CommonBottomSheetContentView {
     func makeButton(by action: BottomSheetAction) -> UIButton {
         let button = UIButton(style: action.style.type)
         button.setTitle(action.title, for: .normal)
-        button.tapPublisher.sink { _ in
+        button.publisher(for: .touchUpInside).sink { _ in
             action.handler()
         }
         .store(in: &self.cancellables)

@@ -26,8 +26,15 @@ final class BottomSheetUI {
 extension BottomSheetUI {
 
     func set(view: UIView) {
-        self.baseView.addSubview(view)
-        view.pin(to: self.baseView)
+        self.baseView.addSubViews(
+            view,
+
+            constraints:
+            view.topAnchor.constraint(equalTo: self.baseView.topAnchor),
+            view.bottomAnchor.constraint(equalTo: self.baseView.bottomAnchor),
+            view.leadingAnchor.constraint(equalTo: self.baseView.leadingAnchor),
+            view.trailingAnchor.constraint(equalTo: self.baseView.trailingAnchor)
+        )
     }
 }
 
@@ -37,43 +44,30 @@ extension BottomSheetUI: UserInterface {
 
     func configureNavigationBar(viewController _: UIViewController) {}
 
-    func setupView(rootView: UIView) {
-        let viewList = [
-            self.containerView,
-            self.bottomSheetLineImageView,
-            self.baseView
-        ]
-
-        viewList.forEach {
-            rootView.addSubview($0)
-        }
-    }
+    func setupView(rootView _: UIView) {}
 
     func setupLayout(rootView: UIView) {
-        self.containerView.layout {
-            $0.centerX == rootView.centerXAnchor
-            $0.bottom == rootView.bottomAnchor
-            $0.width == rootView.widthAnchor
-            $0.height.lessThanOrEqual(to: rootView.heightAnchor)
+        rootView.addSubViews(
+            self.containerView,
+            self.bottomSheetLineImageView,
+            self.baseView,
 
-            let heightConstant = self.containerView.heightAnchor.constraint(equalToConstant: 152)
-            heightConstant.priority = .init(rawValue: 1)
-            heightConstant.isActive = true
-        }
+            constraints:
+            self.containerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            self.containerView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+            self.containerView.widthAnchor.constraint(equalTo: rootView.widthAnchor),
+            self.containerView.heightAnchor.constraint(lessThanOrEqualTo: rootView.heightAnchor),
 
-        self.bottomSheetLineImageView.layout {
-            $0.centerX == self.containerView.centerXAnchor
-            $0.top == self.containerView.topAnchor + 12
-            $0.widthConstant == 30
-            $0.heightConstant == 5
-        }
+            self.bottomSheetLineImageView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
+            self.bottomSheetLineImageView.topAnchor.constraint(equalTo: self.containerView.topAnchor, constant: 12),
+            self.bottomSheetLineImageView.widthAnchor.constraint(equalToConstant: 30),
+            self.bottomSheetLineImageView.heightAnchor.constraint(equalToConstant: 5),
 
-        self.baseView.layout {
-            $0.centerX == self.containerView.centerXAnchor
-            $0.top == self.bottomSheetLineImageView.bottomAnchor + 16
-            $0.bottom == rootView.bottomAnchor - 40
-            $0.leading == self.containerView.leadingAnchor
-            $0.trailing == self.containerView.trailingAnchor
-        }
+            self.baseView.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
+            self.baseView.topAnchor.constraint(equalTo: self.bottomSheetLineImageView.bottomAnchor, constant: 16),
+            self.baseView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor, constant: -40),
+            self.baseView.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor),
+            self.baseView.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor)
+        )
     }
 }

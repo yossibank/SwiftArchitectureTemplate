@@ -10,7 +10,6 @@
 		781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */; };
 		781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */; };
 		781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */; };
-		781F9CA3274785CF0034F911 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9CA2274785CF0034F911 /* UIView+Extension.swift */; };
 		78625645274635C200472228 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78625644274635C200472228 /* DEBUG_UI.swift */; };
 		78844F98274348C200A02E9B /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F97274348C200A02E9B /* String+Util.swift */; };
 		78844F9A2743490200A02E9B /* Array+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78844F992743490200A02E9B /* Array+Util.swift */; };
@@ -29,6 +28,7 @@
 		78A3870827401A9F00DF51CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78A3870627401A9F00DF51CF /* LaunchScreen.storyboard */; };
 		78A3871D27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871C27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift */; };
 		78A3871F27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */; };
+		78B3D0BF2776F93500A8EC6F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */; };
 		78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */; };
 		78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */; };
 		78BA64C82744DA66005B2D61 /* UIButton+StateConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */; };
@@ -37,6 +37,7 @@
 		78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */; };
 		78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */; };
 		78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */; };
+		78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
 		78DD432D274234FE006684D0 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD432C274234FE006684D0 /* Configuration.swift */; };
@@ -65,7 +66,6 @@
 		78DD436E27425455006684D0 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD436D27425455006684D0 /* FirstViewController.swift */; };
 		78DD437027425487006684D0 /* FirstUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD436F27425487006684D0 /* FirstUI.swift */; };
 		78DD4373274254D1006684D0 /* FirstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD4372274254D1006684D0 /* FirstDetailViewController.swift */; };
-		78DD4376274258DF006684D0 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD4375274258DF006684D0 /* CombineCocoa */; };
 		78DD437827425B6F006684D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD437727425B6F006684D0 /* NavigationController.swift */; };
 		78DD437A27425B92006684D0 /* TabBarItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD437927425B92006684D0 /* TabBarItems.swift */; };
 		78DD437C27425D69006684D0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD437B27425D69006684D0 /* TabBarController.swift */; };
@@ -106,7 +106,6 @@
 		781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
 		781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListViewController.swift; sourceTree = "<group>"; };
 		781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListUI.swift; sourceTree = "<group>"; };
-		781F9CA2274785CF0034F911 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		78625644274635C200472228 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
 		78844F97274348C200A02E9B /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
 		78844F992743490200A02E9B /* Array+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Util.swift"; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		78A3871827401A9F00DF51CF /* SwiftArchitectureTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftArchitectureTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78A3871C27401A9F00DF51CF /* SwiftArchitectureTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTemplateUITests.swift; sourceTree = "<group>"; };
 		78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArchitectureTemplateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoadingViewController.swift; sourceTree = "<group>"; };
 		78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+StateConvenience.swift"; sourceTree = "<group>"; };
@@ -137,6 +137,7 @@
 		78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-IBInspectable+Extension.swift"; sourceTree = "<group>"; };
 		78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		78DD432E27423592006684D0 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 				78DD432427415522006684D0 /* Data in Frameworks */,
 				78DD433427423687006684D0 /* FirebaseCrashlytics in Frameworks */,
 				78DD433227423687006684D0 /* FirebaseAnalytics in Frameworks */,
-				78DD4376274258DF006684D0 /* CombineCocoa in Frameworks */,
 				789A4E5E2741440000DD4661 /* Utility in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,7 +318,6 @@
 			children = (
 				78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */,
 				78BA64C72744DA66005B2D61 /* UIButton+StateConvenience.swift */,
-				781F9CA2274785CF0034F911 /* UIView+Extension.swift */,
 				78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */,
 				78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */,
 			);
@@ -356,6 +355,8 @@
 				78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */,
 				78DD434727424536006684D0 /* Style.swift */,
 				78844FA6274367C900A02E9B /* TopViewControllerAccessible.swift */,
+				78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */,
+				78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -520,7 +521,6 @@
 				78DD432627422AB1006684D0 /* Domain */,
 				78DD433127423686006684D0 /* FirebaseAnalytics */,
 				78DD433327423687006684D0 /* FirebaseCrashlytics */,
-				78DD4375274258DF006684D0 /* CombineCocoa */,
 			);
 			productName = SwiftArchitectureTemplate;
 			productReference = 78A386F827401A9D00DF51CF /* SwiftArchitectureTemplate.app */;
@@ -596,7 +596,6 @@
 			mainGroup = 78A386EF27401A9D00DF51CF;
 			packageReferences = (
 				78DD433027423686006684D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				78DD4374274258DE006684D0 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = 78A386F927401A9D00DF51CF /* Products */;
 			projectDirPath = "";
@@ -675,12 +674,12 @@
 				78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */,
 				78DD437827425B6F006684D0 /* NavigationController.swift in Sources */,
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
+				78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */,
 				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
 				78DD436C2742544C006684D0 /* FirstRouting.swift in Sources */,
 				78844F98274348C200A02E9B /* String+Util.swift in Sources */,
 				78DD437A27425B92006684D0 /* TabBarItems.swift in Sources */,
 				78DD432F27423592006684D0 /* Package.swift in Sources */,
-				781F9CA3274785CF0034F911 /* UIView+Extension.swift in Sources */,
 				78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */,
 				78A386FC27401A9D00DF51CF /* AppDelegate.swift in Sources */,
 				78DD437027425487006684D0 /* FirstUI.swift in Sources */,
@@ -709,6 +708,7 @@
 				78DD435D27424D6D006684D0 /* ButtonStyle.swift in Sources */,
 				78844FA027434B6100A02E9B /* Images.swift in Sources */,
 				78DD434827424536006684D0 /* Style.swift in Sources */,
+				78B3D0BF2776F93500A8EC6F /* UIView+Layout.swift in Sources */,
 				78DD4373274254D1006684D0 /* FirstDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1228,14 +1228,6 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		78DD4374274258DE006684D0 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1260,11 +1252,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78DD433027423686006684D0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
-		};
-		78DD4375274258DF006684D0 /* CombineCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 78DD4374274258DE006684D0 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
-			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
