@@ -26,7 +26,7 @@ extension UIControl {
             )
         }
 
-        func request(_ demand: Subscribers.Demand) {
+        func request(_: Subscribers.Demand) {
             // We do nothing here as we only want to send events when they occur.
             // See, for more info: https://developer.apple.com/documentation/combine/subscribers/demand
         }
@@ -81,8 +81,18 @@ extension CombineCompatible where Self: UIControl {
 extension CombineCompatible where Self: UISwitch {
 
     var isOnPublisher: AnyPublisher<Bool, Never> {
-        publisher(for: [.allEditingEvents, .valueChanged]).map {
+        self.publisher(for: [.allEditingEvents, .valueChanged]).map {
             $0.isOn
+        }
+        .eraseToAnyPublisher()
+    }
+}
+
+extension CombineCompatible where Self: UISegmentedControl {
+
+    var selectedIndexPublisher: AnyPublisher<Int, Never> {
+        self.publisher(for: [.allEditingEvents, .valueChanged]).map {
+            $0.selectedSegmentIndex
         }
         .eraseToAnyPublisher()
     }

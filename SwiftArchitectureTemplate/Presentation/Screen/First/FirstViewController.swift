@@ -1,5 +1,4 @@
 import Combine
-import CombineCocoa
 import UIKit
 import Utility
 
@@ -52,7 +51,7 @@ private extension FirstViewController {
     }
 
     func setupEvent() {
-        self.ui.button.tapPublisher.sink { [weak self] _ in
+        self.ui.button.publisher(for: .touchUpInside).sink { [weak self] _ in
             guard let self = self else { return }
             self.routing.showDetail()
         }

@@ -1,5 +1,4 @@
 import Combine
-import CombineCocoa
 import UIKit
 
 // MARK: - stored properties
@@ -103,7 +102,7 @@ private extension DEBUG_BottomSheetListUI {
                     )
                 }
 
-                messageSegment.selectedSegmentIndexPublisher.sink { [weak self] index in
+                messageSegment.selectedIndexPublisher.sink { [weak self] index in
                     guard
                         let self = self
                     else {

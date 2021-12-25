@@ -24,13 +24,13 @@ extension SecondUI: UserInterface {
 
     func setupLayout(rootView: UIView) {
         rootView.addSubViews(
-            button,
+            self.button,
 
             constraints:
-            button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
-            button.widthAnchor.constraint(equalToConstant: 100),
-            button.heightAnchor.constraint(equalToConstant: 100)
+            self.button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            self.button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+            self.button.widthAnchor.constraint(equalToConstant: 100),
+            self.button.heightAnchor.constraint(equalToConstant: 100)
         )
     }
 }
