@@ -9,7 +9,7 @@ extension Stylable where Self == UIButton {
     ) {
         self.init()
         self.setTitle(title, for: state)
-        self.apply(style)
+        apply(style)
     }
 }
 

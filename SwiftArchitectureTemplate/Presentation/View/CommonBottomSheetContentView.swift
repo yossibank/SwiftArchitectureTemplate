@@ -44,8 +44,8 @@ extension BottomSheetAction {
 
 final class CommonBottomSheetContentView: UIView {
 
-    private let baseStackView: UIStackView = {
-        let stackView = UIStackView()
+    private lazy var baseStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabelBackView, messageBodyLabel])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 24
@@ -80,14 +80,14 @@ final class CommonBottomSheetContentView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupView()
-        self.setupLayout()
+        setupView()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.setupView()
-        self.setupLayout()
+        setupView()
+        setupLayout()
     }
 }
 
@@ -100,9 +100,9 @@ extension CommonBottomSheetContentView {
         body: String?,
         actions: [BottomSheetAction]
     ) {
-        self.configureTitleLabel(title: title)
-        self.configureMessageBodyLabel(body: body)
-        self.configureButtons(actions)
+        configureTitleLabel(title: title)
+        configureMessageBodyLabel(body: body)
+        configureButtons(actions)
     }
 }
 
@@ -110,52 +110,42 @@ extension CommonBottomSheetContentView {
 
 private extension CommonBottomSheetContentView {
 
-    func setupView() {
-        addSubview(self.baseStackView)
-        self.titleLabelBackView.addSubview(self.titleLabel)
-
-        let stackViews = [
-            titleLabelBackView,
-            messageBodyLabel
-        ]
-
-        stackViews.forEach {
-            self.baseStackView.addArrangedSubview($0)
-        }
-    }
+    func setupView() {}
 
     func setupLayout() {
-        self.baseStackView.layout {
-            $0.top == self.topAnchor
-            $0.bottom == self.bottomAnchor
-            $0.leading == self.leadingAnchor + 32
-            $0.trailing == self.trailingAnchor - 32
-        }
+        addSubViews(
+            baseStackView,
+            titleLabel,
 
-        self.titleLabel.layout {
-            $0.top == self.titleLabelBackView.topAnchor
-            $0.bottom == self.titleLabelBackView.bottomAnchor - 8
-            $0.leading == self.titleLabelBackView.leadingAnchor
-            $0.trailing == self.titleLabelBackView.trailingAnchor
-            $0.heightConstant == 28
-        }
+            constraints:
+            baseStackView.topAnchor.constraint(equalTo: topAnchor),
+            baseStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            baseStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            baseStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
+
+            titleLabel.topAnchor.constraint(equalTo: titleLabelBackView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleLabelBackView.bottomAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: titleLabelBackView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleLabelBackView.trailingAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 28)
+        )
     }
 
     func configureTitleLabel(title: String?) {
         if let title = title {
-            self.titleLabel.text = title
-            self.titleLabelBackView.isHidden = false
+            titleLabel.text = title
+            titleLabelBackView.isHidden = false
         } else {
-            self.titleLabelBackView.isHidden = true
+            titleLabelBackView.isHidden = true
         }
     }
 
     func configureMessageBodyLabel(body: String?) {
         if let body = body {
-            self.messageBodyLabel.text = body
-            self.messageBodyLabel.isHidden = false
+            messageBodyLabel.text = body
+            messageBodyLabel.isHidden = false
         } else {
-            self.messageBodyLabel.isHidden = true
+            messageBodyLabel.isHidden = true
         }
     }
 
@@ -172,7 +162,7 @@ private extension CommonBottomSheetContentView {
         button.publisher(for: .touchUpInside).sink { _ in
             action.handler()
         }
-        .store(in: &self.cancellables)
+        .store(in: &cancellables)
 
         return button
     }

@@ -24,7 +24,7 @@ extension Stylable {
 
     init(style: ViewStyle<Self>) {
         self.init()
-        self.apply(style)
+        apply(style)
     }
 
     func apply(_ style: ViewStyle<Self>) {

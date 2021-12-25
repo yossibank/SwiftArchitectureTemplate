@@ -65,7 +65,7 @@ public extension Repository where T.Parameters == EmptyParameters {
         pathComponent: T.PathComponent,
         completion: @escaping (Result<T.Response, APIError>) -> Void
     ) {
-        self.request(
+        request(
             useTestData: useTestData,
             parameters: .init(),
             pathComponent: pathComponent,
@@ -93,7 +93,7 @@ public extension Repository where T.PathComponent == EmptyPathComponent {
         parameters: T.Parameters,
         completion: @escaping (Result<T.Response, APIError>) -> Void
     ) {
-        self.request(
+        request(
             useTestData: useTestData,
             parameters: parameters,
             pathComponent: .init(),
@@ -120,7 +120,7 @@ public extension Repository where T.Parameters == EmptyParameters, T.PathCompone
         useTestData: Bool,
         completion: @escaping (Result<T.Response, APIError>) -> Void
     ) {
-        self.request(
+        request(
             useTestData: useTestData,
             parameters: .init(),
             pathComponent: .init(),

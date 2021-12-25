@@ -21,7 +21,7 @@ extension UIControl {
             self.control = control
             control.addTarget(
                 self,
-                action: #selector(self.eventHandler),
+                action: #selector(eventHandler),
                 for: event
             )
         }
@@ -32,11 +32,11 @@ extension UIControl {
         }
 
         func cancel() {
-            self.subscriber = nil
+            subscriber = nil
         }
 
         @objc private func eventHandler() {
-            _ = self.subscriber?.receive(self.control)
+            _ = subscriber?.receive(control)
         }
     }
 
@@ -81,7 +81,7 @@ extension CombineCompatible where Self: UIControl {
 extension CombineCompatible where Self: UISwitch {
 
     var isOnPublisher: AnyPublisher<Bool, Never> {
-        self.publisher(for: [.allEditingEvents, .valueChanged]).map {
+        publisher(for: [.allEditingEvents, .valueChanged]).map {
             $0.isOn
         }
         .eraseToAnyPublisher()
@@ -91,7 +91,7 @@ extension CombineCompatible where Self: UISwitch {
 extension CombineCompatible where Self: UISegmentedControl {
 
     var selectedIndexPublisher: AnyPublisher<Int, Never> {
-        self.publisher(for: [.allEditingEvents, .valueChanged]).map {
+        publisher(for: [.allEditingEvents, .valueChanged]).map {
             $0.selectedSegmentIndex
         }
         .eraseToAnyPublisher()

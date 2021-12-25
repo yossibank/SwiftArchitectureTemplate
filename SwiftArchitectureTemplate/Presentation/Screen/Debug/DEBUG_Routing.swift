@@ -13,9 +13,6 @@ extension DEBUG_Routing {
             case .bottomSheetContent:
                 viewController = Resources.ViewControllers.Debug.bottomSheetList()
 
-            case .bottomSheet:
-                viewController = Resources.ViewControllers.App.bottomSheet()
-
             case .first:
                 viewController = Resources.ViewControllers.App.first()
 
@@ -27,7 +24,7 @@ extension DEBUG_Routing {
         }
 
         switch item {
-            case .bottomSheetContent, .bottomSheet:
+            case .bottomSheetContent:
                 self.viewController?.present(viewController, animated: true)
 
             default:

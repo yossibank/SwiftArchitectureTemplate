@@ -22,11 +22,11 @@ final class DEBUG_BottomSheetListUI {
 extension DEBUG_BottomSheetListUI {
 
     func setupTableView(delegate: UITableViewDelegate) {
-        self.dataSource = self.configureDataSource()
-        self.tableView.dataSource = self.dataSource
-        self.tableView.tableFooterView = UIView()
-        self.tableView.rowHeight = 60
-        self.tableView.delegate = delegate
+        dataSource = configureDataSource()
+        tableView.dataSource = dataSource
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 60
+        tableView.delegate = delegate
 
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
@@ -34,25 +34,25 @@ extension DEBUG_BottomSheetListUI {
     }
 
     func loadTableItems() {
-        self.dataSourceSnapshot.appendSections(SectionKind.allCases)
+        dataSourceSnapshot.appendSections(SectionKind.allCases)
 
         SectionKind.allCases.forEach {
             self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
-        self.dataSource.apply(
-            self.dataSourceSnapshot,
+        dataSource.apply(
+            dataSourceSnapshot,
             animatingDifferences: false
         )
     }
 
     func reloadTableItems(item: ItemKind) {
-        self.dataSourceSnapshot.reloadItems([item])
-        self.dataSource.apply(self.dataSourceSnapshot)
+        dataSourceSnapshot.reloadItems([item])
+        dataSource.apply(dataSourceSnapshot)
     }
 
     func selectedTableItem(index: IndexPath) -> ItemKind? {
-        self.dataSource.itemIdentifier(for: index)
+        dataSource.itemIdentifier(for: index)
     }
 }
 
@@ -61,7 +61,7 @@ extension DEBUG_BottomSheetListUI {
 private extension DEBUG_BottomSheetListUI {
 
     func configureDataSource() -> UITableViewDiffableDataSource<SectionKind, ItemKind> {
-        .init(tableView: self.tableView) { [weak self] _, index, item in
+        .init(tableView: tableView) { [weak self] _, index, item in
             guard
                 let self = self
             else {
@@ -78,11 +78,11 @@ private extension DEBUG_BottomSheetListUI {
         switch item {
             case .title:
                 let titleSwitch = UISwitch()
-                titleSwitch.isOn = self.titleAvailable
+                titleSwitch.isOn = titleAvailable
                 titleSwitch.isOnPublisher.sink { [weak self] isOn in
                     self?.titleAvailable = isOn
                 }
-                .store(in: &self.cancellables)
+                .store(in: &cancellables)
 
                 cell.accessoryView = titleSwitch
                 cell.textLabel?.text = "TITLE AVAILABLE"
@@ -111,10 +111,10 @@ private extension DEBUG_BottomSheetListUI {
 
                     self.messageType = MessageType.allCases.any(at: index) ?? .normal
                 }
-                .store(in: &self.cancellables)
+                .store(in: &cancellables)
 
                 messageSegment.selectedSegmentIndex = MessageType.allCases.firstIndex(
-                    of: self.messageType
+                    of: messageType
                 ) ?? 0
 
                 cell.accessoryView = messageSegment
@@ -124,7 +124,7 @@ private extension DEBUG_BottomSheetListUI {
 
             case let .action(style):
                 cell.textLabel?.text = String(describing: style)
-                cell.accessoryType = self.selectedStyles.contains(style) ? .checkmark : .none
+                cell.accessoryType = selectedStyles.contains(style) ? .checkmark : .none
 
                 return cell
 
@@ -148,13 +148,13 @@ extension DEBUG_BottomSheetListUI: UserInterface {
 
     func setupLayout(rootView: UIView) {
         rootView.addSubViews(
-            self.tableView,
+            tableView,
 
             constraints:
-            self.tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+            tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )
     }
 }

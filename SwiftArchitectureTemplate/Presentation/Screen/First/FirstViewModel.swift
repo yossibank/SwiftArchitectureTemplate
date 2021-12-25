@@ -22,9 +22,9 @@ final class FirstViewModel: ViewModel {
 extension FirstViewModel {
 
     func viewWillAppear() {
-        self.state = .loading
+        state = .loading
 
-        self.usecase.fetchSample().sink { [weak self] completion in
+        usecase.fetchSample().sink { [weak self] completion in
             switch completion {
                 case let .failure(error):
                     Logger.debug(message: error.localizedDescription)
@@ -36,6 +36,6 @@ extension FirstViewModel {
         } receiveValue: { [weak self] state in
             self?.state = .done(state)
         }
-        .store(in: &self.cancellables)
+        .store(in: &cancellables)
     }
 }

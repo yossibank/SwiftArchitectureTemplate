@@ -10,9 +10,9 @@ public struct Logger {
         function: String = #function,
         line: Int = #line
     ) {
-        self.doLog(
+        doLog(
             message: message,
-            osLog: self.osLog,
+            osLog: osLog,
             logType: .info,
             file: file,
             function: function,
@@ -26,9 +26,9 @@ public struct Logger {
         function: String = #function,
         line: Int = #line
     ) {
-        self.doLog(
+        doLog(
             message: message,
-            osLog: self.osLog,
+            osLog: osLog,
             logType: .debug,
             file: file,
             function: function,
@@ -42,9 +42,9 @@ public struct Logger {
         function: String = #function,
         line: Int = #line
     ) {
-        self.doLog(
+        doLog(
             message: message,
-            osLog: self.osLog,
+            osLog: osLog,
             logType: .error,
             file: file,
             function: function,
@@ -58,9 +58,9 @@ public struct Logger {
         function: String = #function,
         line: Int = #line
     ) {
-        self.doLog(
+        doLog(
             message: message,
-            osLog: self.osLog,
+            osLog: osLog,
             logType: .fault,
             file: file,
             function: function,

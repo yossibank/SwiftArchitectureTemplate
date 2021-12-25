@@ -1,7 +1,7 @@
 extension Array where Element: Any {
 
     func any(at position: Int) -> Element? {
-        if position < self.startIndex || position >= self.endIndex {
+        if position < startIndex || position >= endIndex {
             return nil
         }
 
@@ -10,7 +10,7 @@ extension Array where Element: Any {
 
     func any(at position: Int?) -> Element? {
         if let position = position {
-            return self.any(at: position)
+            return any(at: position)
         }
 
         return nil
@@ -20,8 +20,8 @@ extension Array where Element: Any {
 extension Array where Element: Equatable {
 
     mutating func remove(value: Element) {
-        if let i = self.firstIndex(of: value) {
-            self.remove(at: i)
+        if let i = firstIndex(of: value) {
+            remove(at: i)
         }
     }
 }

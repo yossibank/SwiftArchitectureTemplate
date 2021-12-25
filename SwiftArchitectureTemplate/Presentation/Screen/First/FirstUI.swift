@@ -26,17 +26,17 @@ extension FirstUI: UserInterface {
 
     func setupLayout(rootView: UIView) {
         rootView.addSubViews(
-            self.button,
-            self.someSwitch,
+            button,
+            someSwitch,
 
             constraints:
-            self.button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-            self.button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
-            self.button.widthAnchor.constraint(equalToConstant: 100),
-            self.button.heightAnchor.constraint(equalToConstant: 100),
+            button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 100),
 
-            self.someSwitch.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
-            self.someSwitch.topAnchor.constraint(equalTo: self.button.bottomAnchor, constant: 10)
+            someSwitch.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            someSwitch.topAnchor.constraint(equalTo: button.bottomAnchor, constant: 10)
         )
     }
 }

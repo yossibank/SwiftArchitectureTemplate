@@ -15,10 +15,10 @@ final class DEBUG_UI {
 extension DEBUG_UI {
 
     func setupTableView(delegate: UITableViewDelegate) {
-        self.dataSource = self.configureDataSource()
-        self.tableView.dataSource = self.dataSource
-        self.tableView.rowHeight = 60
-        self.tableView.delegate = delegate
+        dataSource = configureDataSource()
+        tableView.dataSource = dataSource
+        tableView.rowHeight = 60
+        tableView.delegate = delegate
 
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
@@ -26,14 +26,14 @@ extension DEBUG_UI {
     }
 
     func loadTableItems() {
-        self.dataSourceSnapshot.appendSections(SectionKind.allCases)
+        dataSourceSnapshot.appendSections(SectionKind.allCases)
 
         SectionKind.allCases.forEach {
             self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
-        self.dataSource.apply(
-            self.dataSourceSnapshot,
+        dataSource.apply(
+            dataSourceSnapshot,
             animatingDifferences: false
         )
     }
@@ -44,7 +44,7 @@ extension DEBUG_UI {
 private extension DEBUG_UI {
 
     func configureDataSource() -> UITableViewDiffableDataSource<SectionKind, ItemKind> {
-        .init(tableView: self.tableView) { [weak self] _, index, item in
+        .init(tableView: tableView) { [weak self] _, index, item in
             guard
                 let self = self
             else {
@@ -77,13 +77,13 @@ extension DEBUG_UI: UserInterface {
 
     func setupLayout(rootView: UIView) {
         rootView.addSubViews(
-            self.tableView,
+            tableView,
 
             constraints:
-            self.tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
-            self.tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+            tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )
     }
 }
@@ -100,7 +100,7 @@ extension DEBUG_UI {
                     return [.bottomSheetContent]
 
                 case .viewController:
-                    return [.bottomSheet, .first, .firstDetail, .second]
+                    return [.first, .firstDetail, .second]
             }
         }
     }
@@ -111,7 +111,6 @@ extension DEBUG_UI {
         case bottomSheetContent
 
         /* ViewController */
-        case bottomSheet
         case first
         case firstDetail
         case second

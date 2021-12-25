@@ -33,7 +33,7 @@ extension VCInjectable {
 extension VCInjectable where R == NoRouting {
 
     func inject(viewModel: VM, ui: UI) {
-        self.routing = R()
+        routing = R()
         self.viewModel = viewModel
         self.ui = ui
     }
@@ -43,7 +43,7 @@ extension VCInjectable where VM == NoViewModel {
 
     func inject(routing: R, ui: UI) {
         self.routing = routing
-        self.viewModel = VM()
+        viewModel = VM()
         self.ui = ui
     }
 }
@@ -53,15 +53,15 @@ extension VCInjectable where UI == NoUserInterface {
     func inject(routing: R, viewModel: VM) {
         self.routing = routing
         self.viewModel = viewModel
-        self.ui = UI()
+        ui = UI()
     }
 }
 
 extension VCInjectable where R == NoRouting, VM == NoViewModel {
 
     func inject(ui: UI) {
-        self.routing = R()
-        self.viewModel = VM()
+        routing = R()
+        viewModel = VM()
         self.ui = ui
     }
 }
@@ -69,9 +69,9 @@ extension VCInjectable where R == NoRouting, VM == NoViewModel {
 extension VCInjectable where R == NoRouting, UI == NoUserInterface {
 
     func inject(viewModel: VM) {
-        self.routing = R()
+        routing = R()
         self.viewModel = viewModel
-        self.ui = UI()
+        ui = UI()
     }
 }
 
@@ -79,16 +79,16 @@ extension VCInjectable where VM == NoViewModel, UI == NoUserInterface {
 
     func inject(routing: R) {
         self.routing = routing
-        self.viewModel = VM()
-        self.ui = UI()
+        viewModel = VM()
+        ui = UI()
     }
 }
 
 extension VCInjectable where R == NoRouting, VM == NoViewModel, UI == NoUserInterface {
 
     func inject() {
-        self.routing = R()
-        self.viewModel = VM()
-        self.ui = UI()
+        routing = R()
+        viewModel = VM()
+        ui = UI()
     }
 }

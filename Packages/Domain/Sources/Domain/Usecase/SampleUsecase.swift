@@ -8,7 +8,7 @@ public protocol SampleUsecase {
 public extension SampleUsecase {
 
     func fetchSample(userId: Int? = nil) -> AnyPublisher<[SampleEntity], APIError> {
-        self.fetchSample(userId: userId)
+        fetchSample(userId: userId)
     }
 }
 
@@ -17,7 +17,7 @@ extension UsecaseImpl: SampleUsecase where R == Repos.Sample.Get, M == SampleMap
     public func fetchSample(
         userId: Int? = nil
     ) -> AnyPublisher<[SampleEntity], APIError> {
-        self.toPublisher { promise in
+        toPublisher { promise in
             analytics.sendEvent()
 
             repository.request(

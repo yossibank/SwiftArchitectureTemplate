@@ -27,7 +27,7 @@ extension TabBarController {
         let tabs = Tabs.allCases.filter { $0 != .debug }.map { $0.viewController }
         #endif
 
-        self.inject()
-        self.setViewControllers(tabs, animated: false)
+        inject()
+        setViewControllers(tabs, animated: false)
     }
 }

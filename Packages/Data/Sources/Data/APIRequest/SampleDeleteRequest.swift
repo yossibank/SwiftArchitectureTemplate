@@ -10,7 +10,7 @@ public struct SampleDeleteRequest: Request {
     public let parameters: Parameters
     public var queryItems: [URLQueryItem]?
     public var method: HTTPMethod { .delete }
-    public var path: String { "/posts/\(self.id)" }
+    public var path: String { "/posts/\(id)" }
     public var body: Data?
 
     public var testDataPath: URL? { nil }

@@ -8,15 +8,15 @@ final class FirstViewModelTests: XCTestCase {
     private var viewModel: FirstViewModel!
 
     override func setUpWithError() throws {
-        self.viewModel = FirstViewModel(
+        viewModel = FirstViewModel(
             usecase: Domain.Usecase.FetchSample(useTestData: true)
         )
     }
 
     func testViewWillAppear() throws {
-        let publisher = self.viewModel.$state.collect(1).first()
+        let publisher = viewModel.$state.collect(1).first()
 
-        self.viewModel.viewWillAppear()
+        viewModel.viewWillAppear()
 
         let result = try awaitPublisher(publisher)
 
