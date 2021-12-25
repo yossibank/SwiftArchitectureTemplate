@@ -20,7 +20,7 @@ extension UIView {
         layoutAttribute: NSLayoutConstraint.Attribute
     ) -> NSLayoutConstraint? {
         if let constraints = superview?.constraints {
-            for constraint in constraints where self.itemMatch(
+            for constraint in constraints where itemMatch(
                 constraint: constraint,
                 layoutAttribute: layoutAttribute
             ) {

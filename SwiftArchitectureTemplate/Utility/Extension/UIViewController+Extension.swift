@@ -12,7 +12,7 @@ extension UIViewController {
         )
         bottomSheetVC.set(view: view)
 
-        self.present(
+        present(
             bottomSheetVC,
             animated: true,
             completion: completion
@@ -38,7 +38,7 @@ extension UIViewController {
         )
         bottomSheetVC.set(view: commonBottomSheetView)
 
-        self.present(
+        present(
             bottomSheetVC,
             animated: true,
             completion: completion

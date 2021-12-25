@@ -36,13 +36,13 @@ extension BottomSheetViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.modalTransitionStyle = .coverVertical
-        self.modalPresentationStyle = .formSheet
+        modalTransitionStyle = .coverVertical
+        modalPresentationStyle = .formSheet
 
-        self.setupUI()
+        setupUI()
 
         if let view = contentView {
-            self.ui.set(view: view)
+            ui.set(view: view)
         }
 
         let gestureRecognizer = UITapGestureRecognizer(
@@ -50,7 +50,7 @@ extension BottomSheetViewController {
             action: #selector(viewTapped)
         )
 
-        self.view.addGestureRecognizer(gestureRecognizer)
+        view.addGestureRecognizer(gestureRecognizer)
 
         presentationController?.delegate = self
     }
@@ -61,7 +61,7 @@ extension BottomSheetViewController {
 extension BottomSheetViewController {
 
     func set(view: UIView) {
-        self.contentView = view
+        contentView = view
     }
 }
 
@@ -70,13 +70,13 @@ extension BottomSheetViewController {
 private extension BottomSheetViewController {
 
     func setupUI() {
-        self.ui.configureNavigationBar(viewController: self)
-        self.ui.setupView(rootView: self.view)
-        self.ui.setupLayout(rootView: self.view)
+        ui.configureNavigationBar(viewController: self)
+        ui.setupView(rootView: view)
+        ui.setupLayout(rootView: view)
     }
 
     @objc func viewTapped() {
-        self.dismiss(animated: true) { [weak self] in
+        dismiss(animated: true) { [weak self] in
             self?.dismissCallback?()
         }
     }
@@ -87,7 +87,7 @@ private extension BottomSheetViewController {
 extension BottomSheetViewController: UIAdaptivePresentationControllerDelegate {
 
     func presentationControllerDidDismiss(_: UIPresentationController) {
-        self.dismiss(animated: true) { [weak self] in
+        dismiss(animated: true) { [weak self] in
             self?.dismissCallback?()
         }
     }

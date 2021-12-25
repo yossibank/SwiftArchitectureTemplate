@@ -19,14 +19,14 @@ extension String {
         let isFirstMatch = regex.firstMatch(
             in: self,
             options: .init(),
-            range: NSMakeRange(0, self.count)
+            range: NSMakeRange(0, count)
         )
 
         return isFirstMatch != nil
     }
 
     func addSpaceAfterUppercase() -> String {
-        self.map { $0.description.contain(pattern: "[A-Z]")
+        map { $0.description.contain(pattern: "[A-Z]")
             ? String(" \($0)")
             : String($0)
         }.joined()

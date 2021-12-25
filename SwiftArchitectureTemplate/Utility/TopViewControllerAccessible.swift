@@ -13,7 +13,7 @@ extension TopViewControllerAccessible {
     }
 
     func getTopViewController() -> UIViewController? {
-        var topViewController: UIViewController? = self.rootViewController
+        var topViewController: UIViewController? = rootViewController
 
         while let presentedViewController = topViewController?.presentedViewController {
             topViewController = presentedViewController
@@ -24,19 +24,19 @@ extension TopViewControllerAccessible {
 
     func getVisibleViewController() -> UIViewController? {
         guard
-            let rootViewController = self.rootViewController
+            let rootViewController = rootViewController
         else {
             return nil
         }
 
-        return self.getVisibleViewController(rootViewController)
+        return getVisibleViewController(rootViewController)
     }
 
     private func getVisibleViewController(
         _ rootViewController: UIViewController
     ) -> UIViewController? {
         if let presentedViewController = rootViewController.presentedViewController {
-            return self.getVisibleViewController(presentedViewController)
+            return getVisibleViewController(presentedViewController)
         }
 
         if let navigationController = rootViewController as? UINavigationController {

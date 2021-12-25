@@ -11,9 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         PackageConfig.setup()
 
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = TabBarController()
-        self.window?.makeKeyAndVisible()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = TabBarController()
+        window?.makeKeyAndVisible()
 
         return true
     }

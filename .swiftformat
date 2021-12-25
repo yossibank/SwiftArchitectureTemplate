@@ -43,7 +43,6 @@
 --ranges spaced
 --redundanttype inferred
 --semicolons inline
---self insert
 --shortoptionals always
 --smarttabs enabled
 --stripunusedargs always
@@ -61,5 +60,5 @@
 --wrapparameters before-first
 --xcodeindentation disabled
 
---disable andOperator,anyObjectProtocol,blankLinesAroundMark,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveBlankLines,consecutiveSpaces,enumNamespaces,initCoderUnavailable,preferKeyPath,redundantRawValues,sortedImports,spaceAroundOperators,wrapAttributes,yodaConditions,wrapSwitchCases
+--disable andOperator,anyObjectProtocol,blankLinesAroundMark,blankLinesAtStartOfScope,blankLinesBetweenScopes,consecutiveBlankLines,consecutiveSpaces,enumNamespaces,initCoderUnavailable,preferKeyPath,redundantRawValues,redundantSelf,sortedImports,spaceAroundOperators,wrapAttributes,yodaConditions,wrapSwitchCases
 --enable wrapMultilineStatementBraces,wrapEnumCases

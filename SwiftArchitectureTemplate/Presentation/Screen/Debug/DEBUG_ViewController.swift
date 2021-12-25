@@ -9,7 +9,7 @@ extension DEBUG_ViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_ViewController: UIViewController {
-    var routing: R! { didSet { self.routing.viewController = self } }
+    var routing: R! { didSet { routing.viewController = self } }
     var viewModel: VM!
     var ui: UI!
 }
@@ -20,8 +20,8 @@ extension DEBUG_ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.setupTableView()
+        setupUI()
+        setupTableView()
     }
 }
 
@@ -30,14 +30,14 @@ extension DEBUG_ViewController {
 private extension DEBUG_ViewController {
 
     func setupUI() {
-        self.ui.configureNavigationBar(viewController: self)
-        self.ui.setupView(rootView: self.view)
-        self.ui.setupLayout(rootView: self.view)
+        ui.configureNavigationBar(viewController: self)
+        ui.setupView(rootView: view)
+        ui.setupLayout(rootView: view)
     }
 
     func setupTableView() {
-        self.ui.setupTableView(delegate: self)
-        self.ui.loadTableItems()
+        ui.setupTableView(delegate: self)
+        ui.loadTableItems()
     }
 }
 
@@ -78,6 +78,6 @@ extension DEBUG_ViewController: UITableViewDelegate {
         let section = DEBUG_UI.SectionKind.allCases[indexPath.section]
         let item = section.initialItems[indexPath.row]
 
-        self.routing.showDebugScreen(item: item)
+        routing.showDebugScreen(item: item)
     }
 }

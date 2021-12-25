@@ -20,8 +20,8 @@ extension DEBUG_BottomSheetListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupUI()
-        self.setupTableView()
+        setupUI()
+        setupTableView()
     }
 }
 
@@ -30,14 +30,14 @@ extension DEBUG_BottomSheetListViewController {
 private extension DEBUG_BottomSheetListViewController {
 
     func setupUI() {
-        self.ui.configureNavigationBar(viewController: self)
-        self.ui.setupView(rootView: self.view)
-        self.ui.setupLayout(rootView: self.view)
+        ui.configureNavigationBar(viewController: self)
+        ui.setupView(rootView: view)
+        ui.setupLayout(rootView: view)
     }
 
     func setupTableView() {
-        self.ui.setupTableView(delegate: self)
-        self.ui.loadTableItems()
+        ui.setupTableView(delegate: self)
+        ui.loadTableItems()
     }
 }
 
@@ -80,24 +80,24 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
 
         switch item {
             case let .action(style):
-                if self.ui.selectedStyles.contains(style) {
-                    if let index = self.ui.selectedStyles.firstIndex(of: style) {
-                        self.ui.selectedStyles.remove(at: index)
+                if ui.selectedStyles.contains(style) {
+                    if let index = ui.selectedStyles.firstIndex(of: style) {
+                        ui.selectedStyles.remove(at: index)
                     }
                 } else {
-                    self.ui.selectedStyles.append(style)
+                    ui.selectedStyles.append(style)
                 }
 
                 guard
-                    let item = self.ui.selectedTableItem(index: indexPath)
+                    let item = ui.selectedTableItem(index: indexPath)
                 else {
                     return
                 }
 
-                self.ui.reloadTableItems(item: item)
+                ui.reloadTableItems(item: item)
 
             case .show:
-                let title = self.ui.titleAvailable ? "DEBUG TITLE" : nil
+                let title = ui.titleAvailable ? "DEBUG TITLE" : nil
 
                 let body: String? = {
                     switch self.ui.messageType {
@@ -112,11 +112,11 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
                     }
                 }()
 
-                let actions = self.ui.selectedStyles.map {
+                let actions = ui.selectedStyles.map {
                     BottomSheetAction(title: $0.value, style: $0, handler: {})
                 }
 
-                self.showBottomSheet(
+                showBottomSheet(
                     title: title,
                     body: body,
                     actions: actions

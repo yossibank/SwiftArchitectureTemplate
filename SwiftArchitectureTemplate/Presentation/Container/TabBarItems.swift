@@ -32,7 +32,7 @@ enum Tabs: Int, CaseIterable {
     }
 
     private var tabBarItem: UITabBarItem {
-        .init(title: self.title, image: self.image, tag: self.rawValue)
+        .init(title: title, image: image, tag: rawValue)
     }
 
     private var baseViewController: UIViewController {
@@ -54,8 +54,8 @@ enum Tabs: Int, CaseIterable {
     }
 
     var viewController: UIViewController {
-        let viewController = self.baseViewController
-        viewController.tabBarItem = self.tabBarItem
+        let viewController = baseViewController
+        viewController.tabBarItem = tabBarItem
         return viewController
     }
 }

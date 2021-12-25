@@ -80,14 +80,14 @@ final class CommonBottomSheetContentView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupView()
-        self.setupLayout()
+        setupView()
+        setupLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        self.setupView()
-        self.setupLayout()
+        setupView()
+        setupLayout()
     }
 }
 
@@ -100,9 +100,9 @@ extension CommonBottomSheetContentView {
         body: String?,
         actions: [BottomSheetAction]
     ) {
-        self.configureTitleLabel(title: title)
-        self.configureMessageBodyLabel(body: body)
-        self.configureButtons(actions)
+        configureTitleLabel(title: title)
+        configureMessageBodyLabel(body: body)
+        configureButtons(actions)
     }
 }
 
@@ -111,8 +111,8 @@ extension CommonBottomSheetContentView {
 private extension CommonBottomSheetContentView {
 
     func setupView() {
-        addSubview(self.baseStackView)
-        self.titleLabelBackView.addSubview(self.titleLabel)
+        addSubview(baseStackView)
+        titleLabelBackView.addSubview(titleLabel)
 
         let stackViews = [
             titleLabelBackView,
@@ -125,14 +125,14 @@ private extension CommonBottomSheetContentView {
     }
 
     func setupLayout() {
-        self.baseStackView.layout {
+        baseStackView.layout {
             $0.top == self.topAnchor
             $0.bottom == self.bottomAnchor
             $0.leading == self.leadingAnchor + 32
             $0.trailing == self.trailingAnchor - 32
         }
 
-        self.titleLabel.layout {
+        titleLabel.layout {
             $0.top == self.titleLabelBackView.topAnchor
             $0.bottom == self.titleLabelBackView.bottomAnchor - 8
             $0.leading == self.titleLabelBackView.leadingAnchor
@@ -143,19 +143,19 @@ private extension CommonBottomSheetContentView {
 
     func configureTitleLabel(title: String?) {
         if let title = title {
-            self.titleLabel.text = title
-            self.titleLabelBackView.isHidden = false
+            titleLabel.text = title
+            titleLabelBackView.isHidden = false
         } else {
-            self.titleLabelBackView.isHidden = true
+            titleLabelBackView.isHidden = true
         }
     }
 
     func configureMessageBodyLabel(body: String?) {
         if let body = body {
-            self.messageBodyLabel.text = body
-            self.messageBodyLabel.isHidden = false
+            messageBodyLabel.text = body
+            messageBodyLabel.isHidden = false
         } else {
-            self.messageBodyLabel.isHidden = true
+            messageBodyLabel.isHidden = true
         }
     }
 
@@ -172,7 +172,7 @@ private extension CommonBottomSheetContentView {
         button.publisher(for: .touchUpInside).sink { _ in
             action.handler()
         }
-        .store(in: &self.cancellables)
+        .store(in: &cancellables)
 
         return button
     }

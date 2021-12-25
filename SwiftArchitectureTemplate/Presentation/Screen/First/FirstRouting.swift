@@ -7,7 +7,7 @@ final class FirstRouting: Routing {
 extension FirstRouting {
 
     func showDetail() {
-        self.viewController?.navigationController?.pushViewController(
+        viewController?.navigationController?.pushViewController(
             Resources.ViewControllers.App.firstDetail(),
             animated: true
         )

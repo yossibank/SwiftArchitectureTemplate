@@ -25,7 +25,7 @@ struct APIClient {
 
         // TODO: need to consider cache expiration
         if let cache = URLCache.shared.cachedResponse(for: urlRequest), item.wantCache {
-            self.decode(data: cache.data, completion: completion)
+            decode(data: cache.data, completion: completion)
             return
         }
 

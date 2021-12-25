@@ -14,12 +14,12 @@ class FileStorage<T: Codable> {
 
     var wrappedValue: T? {
         get {
-            self.value
+            value
         }
         set {
-            self.value = newValue
+            value = newValue
 
-            let file = self.file
+            let file = file
 
             if let data = newValue {
                 LocalStorageManager.writeObjectToFile(fileName: file, jsonEncodable: data)
@@ -87,7 +87,7 @@ private struct LocalStorageManager {
             let localItems = try JSONDecoder().decode(T.self, from: localData)
             return localItems
         } catch {
-            self.logError(
+            logError(
                 errorDescription: error.localizedDescription,
                 functionName: #function
             )
