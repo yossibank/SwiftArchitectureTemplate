@@ -145,16 +145,18 @@ extension DEBUG_BottomSheetListUI: UserInterface {
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-        rootView.addSubview(self.tableView)
     }
 
     func setupLayout(rootView: UIView) {
-        self.tableView.layout {
-            $0.top == rootView.safeAreaLayoutGuide.topAnchor
-            $0.bottom == rootView.safeAreaLayoutGuide.bottomAnchor
-            $0.leading == rootView.leadingAnchor
-            $0.trailing == rootView.trailingAnchor
-        }
+        rootView.addSubViews(
+            self.tableView,
+
+            constraints:
+            self.tableView.topAnchor.constraint(equalTo: rootView.topAnchor),
+            self.tableView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
+            self.tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
+        )
     }
 }
 

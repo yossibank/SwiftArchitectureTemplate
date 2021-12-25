@@ -20,15 +20,17 @@ extension SecondUI: UserInterface {
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-        rootView.addSubview(self.button)
     }
 
     func setupLayout(rootView: UIView) {
-        self.button.layout {
-            $0.centerX == rootView.centerXAnchor
-            $0.centerY == rootView.centerYAnchor
-            $0.widthConstant == 100
-            $0.heightConstant == 100
-        }
+        rootView.addSubViews(
+            button,
+
+            constraints:
+            button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+            button.widthAnchor.constraint(equalToConstant: 100),
+            button.heightAnchor.constraint(equalToConstant: 100)
+        )
     }
 }

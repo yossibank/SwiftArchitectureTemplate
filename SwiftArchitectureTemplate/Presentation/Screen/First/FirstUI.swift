@@ -22,21 +22,21 @@ extension FirstUI: UserInterface {
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-        rootView.addSubview(self.button)
-        rootView.addSubview(self.someSwitch)
     }
 
     func setupLayout(rootView: UIView) {
-        self.button.layout {
-            $0.centerX == rootView.centerXAnchor
-            $0.centerY == rootView.centerYAnchor
-            $0.widthConstant == 100
-            $0.heightConstant == 100
-        }
+        rootView.addSubViews(
+            self.button,
+            self.someSwitch,
 
-        self.someSwitch.layout {
-            $0.top == self.button.bottomAnchor + 10
-            $0.centerX == rootView.centerXAnchor
-        }
+            constraints:
+            self.button.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            self.button.centerYAnchor.constraint(equalTo: rootView.centerYAnchor),
+            self.button.widthAnchor.constraint(equalToConstant: 100),
+            self.button.heightAnchor.constraint(equalToConstant: 100),
+
+            self.someSwitch.centerXAnchor.constraint(equalTo: rootView.centerXAnchor),
+            self.someSwitch.topAnchor.constraint(equalTo: self.button.bottomAnchor, constant: 10)
+        )
     }
 }
