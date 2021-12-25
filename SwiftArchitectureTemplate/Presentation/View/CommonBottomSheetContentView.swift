@@ -44,8 +44,8 @@ extension BottomSheetAction {
 
 final class CommonBottomSheetContentView: UIView {
 
-    private let baseStackView: UIStackView = {
-        let stackView = UIStackView()
+    private lazy var baseStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabelBackView, messageBodyLabel])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 24
@@ -110,35 +110,25 @@ extension CommonBottomSheetContentView {
 
 private extension CommonBottomSheetContentView {
 
-    func setupView() {
-        addSubview(baseStackView)
-        titleLabelBackView.addSubview(titleLabel)
-
-        let stackViews = [
-            titleLabelBackView,
-            messageBodyLabel
-        ]
-
-        stackViews.forEach {
-            self.baseStackView.addArrangedSubview($0)
-        }
-    }
+    func setupView() {}
 
     func setupLayout() {
-        baseStackView.layout {
-            $0.top == self.topAnchor
-            $0.bottom == self.bottomAnchor
-            $0.leading == self.leadingAnchor + 32
-            $0.trailing == self.trailingAnchor - 32
-        }
+        addSubViews(
+            baseStackView,
+            titleLabel,
 
-        titleLabel.layout {
-            $0.top == self.titleLabelBackView.topAnchor
-            $0.bottom == self.titleLabelBackView.bottomAnchor - 8
-            $0.leading == self.titleLabelBackView.leadingAnchor
-            $0.trailing == self.titleLabelBackView.trailingAnchor
-            $0.heightConstant == 28
-        }
+            constraints:
+            baseStackView.topAnchor.constraint(equalTo: topAnchor),
+            baseStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            baseStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            baseStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
+
+            titleLabel.topAnchor.constraint(equalTo: titleLabelBackView.topAnchor),
+            titleLabel.bottomAnchor.constraint(equalTo: titleLabelBackView.bottomAnchor, constant: -8),
+            titleLabel.leadingAnchor.constraint(equalTo: titleLabelBackView.leadingAnchor),
+            titleLabel.trailingAnchor.constraint(equalTo: titleLabelBackView.trailingAnchor),
+            titleLabel.heightAnchor.constraint(equalToConstant: 28)
+        )
     }
 
     func configureTitleLabel(title: String?) {
