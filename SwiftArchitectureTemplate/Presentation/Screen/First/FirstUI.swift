@@ -1,15 +1,24 @@
+import Combine
 import UIKit
 
 // MARK: - stored properties
 
 final class FirstUI {
 
-    let button: UIButton = .init(
+    private let button: UIButton = .init(
         style: .someStyle,
         title: Resources.Strings.Button.nextTitle
     )
 
-    let someSwitch: UISwitch = .init()
+    private let someSwitch: UISwitch = .init()
+
+    lazy var buttonTapPublisher: UIControl.Publisher<UIButton> = {
+        button.publisher(for: .touchUpInside)
+    }()
+
+    lazy var someSwitchPublisher: AnyPublisher<Bool, Never> = {
+        someSwitch.isOnPublisher
+    }()
 }
 
 // MARK: - protocol

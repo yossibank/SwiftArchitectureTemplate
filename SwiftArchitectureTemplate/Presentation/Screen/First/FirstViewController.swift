@@ -53,13 +53,13 @@ private extension FirstViewController {
     }
 
     func setupEvent() {
-        ui.button.publisher(for: .touchUpInside).sink { [weak self] _ in
+        ui.buttonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
             self.routing.showDetail()
         }
         .store(in: &cancellables)
 
-        ui.someSwitch.isOnPublisher.sink { isOn in
+        ui.someSwitchPublisher.sink { isOn in
             Logger.debug(message: "\(isOn)")
         }
         .store(in: &cancellables)

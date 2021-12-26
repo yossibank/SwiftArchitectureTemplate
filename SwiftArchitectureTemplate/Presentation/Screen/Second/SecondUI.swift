@@ -4,7 +4,7 @@ import UIKit
 
 final class SecondUI {
 
-    let button: UIButton = .init(
+    private let button: UIButton = .init(
         style: .someStyle,
         title: Resources.Strings.Button.cancelButtonTitle
     )
