@@ -14,15 +14,17 @@ final class SecondUI {
 
 extension SecondUI: UserInterface {
 
-    func configureNavigationBar(viewController: UIViewController) {
-        viewController.title = "SECOND"
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    ) {
+        navigationBar?.setupBackGroundColor(color: .random)
+        navigationItem?.title = "SECOND"
     }
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-    }
 
-    func setupLayout(rootView: UIView) {
         rootView.addSubViews(
             button,
 

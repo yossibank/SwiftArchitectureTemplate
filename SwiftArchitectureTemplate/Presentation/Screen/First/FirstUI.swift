@@ -16,15 +16,17 @@ final class FirstUI {
 
 extension FirstUI: UserInterface {
 
-    func configureNavigationBar(viewController: UIViewController) {
-        viewController.title = "FIRST"
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    ) {
+        navigationBar?.setupBackGroundColor(color: .random)
+        navigationItem?.title = "HOGEHOGE"
     }
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-    }
 
-    func setupLayout(rootView: UIView) {
         rootView.addSubViews(
             button,
             someSwitch,

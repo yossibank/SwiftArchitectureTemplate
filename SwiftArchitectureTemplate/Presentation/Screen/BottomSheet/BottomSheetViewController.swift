@@ -70,9 +70,7 @@ extension BottomSheetViewController {
 private extension BottomSheetViewController {
 
     func setupUI() {
-        ui.configureNavigationBar(viewController: self)
         ui.setupView(rootView: view)
-        ui.setupLayout(rootView: view)
     }
 
     @objc func viewTapped() {

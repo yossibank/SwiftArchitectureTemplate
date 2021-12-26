@@ -45,9 +45,11 @@ extension FirstViewController {
 private extension FirstViewController {
 
     func setupUI() {
-        ui.configureNavigationBar(viewController: self)
+        ui.setupNavigationBar(
+            navigationBar: navigationController?.navigationBar,
+            navigationItem: navigationItem
+        )
         ui.setupView(rootView: view)
-        ui.setupLayout(rootView: view)
     }
 
     func setupEvent() {

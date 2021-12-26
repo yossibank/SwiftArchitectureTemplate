@@ -30,9 +30,7 @@ extension DEBUG_BottomSheetListViewController {
 private extension DEBUG_BottomSheetListViewController {
 
     func setupUI() {
-        ui.configureNavigationBar(viewController: self)
         ui.setupView(rootView: view)
-        ui.setupLayout(rootView: view)
     }
 
     func setupTableView() {

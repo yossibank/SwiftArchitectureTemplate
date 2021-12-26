@@ -67,15 +67,17 @@ private extension DEBUG_UI {
 
 extension DEBUG_UI: UserInterface {
 
-    func configureNavigationBar(viewController: UIViewController) {
-        viewController.title = "DEBUG"
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    ) {
+        navigationBar?.setupBackGroundColor(color: .random)
+        navigationItem?.title = "DEBUG"
     }
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-    }
 
-    func setupLayout(rootView: UIView) {
         rootView.addSubViews(
             tableView,
 
