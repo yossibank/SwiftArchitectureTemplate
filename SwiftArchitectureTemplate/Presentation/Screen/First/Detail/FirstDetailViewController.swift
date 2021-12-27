@@ -1,7 +1,6 @@
 import UIKit
 
 extension FirstDetailViewController: VCInjectable {
-    typealias R = NoRouting
     typealias VM = NoViewModel
     typealias UI = NoUserInterface
 }
@@ -9,7 +8,6 @@ extension FirstDetailViewController: VCInjectable {
 // MARK: - stored properties
 
 final class FirstDetailViewController: UIViewController {
-    var routing: R!
     var viewModel: VM!
     var ui: UI!
 }

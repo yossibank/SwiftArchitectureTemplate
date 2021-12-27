@@ -1,7 +1,6 @@
 import UIKit
 
 extension DEBUG_ViewController: VCInjectable {
-    typealias R = DEBUG_Routing
     typealias VM = NoViewModel
     typealias UI = DEBUG_UI
 }
@@ -9,7 +8,6 @@ extension DEBUG_ViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_ViewController: UIViewController {
-    var routing: R! { didSet { routing.viewController = self } }
     var viewModel: VM!
     var ui: UI!
 }
@@ -79,7 +77,5 @@ extension DEBUG_ViewController: UITableViewDelegate {
 
         let section = DEBUG_UI.SectionKind.allCases[indexPath.section]
         let item = section.initialItems[indexPath.row]
-
-        routing.showDebugScreen(item: item)
     }
 }

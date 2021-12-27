@@ -26,17 +26,17 @@ extension Resources {
 
             func debug() -> DEBUG_ViewController {
                 let instance = DEBUG_ViewController()
-                instance.inject(routing: DEBUG_Routing(), ui: DEBUG_UI())
+                instance.inject(ui: DEBUG_UI())
                 return instance
             }
 
-            func first() -> FirstViewController {
+            func first(flow: FirstFlowController) -> FirstViewController {
                 let instance = FirstViewController()
                 instance.inject(
-                    routing: FirstRouting(),
                     viewModel: FirstViewModel(),
                     ui: FirstUI()
                 )
+                instance.delegate = flow
                 return instance
             }
 

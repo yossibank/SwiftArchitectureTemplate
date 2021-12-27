@@ -1,7 +1,6 @@
 import UIKit
 
 extension BottomSheetViewController: VCInjectable {
-    typealias R = NoRouting
     typealias VM = NoViewModel
     typealias UI = BottomSheetUI
 }
@@ -10,7 +9,6 @@ extension BottomSheetViewController: VCInjectable {
 
 final class BottomSheetViewController: UIViewController {
 
-    var routing: R!
     var viewModel: VM!
     var ui: UI!
 

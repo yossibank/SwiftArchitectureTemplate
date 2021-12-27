@@ -1,7 +1,6 @@
 import UIKit
 
 extension DEBUG_BottomSheetListViewController: VCInjectable {
-    typealias R = NoRouting
     typealias VM = NoViewModel
     typealias UI = DEBUG_BottomSheetListUI
 }
@@ -9,7 +8,6 @@ extension DEBUG_BottomSheetListViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_BottomSheetListViewController: UIViewController {
-    var routing: R!
     var viewModel: VM!
     var ui: UI!
 }
