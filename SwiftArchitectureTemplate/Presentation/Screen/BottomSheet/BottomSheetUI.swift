@@ -42,11 +42,7 @@ extension BottomSheetUI {
 
 extension BottomSheetUI: UserInterface {
 
-    func configureNavigationBar(viewController _: UIViewController) {}
-
-    func setupView(rootView _: UIView) {}
-
-    func setupLayout(rootView: UIView) {
+    func setupView(rootView: UIView) {
         rootView.addSubViews(
             containerView,
             bottomSheetLineImageView,

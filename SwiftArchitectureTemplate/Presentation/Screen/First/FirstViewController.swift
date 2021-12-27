@@ -2,8 +2,11 @@ import Combine
 import UIKit
 import Utility
 
+protocol FirstViewControllerDelegate: AnyObject {
+    func didNextButtonTapped()
+}
+
 extension FirstViewController: VCInjectable {
-    typealias R = FirstRouting
     typealias VM = FirstViewModel
     typealias UI = FirstUI
 }
@@ -12,9 +15,10 @@ extension FirstViewController: VCInjectable {
 
 final class FirstViewController: UIViewController {
 
-    var routing: R! { didSet { routing.viewController = self } }
     var viewModel: VM!
     var ui: UI!
+
+    weak var delegate: FirstViewControllerDelegate!
 
     private var cancellables: Set<AnyCancellable> = []
 }
@@ -45,19 +49,21 @@ extension FirstViewController {
 private extension FirstViewController {
 
     func setupUI() {
-        ui.configureNavigationBar(viewController: self)
+        ui.setupNavigationBar(
+            navigationBar: navigationController?.navigationBar,
+            navigationItem: navigationItem
+        )
         ui.setupView(rootView: view)
-        ui.setupLayout(rootView: view)
     }
 
     func setupEvent() {
-        ui.button.publisher(for: .touchUpInside).sink { [weak self] _ in
+        ui.buttonTapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
-            self.routing.showDetail()
+            self.delegate.didNextButtonTapped()
         }
         .store(in: &cancellables)
 
-        ui.someSwitch.isOnPublisher.sink { isOn in
+        ui.someSwitchPublisher.sink { isOn in
             Logger.debug(message: "\(isOn)")
         }
         .store(in: &cancellables)

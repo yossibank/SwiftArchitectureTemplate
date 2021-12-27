@@ -1,7 +1,6 @@
 import UIKit
 
 extension SecondViewController: VCInjectable {
-    typealias R = NoRouting
     typealias VM = SecondViewModel
     typealias UI = SecondUI
 }
@@ -9,7 +8,6 @@ extension SecondViewController: VCInjectable {
 // MARK: - stored properties
 
 final class SecondViewController: UIViewController {
-    var routing: R!
     var viewModel: VM!
     var ui: UI!
 }
@@ -29,8 +27,10 @@ extension SecondViewController {
 private extension SecondViewController {
 
     func setupUI() {
-        ui.configureNavigationBar(viewController: self)
+        ui.setupNavigationBar(
+            navigationBar: navigationController?.navigationBar,
+            navigationItem: navigationItem
+        )
         ui.setupView(rootView: view)
-        ui.setupLayout(rootView: view)
     }
 }

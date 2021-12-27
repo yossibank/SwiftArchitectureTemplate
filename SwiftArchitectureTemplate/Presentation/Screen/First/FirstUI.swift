@@ -1,30 +1,41 @@
+import Combine
 import UIKit
 
 // MARK: - stored properties
 
 final class FirstUI {
 
-    let button: UIButton = .init(
+    private let button: UIButton = .init(
         style: .someStyle,
         title: Resources.Strings.Button.nextTitle
     )
 
-    let someSwitch: UISwitch = .init()
+    private let someSwitch: UISwitch = .init()
+
+    lazy var buttonTapPublisher: UIControl.Publisher<UIButton> = {
+        button.publisher(for: .touchUpInside)
+    }()
+
+    lazy var someSwitchPublisher: AnyPublisher<Bool, Never> = {
+        someSwitch.isOnPublisher
+    }()
 }
 
 // MARK: - protocol
 
 extension FirstUI: UserInterface {
 
-    func configureNavigationBar(viewController: UIViewController) {
-        viewController.title = "FIRST"
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    ) {
+        navigationBar?.setupBackGroundColor(color: .random)
+        navigationItem?.title = "HOGEHOGE"
     }
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-    }
 
-    func setupLayout(rootView: UIView) {
         rootView.addSubViews(
             button,
             someSwitch,

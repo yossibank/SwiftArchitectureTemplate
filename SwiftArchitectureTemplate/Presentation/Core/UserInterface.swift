@@ -1,22 +1,36 @@
 import UIKit
 
 protocol UserInterface {
-    func configureNavigationBar(viewController: UIViewController)
+    func setupNavigationBar(
+        navigationBar: UINavigationBar?,
+        navigationItem: UINavigationItem?
+    )
     func setupView(rootView: UIView)
-    func setupLayout(rootView: UIView)
+}
+
+extension UserInterface {
+
+    func setupNavigationBar(
+        navigationBar: UINavigationBar? = nil,
+        navigationItem: UINavigationItem? = nil
+    ) {
+        setupNavigationBar(
+            navigationBar: navigationBar,
+            navigationItem: navigationItem
+        )
+    }
 }
 
 final class NoUserInterface: UserInterface {
 
-    func configureNavigationBar(viewController _: UIViewController) {
+    func setupNavigationBar(
+        navigationBar _: UINavigationBar?,
+        navigationItem _: UINavigationItem?
+    ) {
         assertionFailure("no need to implement")
     }
 
     func setupView(rootView _: UIView) {
-        assertionFailure("no need to implement")
-    }
-
-    func setupLayout(rootView _: UIView) {
         assertionFailure("no need to implement")
     }
 }

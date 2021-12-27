@@ -4,6 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var mainFlowController: MainFlowController!
 
     func application(
         _: UIApplication,
@@ -11,9 +12,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         PackageConfig.setup()
 
+        mainFlowController = MainFlowController()
+
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = TabBarController()
+        window?.rootViewController = mainFlowController
         window?.makeKeyAndVisible()
+        mainFlowController.start()
 
         return true
     }

@@ -140,13 +140,9 @@ private extension DEBUG_BottomSheetListUI {
 
 extension DEBUG_BottomSheetListUI: UserInterface {
 
-    func configureNavigationBar(viewController _: UIViewController) {}
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
-    }
 
-    func setupLayout(rootView: UIView) {
         rootView.addSubViews(
             tableView,
 
