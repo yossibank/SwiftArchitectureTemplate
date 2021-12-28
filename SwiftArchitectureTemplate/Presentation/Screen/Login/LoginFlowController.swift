@@ -2,7 +2,7 @@ import UIKit
 
 // MARK: - Stored Properties & Init
 
-final class FirstFlowController: UIViewController {
+final class LoginFlowController: UIViewController {
 
     let navVC = NavigationController()
 
@@ -19,7 +19,7 @@ final class FirstFlowController: UIViewController {
 
 // MARK: - override methods
 
-extension FirstFlowController {
+extension LoginFlowController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -27,32 +27,18 @@ extension FirstFlowController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        children.first?.view.frame = tabBarController?.view.bounds ?? .zero
+        children.first?.view.frame = view.bounds
     }
 }
 
 // MARK: - internal methods
 
-extension FirstFlowController {
+extension LoginFlowController {
 
     func start() {
-        let vc = Resources.ViewControllers.App.first(flow: self)
-
-        tabBarItem.title = "FIRST"
-        tabBarItem.image = UIImage(systemName: "a.circle")
+        let vc = LoginViewController()
+        vc.title = "LOGIN"
 
         navVC.viewControllers = [vc]
-    }
-}
-
-// MARK: - Delegate
-
-extension FirstFlowController: FirstViewControllerDelegate {
-
-    func didNextButtonTapped() {
-        navVC.pushViewController(
-            Resources.ViewControllers.App.firstDetail(),
-            animated: true
-        )
     }
 }

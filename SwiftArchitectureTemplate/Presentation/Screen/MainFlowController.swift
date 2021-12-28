@@ -1,6 +1,6 @@
 import UIKit
 
-// MARK: - Init
+// MARK: - Stored Properties & Init
 
 final class MainFlowController: UIViewController {
 

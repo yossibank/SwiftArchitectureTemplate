@@ -4,7 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var mainFlowController: MainFlowController!
+    var appFlowController: AppFlowController = .init()
 
     func application(
         _: UIApplication,
@@ -12,12 +12,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         PackageConfig.setup()
 
-        mainFlowController = MainFlowController()
-
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = mainFlowController
+        window?.rootViewController = appFlowController
         window?.makeKeyAndVisible()
-        mainFlowController.start()
+        appFlowController.start()
 
         return true
     }
