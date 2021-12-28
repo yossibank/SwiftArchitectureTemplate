@@ -24,19 +24,17 @@ extension Resources {
                 return instance
             }
 
-            func debug() -> DEBUG_ViewController {
+            func debug(flow: DEBUG_FlowController) -> DEBUG_ViewController {
                 let instance = DEBUG_ViewController()
                 instance.inject(ui: DEBUG_UI())
                 instance.title = "DEBUG"
+                instance.delegate = flow
                 return instance
             }
 
             func first(flow: FirstFlowController) -> FirstViewController {
                 let instance = FirstViewController()
-                instance.inject(
-                    viewModel: FirstViewModel(),
-                    ui: FirstUI()
-                )
+                instance.inject(viewModel: FirstViewModel(), ui: FirstUI())
                 instance.title = "FIRST"
                 instance.delegate = flow
                 return instance

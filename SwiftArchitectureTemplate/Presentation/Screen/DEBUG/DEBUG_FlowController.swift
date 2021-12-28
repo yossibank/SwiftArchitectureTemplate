@@ -36,11 +36,42 @@ extension DEBUG_FlowController {
 extension DEBUG_FlowController {
 
     func start() {
-        let vc = Resources.ViewControllers.App.debug()
+        let vc = Resources.ViewControllers.App.debug(flow: self)
 
         tabBarItem.title = "DEBUG"
         tabBarItem.image = UIImage(systemName: "c.circle")
 
         navVC.viewControllers = [vc]
+    }
+}
+
+// MARK: - Delegate
+
+extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
+
+    func didItemSelected(item: DEBUG_Item) {
+        let viewController: UIViewController
+
+        switch item {
+            case .bottomSheetContent:
+                viewController = Resources.ViewControllers.Debug.bottomSheetList()
+
+            case .first:
+                viewController = Resources.ViewControllers.App.first(flow: .init())
+
+            case .firstDetail:
+                viewController = Resources.ViewControllers.App.firstDetail()
+
+            case .second:
+                viewController = Resources.ViewControllers.App.second()
+        }
+
+        switch item {
+            case .bottomSheetContent:
+                navVC.present(viewController, animated: true)
+
+            default:
+                navVC.pushViewController(viewController, animated: true)
+        }
     }
 }
