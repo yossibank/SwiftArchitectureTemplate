@@ -4,7 +4,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var appFlowController: AppFlowController = .init()
+
+    private let appFlowController: AppFlowController = .init()
 
     func application(
         _: UIApplication,

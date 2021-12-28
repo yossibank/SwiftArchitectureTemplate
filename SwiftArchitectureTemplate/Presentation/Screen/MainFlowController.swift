@@ -4,7 +4,7 @@ import UIKit
 
 final class MainFlowController: UIViewController {
 
-    let tabController = TabBarController()
+    private let tabController = TabBarController()
 
     init() {
         super.init(nibName: nil, bundle: nil)

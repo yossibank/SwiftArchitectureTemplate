@@ -4,7 +4,7 @@ import UIKit
 
 final class FirstFlowController: UIViewController {
 
-    let navVC = NavigationController()
+    private let navVC = NavigationController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
