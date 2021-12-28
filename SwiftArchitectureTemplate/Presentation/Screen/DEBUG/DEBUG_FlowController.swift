@@ -50,28 +50,23 @@ extension DEBUG_FlowController: FlowController {
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
     func didItemSelected(item: DEBUG_Item) {
-        let viewController: UIViewController
-
         switch item {
             case .bottomSheetContent:
-                viewController = Resources.ViewControllers.Debug.bottomSheetList()
+                let vc = Resources.ViewControllers.Debug.bottomSheetList()
+                navVC.present(vc, animated: true)
 
             case .first:
-                viewController = Resources.ViewControllers.App.first(flow: .init())
+                let flow = FirstFlowController()
+                flow.start()
+                navVC.pushViewController(flow, animated: true)
 
             case .firstDetail:
-                viewController = Resources.ViewControllers.App.firstDetail()
+                let vc = Resources.ViewControllers.App.firstDetail()
+                navVC.pushViewController(vc, animated: true)
 
             case .second:
-                viewController = Resources.ViewControllers.App.second()
-        }
-
-        switch item {
-            case .bottomSheetContent:
-                navVC.present(viewController, animated: true)
-
-            default:
-                navVC.pushViewController(viewController, animated: true)
+                let vc = Resources.ViewControllers.App.second()
+                navVC.pushViewController(vc, animated: true)
         }
     }
 }
