@@ -46,6 +46,7 @@
 		78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEE277B394800C7EC65 /* SecondFlowController.swift */; };
 		78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */; };
 		78C20EF4277B401600C7EC65 /* DEBUG_Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */; };
+		78C20EF6277B42F800C7EC65 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF5277B42F800C7EC65 /* FlowController.swift */; };
 		78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
@@ -153,6 +154,7 @@
 		78C20EEE277B394800C7EC65 /* SecondFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowController.swift; sourceTree = "<group>"; };
 		78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
 		78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Item.swift; sourceTree = "<group>"; };
+		78C20EF5277B42F800C7EC65 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 		78DD434F274247BF006684D0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				78C20EF5277B42F800C7EC65 /* FlowController.swift */,
 				78DD435727424842006684D0 /* UserInterface.swift */,
 				78DD4359274249CC006684D0 /* VCInjectable.swift */,
 				78DD435527424825006684D0 /* ViewModel.swift */,
@@ -698,6 +701,7 @@
 				78DD436227424E7C006684D0 /* DEBUG_ViewController.swift in Sources */,
 				78625645274635C200472228 /* DEBUG_UI.swift in Sources */,
 				781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */,
+				78C20EF6277B42F800C7EC65 /* FlowController.swift in Sources */,
 				78844FA227434B6E00A02E9B /* Colors.swift in Sources */,
 				78DD433827423995006684D0 /* FirebaseProvider.swift in Sources */,
 				78C20EE7277B35D200C7EC65 /* AppFlowController.swift in Sources */,

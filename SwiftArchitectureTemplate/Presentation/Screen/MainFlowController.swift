@@ -31,33 +31,21 @@ extension MainFlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension MainFlowController {
+extension MainFlowController: FlowController {
 
     func start() {
-        let nc1 = FirstFlowController()
-        let nc2 = SecondFlowController()
+        let flows: [FlowController]
 
         #if !RELEASE
-        let nc3 = DEBUG_FlowController()
-
-        tabController.setViewControllers(
-            [nc1, nc2, nc3],
-            animated: false
-        )
+        flows = [FirstFlowController(), SecondFlowController(), DEBUG_FlowController()]
         #else
-        tabController.setViewControllers(
-            [nc1, nc2],
-            animated: false
-        )
+        flows = [FirstFlowController(), SecondFlowController()]
         #endif
 
-        nc1.start()
-        nc2.start()
+        tabController.setViewControllers(flows, animated: false)
 
-        #if !RELEASE
-        nc3.start()
-        #endif
+        flows.forEach { $0.start() }
     }
 }

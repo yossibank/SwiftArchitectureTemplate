@@ -31,9 +31,9 @@ extension SecondFlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension SecondFlowController {
+extension SecondFlowController: FlowController {
 
     func start() {
         let vc = Resources.ViewControllers.App.second()

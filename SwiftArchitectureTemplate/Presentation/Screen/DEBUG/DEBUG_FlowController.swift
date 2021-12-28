@@ -31,9 +31,9 @@ extension DEBUG_FlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension DEBUG_FlowController {
+extension DEBUG_FlowController: FlowController {
 
     func start() {
         let vc = Resources.ViewControllers.App.debug(flow: self)

@@ -27,9 +27,9 @@ extension AppFlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension AppFlowController {
+extension AppFlowController: FlowController {
 
     func start() {
         removeFirstChild()

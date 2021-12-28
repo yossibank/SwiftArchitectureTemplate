@@ -31,9 +31,9 @@ extension LoginFlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension LoginFlowController {
+extension LoginFlowController: FlowController {
 
     func start() {
         let vc = LoginViewController()

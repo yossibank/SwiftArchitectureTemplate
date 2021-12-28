@@ -31,9 +31,9 @@ extension FirstFlowController {
     }
 }
 
-// MARK: - internal methods
+// MARK: - protocol
 
-extension FirstFlowController {
+extension FirstFlowController: FlowController {
 
     func start() {
         let vc = Resources.ViewControllers.App.first(flow: self)
