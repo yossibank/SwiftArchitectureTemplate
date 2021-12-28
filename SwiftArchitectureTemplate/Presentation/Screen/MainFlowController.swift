@@ -37,16 +37,7 @@ extension MainFlowController {
 
     func start() {
         let nc1 = FirstFlowController()
-
-        let nc2: NavigationController = {
-            let vc = Resources.ViewControllers.App.second()
-
-            let nc = NavigationController(rootViewController: vc)
-            nc.tabBarItem.title = "SECOND"
-            nc.tabBarItem.image = UIImage(systemName: "b.circle")
-
-            return nc
-        }()
+        let nc2 = SecondFlowController()
 
         #if !RELEASE
         let nc3: NavigationController = {
@@ -71,5 +62,6 @@ extension MainFlowController {
         #endif
 
         nc1.start()
+        nc2.start()
     }
 }

@@ -36,6 +36,7 @@ extension Resources {
                     viewModel: FirstViewModel(),
                     ui: FirstUI()
                 )
+                instance.title = "FIRST"
                 instance.delegate = flow
                 return instance
             }
@@ -49,6 +50,7 @@ extension Resources {
             func second() -> SecondViewController {
                 let instance = SecondViewController()
                 instance.inject(viewModel: SecondViewModel(), ui: SecondUI())
+                instance.title = "SECOND"
                 return instance
             }
         }

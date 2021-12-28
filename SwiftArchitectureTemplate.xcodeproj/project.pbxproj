@@ -44,6 +44,7 @@
 		78C20EE7277B35D200C7EC65 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EE6277B35D200C7EC65 /* AppFlowController.swift */; };
 		78C20EEA277B35F800C7EC65 /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */; };
 		78C20EEC277B360000C7EC65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEB277B360000C7EC65 /* LoginViewController.swift */; };
+		78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEE277B394800C7EC65 /* SecondFlowController.swift */; };
 		78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
@@ -149,6 +150,7 @@
 		78C20EE6277B35D200C7EC65 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
 		78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
 		78C20EEB277B360000C7EC65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		78C20EEE277B394800C7EC65 /* SecondFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowController.swift; sourceTree = "<group>"; };
 		78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -341,6 +343,16 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		78C20EED277B391100C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78DD4367274251D3006684D0 /* SecondUI.swift */,
+				78DD436327424F55006684D0 /* SecondViewController.swift */,
+				78DD436527424F5E006684D0 /* SecondViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		78DD432827423475006684D0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -485,9 +497,8 @@
 		78DD436027424E69006684D0 /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				78DD4367274251D3006684D0 /* SecondUI.swift */,
-				78DD436327424F55006684D0 /* SecondViewController.swift */,
-				78DD436527424F5E006684D0 /* SecondViewModel.swift */,
+				78C20EEE277B394800C7EC65 /* SecondFlowController.swift */,
+				78C20EED277B391100C7EC65 /* Root */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -689,6 +700,7 @@
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
 				78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */,
 				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
+				78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */,
 				78844F98274348C200A02E9B /* String+Util.swift in Sources */,
 				78DD432F27423592006684D0 /* Package.swift in Sources */,
 				78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */,
