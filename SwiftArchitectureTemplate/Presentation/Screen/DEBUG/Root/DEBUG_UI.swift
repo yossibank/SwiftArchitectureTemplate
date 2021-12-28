@@ -69,10 +69,9 @@ extension DEBUG_UI: UserInterface {
 
     func setupNavigationBar(
         navigationBar: UINavigationBar?,
-        navigationItem: UINavigationItem?
+        navigationItem _: UINavigationItem?
     ) {
         navigationBar?.setupBackGroundColor(color: .random)
-        navigationItem?.title = "DEBUG"
     }
 
     func setupView(rootView: UIView) {

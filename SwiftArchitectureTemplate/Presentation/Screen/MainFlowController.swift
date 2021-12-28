@@ -40,15 +40,7 @@ extension MainFlowController {
         let nc2 = SecondFlowController()
 
         #if !RELEASE
-        let nc3: NavigationController = {
-            let vc = Resources.ViewControllers.App.debug()
-
-            let nc = NavigationController(rootViewController: vc)
-            nc.tabBarItem.title = "DEBUG"
-            nc.tabBarItem.image = UIImage(systemName: "c.circle")
-
-            return nc
-        }()
+        let nc3 = DEBUG_FlowController()
 
         tabController.setViewControllers(
             [nc1, nc2, nc3],
@@ -63,5 +55,9 @@ extension MainFlowController {
 
         nc1.start()
         nc2.start()
+
+        #if !RELEASE
+        nc3.start()
+        #endif
     }
 }

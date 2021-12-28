@@ -27,6 +27,7 @@ extension Resources {
             func debug() -> DEBUG_ViewController {
                 let instance = DEBUG_ViewController()
                 instance.inject(ui: DEBUG_UI())
+                instance.title = "DEBUG"
                 return instance
             }
 

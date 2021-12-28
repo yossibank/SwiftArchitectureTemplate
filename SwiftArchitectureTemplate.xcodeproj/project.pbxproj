@@ -45,6 +45,7 @@
 		78C20EEA277B35F800C7EC65 /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */; };
 		78C20EEC277B360000C7EC65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEB277B360000C7EC65 /* LoginViewController.swift */; };
 		78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEE277B394800C7EC65 /* SecondFlowController.swift */; };
+		78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */; };
 		78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
@@ -151,6 +152,7 @@
 		78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
 		78C20EEB277B360000C7EC65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		78C20EEE277B394800C7EC65 /* SecondFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowController.swift; sourceTree = "<group>"; };
+		78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
 		78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -353,6 +355,15 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		78C20EF0277B3AC400C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78625644274635C200472228 /* DEBUG_UI.swift */,
+				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		78DD432827423475006684D0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,7 +466,7 @@
 				78A4E9382778659F005FBB36 /* MainFlowController.swift */,
 				78DD437D27425E60006684D0 /* Launch */,
 				78BA64C12744C812005B2D61 /* BottomSheet */,
-				78DD435E27424E5C006684D0 /* Debug */,
+				78DD435E27424E5C006684D0 /* DEBUG */,
 				78DD435F27424E64006684D0 /* First */,
 				78C20EE8277B35E000C7EC65 /* Login */,
 				78DD436027424E69006684D0 /* Second */,
@@ -471,15 +482,15 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		78DD435E27424E5C006684D0 /* Debug */ = {
+		78DD435E27424E5C006684D0 /* DEBUG */ = {
 			isa = PBXGroup;
 			children = (
-				781F9C9D274758C40034F911 /* Contents */,
+				78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */,
 				781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */,
-				78625644274635C200472228 /* DEBUG_UI.swift */,
-				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
+				781F9C9D274758C40034F911 /* Contents */,
+				78C20EF0277B3AC400C7EC65 /* Root */,
 			);
-			path = Debug;
+			path = DEBUG;
 			sourceTree = "<group>";
 		};
 		78DD435F27424E64006684D0 /* First */ = {
@@ -721,6 +732,7 @@
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
 				78DD4336274238DC006684D0 /* API.swift in Sources */,
+				78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */,
 				78DD435A274249CC006684D0 /* VCInjectable.swift in Sources */,
 				78DD4368274251D3006684D0 /* SecondUI.swift in Sources */,
 				78DD436E27425455006684D0 /* FirstViewController.swift in Sources */,
