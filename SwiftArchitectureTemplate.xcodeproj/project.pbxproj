@@ -313,8 +313,7 @@
 		78BA64C12744C812005B2D61 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */,
-				78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */,
+				78C20EF9277B459600C7EC65 /* Root */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -342,7 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */,
-				78C20EEB277B360000C7EC65 /* LoginViewController.swift */,
+				78C20EF8277B458500C7EC65 /* Root */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -363,6 +362,33 @@
 				78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */,
 				78625644274635C200472228 /* DEBUG_UI.swift */,
 				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF7277B448F00C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78DD436F27425487006684D0 /* FirstUI.swift */,
+				78DD436D27425455006684D0 /* FirstViewController.swift */,
+				78DD436927425445006684D0 /* FirstViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF8277B458500C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78C20EEB277B360000C7EC65 /* LoginViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF9277B459600C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */,
+				78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -499,11 +525,9 @@
 		78DD435F27424E64006684D0 /* First */ = {
 			isa = PBXGroup;
 			children = (
-				78DD4371274254C5006684D0 /* Detail */,
 				786BC1B92779CD6D00F97732 /* FirstFlowController.swift */,
-				78DD436F27425487006684D0 /* FirstUI.swift */,
-				78DD436D27425455006684D0 /* FirstViewController.swift */,
-				78DD436927425445006684D0 /* FirstViewModel.swift */,
+				78DD4371274254C5006684D0 /* Detail */,
+				78C20EF7277B448F00C7EC65 /* Root */,
 			);
 			path = First;
 			sourceTree = "<group>";
