@@ -27,10 +27,6 @@ extension SecondViewController {
 private extension SecondViewController {
 
     func setupUI() {
-        ui.setupNavigationBar(
-            navigationBar: navigationController?.navigationBar,
-            navigationItem: navigationItem
-        )
         ui.setupView(rootView: view)
     }
 }

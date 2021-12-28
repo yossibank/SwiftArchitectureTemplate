@@ -14,13 +14,6 @@ final class SecondUI {
 
 extension SecondUI: UserInterface {
 
-    func setupNavigationBar(
-        navigationBar: UINavigationBar?,
-        navigationItem _: UINavigationItem?
-    ) {
-        navigationBar?.setupBackGroundColor(color: .random)
-    }
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
 

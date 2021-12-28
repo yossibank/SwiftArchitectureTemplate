@@ -28,10 +28,6 @@ extension DEBUG_ViewController {
 private extension DEBUG_ViewController {
 
     func setupUI() {
-        ui.setupNavigationBar(
-            navigationBar: navigationController?.navigationBar,
-            navigationItem: navigationItem
-        )
         ui.setupView(rootView: view)
     }
 

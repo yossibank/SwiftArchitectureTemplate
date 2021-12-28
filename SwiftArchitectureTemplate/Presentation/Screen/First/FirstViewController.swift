@@ -49,10 +49,6 @@ extension FirstViewController {
 private extension FirstViewController {
 
     func setupUI() {
-        ui.setupNavigationBar(
-            navigationBar: navigationController?.navigationBar,
-            navigationItem: navigationItem
-        )
         ui.setupView(rootView: view)
     }
 
