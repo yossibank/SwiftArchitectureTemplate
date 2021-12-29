@@ -283,6 +283,8 @@
 		78A386FA27401A9D00DF51CF /* SwiftArchitectureTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				78A386FB27401A9D00DF51CF /* AppDelegate.swift */,
+				78C20EE6277B35D200C7EC65 /* AppFlowController.swift */,
 				78DD432B27423496006684D0 /* Configuration */,
 				78DD432827423475006684D0 /* Presentation */,
 				78DD432A27423491006684D0 /* Resource */,
@@ -408,8 +410,6 @@
 		78DD432927423489006684D0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				78844F962743476B00A02E9B /* AppUtil */,
-				78BA64C62744DA52005B2D61 /* Extension */,
 				78DD433727423995006684D0 /* FirebaseProvider.swift */,
 				78DD4341274240A1006684D0 /* Layout.swift */,
 				78DD43432742440D006684D0 /* LoadingState.swift */,
@@ -419,6 +419,8 @@
 				78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */,
 				78A4E93A27786631005FBB36 /* UIViewController+Container.swift */,
 				78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */,
+				78844F962743476B00A02E9B /* AppUtil */,
+				78BA64C62744DA52005B2D61 /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -426,7 +428,6 @@
 		78DD432A27423491006684D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				78844F9B27434ACD00A02E9B /* Support */,
 				78A3870427401A9F00DF51CF /* Assets.xcassets */,
 				78DD4349274246E1006684D0 /* Localizable.swift */,
 				78844F9D27434B3C00A02E9B /* Resources.swift */,
@@ -435,6 +436,7 @@
 				78844F9F27434B6100A02E9B /* Images.swift */,
 				78DD434B27424739006684D0 /* Strings.swift */,
 				78844FA327435C2800A02E9B /* ViewControllers.swift */,
+				78844F9B27434ACD00A02E9B /* Support */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -442,11 +444,10 @@
 		78DD432B27423496006684D0 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				78DD433927423A6A006684D0 /* Config */,
 				78DD4335274238DC006684D0 /* API.swift */,
-				78A386FB27401A9D00DF51CF /* AppDelegate.swift */,
 				78DD432C274234FE006684D0 /* Configuration.swift */,
 				78DD432E27423592006684D0 /* Package.swift */,
+				78DD433927423A6A006684D0 /* Config */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -492,7 +493,6 @@
 		78DD4352274247DF006684D0 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				78C20EE6277B35D200C7EC65 /* AppFlowController.swift */,
 				78A4E9382778659F005FBB36 /* MainFlowController.swift */,
 				78DD437D27425E60006684D0 /* Launch */,
 				78BA64C12744C812005B2D61 /* BottomSheet */,
