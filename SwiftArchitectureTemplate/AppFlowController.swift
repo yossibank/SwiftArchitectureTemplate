@@ -34,7 +34,7 @@ extension AppFlowController: FlowController {
     func start() {
         removeFirstChild()
 
-        if true {
+        if AppDataHolder.isLogin ?? false {
             add(mainFlowController)
             mainFlowController.start()
         } else {
