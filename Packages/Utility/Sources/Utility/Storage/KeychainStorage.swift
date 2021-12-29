@@ -1,15 +1,15 @@
 import Foundation
 
 @propertyWrapper
-class KeychainStorage<T: LosslessStringConvertible> {
+public class KeychainStorage<T: LosslessStringConvertible> {
 
     private let key: String
 
-    init(key: String) {
+    public init(key: String) {
         self.key = key
     }
 
-    var wrappedValue: T? {
+    public var wrappedValue: T? {
         get {
             guard
                 let result = Keychain().get(key)

@@ -75,6 +75,7 @@
 		78DD4373274254D1006684D0 /* FirstDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD4372274254D1006684D0 /* FirstDetailViewController.swift */; };
 		78DD437827425B6F006684D0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD437727425B6F006684D0 /* NavigationController.swift */; };
 		78DD437C27425D69006684D0 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DD437B27425D69006684D0 /* TabBarController.swift */; };
+		78E35E2B277C3F37002EDE43 /* AppDataHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E35E2A277C3F37002EDE43 /* AppDataHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +185,7 @@
 		78DD437727425B6F006684D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		78DD437B27425D69006684D0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		78E35E29277C2303002EDE43 /* SwiftArchitectureTemplate.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftArchitectureTemplate.xctestplan; sourceTree = "<group>"; };
+		78E35E2A277C3F37002EDE43 /* AppDataHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataHolder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 		78A386FA27401A9D00DF51CF /* SwiftArchitectureTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				78E35E2A277C3F37002EDE43 /* AppDataHolder.swift */,
 				78A386FB27401A9D00DF51CF /* AppDelegate.swift */,
 				78C20EE6277B35D200C7EC65 /* AppFlowController.swift */,
 				78DD432B27423496006684D0 /* Configuration */,
@@ -739,6 +742,7 @@
 				78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */,
 				78DD437827425B6F006684D0 /* NavigationController.swift in Sources */,
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
+				78E35E2B277C3F37002EDE43 /* AppDataHolder.swift in Sources */,
 				78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */,
 				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
 				78C20EF4277B401600C7EC65 /* DEBUG_Item.swift in Sources */,
