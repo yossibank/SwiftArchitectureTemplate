@@ -1,3 +1,5 @@
+#if DEBUG
+
 import Combine
 import UIKit
 
@@ -195,3 +197,5 @@ extension DEBUG_BottomSheetListUI {
         case none
     }
 }
+
+#endif

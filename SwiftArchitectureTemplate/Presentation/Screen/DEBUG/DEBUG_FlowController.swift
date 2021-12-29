@@ -1,3 +1,5 @@
+#if DEBUG
+
 import UIKit
 
 // MARK: - Stored Properties & Init
@@ -52,7 +54,7 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
     func didItemSelected(item: DEBUG_Item) {
         switch item {
             case .bottomSheetContent:
-                let vc = Resources.ViewControllers.Debug.bottomSheetList()
+                let vc = Resources.ViewControllers.App.debugBottomSheetList()
                 navVC.present(vc, animated: true)
 
             case .first:
@@ -70,3 +72,5 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
         }
     }
 }
+
+#endif

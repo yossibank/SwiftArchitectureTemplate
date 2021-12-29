@@ -1,3 +1,5 @@
+#if DEBUG
+
 import UIKit
 
 protocol DEBUG_ViewControllerDelegate: AnyObject {
@@ -84,3 +86,5 @@ extension DEBUG_ViewController: UITableViewDelegate {
         delegate.didItemSelected(item: item)
     }
 }
+
+#endif

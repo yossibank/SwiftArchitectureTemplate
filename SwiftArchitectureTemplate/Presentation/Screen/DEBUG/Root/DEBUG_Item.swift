@@ -1,4 +1,4 @@
-import Foundation
+#if DEBUG
 
 enum DEBUG_Section: String, CaseIterable {
     case view
@@ -25,3 +25,5 @@ enum DEBUG_Item: String, Hashable {
     case firstDetail
     case second
 }
+
+#endif

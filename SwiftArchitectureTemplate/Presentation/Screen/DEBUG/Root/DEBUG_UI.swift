@@ -1,3 +1,5 @@
+#if DEBUG
+
 import UIKit
 
 // MARK: - stored properties
@@ -81,3 +83,5 @@ extension DEBUG_UI: UserInterface {
         )
     }
 }
+
+#endif

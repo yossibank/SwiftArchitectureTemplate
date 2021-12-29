@@ -12,25 +12,7 @@ extension Resources {
             AppControllers()
         }
 
-        var Debug: DebugControllers {
-            DebugControllers()
-        }
-
         struct AppControllers {
-
-            func bottomSheet(dismissCallBack: VoidBlock? = nil) -> BottomSheetViewController {
-                let instance = BottomSheetViewController(dismissCallBack: dismissCallBack)
-                instance.inject(ui: BottomSheetUI())
-                return instance
-            }
-
-            func debug(flow: DEBUG_FlowController) -> DEBUG_ViewController {
-                let instance = DEBUG_ViewController()
-                instance.inject(ui: DEBUG_UI())
-                instance.title = "DEBUG"
-                instance.delegate = flow
-                return instance
-            }
 
             func first(flow: FirstFlowController) -> FirstViewController {
                 let instance = FirstViewController()
@@ -53,15 +35,30 @@ extension Resources {
                 instance.title = "SECOND"
                 return instance
             }
-        }
 
-        struct DebugControllers {
+            func bottomSheet(dismissCallBack: VoidBlock? = nil) -> BottomSheetViewController {
+                let instance = BottomSheetViewController(dismissCallBack: dismissCallBack)
+                instance.inject(ui: BottomSheetUI())
+                return instance
+            }
 
-            func bottomSheetList() -> DEBUG_BottomSheetListViewController {
+            #if DEBUG
+
+            func debug(flow: DEBUG_FlowController) -> DEBUG_ViewController {
+                let instance = DEBUG_ViewController()
+                instance.inject(ui: DEBUG_UI())
+                instance.title = "DEBUG"
+                instance.delegate = flow
+                return instance
+            }
+
+            func debugBottomSheetList() -> DEBUG_BottomSheetListViewController {
                 let instance = DEBUG_BottomSheetListViewController()
                 instance.inject(ui: DEBUG_BottomSheetListUI())
                 return instance
             }
+
+            #endif
         }
     }
 }
