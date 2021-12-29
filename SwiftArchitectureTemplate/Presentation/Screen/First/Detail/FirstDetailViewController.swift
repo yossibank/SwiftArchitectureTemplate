@@ -18,7 +18,6 @@ extension FirstDetailViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        title = "DETAIL"
+        view.backgroundColor = .yellow
     }
 }

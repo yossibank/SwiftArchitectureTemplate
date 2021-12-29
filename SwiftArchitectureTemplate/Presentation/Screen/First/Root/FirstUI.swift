@@ -25,14 +25,6 @@ final class FirstUI {
 
 extension FirstUI: UserInterface {
 
-    func setupNavigationBar(
-        navigationBar: UINavigationBar?,
-        navigationItem: UINavigationItem?
-    ) {
-        navigationBar?.setupBackGroundColor(color: .random)
-        navigationItem?.title = "HOGEHOGE"
-    }
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
 

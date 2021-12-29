@@ -2,13 +2,13 @@ import UIKit
 
 // MARK: - Stored Properties & Init
 
-final class MainFlowController: UIViewController {
+final class LoginFlowController: UIViewController {
 
-    private let tabController = TabBarController()
+    private let navVC = NavigationController()
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        add(tabController)
+        add(navVC)
     }
 
     @available(*, unavailable)
@@ -19,7 +19,7 @@ final class MainFlowController: UIViewController {
 
 // MARK: - override methods
 
-extension MainFlowController {
+extension LoginFlowController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -33,19 +33,12 @@ extension MainFlowController {
 
 // MARK: - protocol
 
-extension MainFlowController: FlowController {
+extension LoginFlowController: FlowController {
 
     func start() {
-        let flows: [FlowController]
+        let vc = LoginViewController()
+        vc.title = "LOGIN"
 
-        #if !RELEASE
-        flows = [FirstFlowController(), SecondFlowController(), DEBUG_FlowController()]
-        #else
-        flows = [FirstFlowController(), SecondFlowController()]
-        #endif
-
-        tabController.setViewControllers(flows, animated: false)
-
-        flows.forEach { $0.start() }
+        navVC.viewControllers = [vc]
     }
 }

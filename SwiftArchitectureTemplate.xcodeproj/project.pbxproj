@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */; };
 		781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */; };
 		781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */; };
 		78625645274635C200472228 /* DEBUG_UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78625644274635C200472228 /* DEBUG_UI.swift */; };
@@ -41,6 +40,13 @@
 		78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */; };
 		78BA64D12744FC38005B2D61 /* UIView-IBInspectable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */; };
 		78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */; };
+		78C20EE7277B35D200C7EC65 /* AppFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EE6277B35D200C7EC65 /* AppFlowController.swift */; };
+		78C20EEA277B35F800C7EC65 /* LoginFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */; };
+		78C20EEC277B360000C7EC65 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEB277B360000C7EC65 /* LoginViewController.swift */; };
+		78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EEE277B394800C7EC65 /* SecondFlowController.swift */; };
+		78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */; };
+		78C20EF4277B401600C7EC65 /* DEBUG_Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */; };
+		78C20EF6277B42F800C7EC65 /* FlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C20EF5277B42F800C7EC65 /* FlowController.swift */; };
 		78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */; };
 		78DD432427415522006684D0 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432327415522006684D0 /* Data */; };
 		78DD432727422AB1006684D0 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 78DD432627422AB1006684D0 /* Domain */; };
@@ -103,7 +109,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Routing.swift; sourceTree = "<group>"; };
 		781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListViewController.swift; sourceTree = "<group>"; };
 		781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_BottomSheetListUI.swift; sourceTree = "<group>"; };
 		78625644274635C200472228 /* DEBUG_UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_UI.swift; sourceTree = "<group>"; };
@@ -143,6 +148,13 @@
 		78BA64CE2744FBB9005B2D61 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		78BA64D02744FC38005B2D61 /* UIView-IBInspectable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView-IBInspectable+Extension.swift"; sourceTree = "<group>"; };
 		78BA64D22744FD9D005B2D61 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		78C20EE6277B35D200C7EC65 /* AppFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowController.swift; sourceTree = "<group>"; };
+		78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFlowController.swift; sourceTree = "<group>"; };
+		78C20EEB277B360000C7EC65 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		78C20EEE277B394800C7EC65 /* SecondFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowController.swift; sourceTree = "<group>"; };
+		78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_FlowController.swift; sourceTree = "<group>"; };
+		78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DEBUG_Item.swift; sourceTree = "<group>"; };
+		78C20EF5277B42F800C7EC65 /* FlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowController.swift; sourceTree = "<group>"; };
 		78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+Publisher.swift"; sourceTree = "<group>"; };
 		78DD432527421126006684D0 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		78DD432C274234FE006684D0 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
@@ -271,6 +283,8 @@
 		78A386FA27401A9D00DF51CF /* SwiftArchitectureTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				78A386FB27401A9D00DF51CF /* AppDelegate.swift */,
+				78C20EE6277B35D200C7EC65 /* AppFlowController.swift */,
 				78DD432B27423496006684D0 /* Configuration */,
 				78DD432827423475006684D0 /* Presentation */,
 				78DD432A27423491006684D0 /* Resource */,
@@ -301,8 +315,7 @@
 		78BA64C12744C812005B2D61 /* BottomSheet */ = {
 			isa = PBXGroup;
 			children = (
-				78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */,
-				78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */,
+				78C20EF9277B459600C7EC65 /* Root */,
 			);
 			path = BottomSheet;
 			sourceTree = "<group>";
@@ -326,6 +339,62 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		78C20EE8277B35E000C7EC65 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				78C20EE9277B35F800C7EC65 /* LoginFlowController.swift */,
+				78C20EF8277B458500C7EC65 /* Root */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		78C20EED277B391100C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78DD4367274251D3006684D0 /* SecondUI.swift */,
+				78DD436327424F55006684D0 /* SecondViewController.swift */,
+				78DD436527424F5E006684D0 /* SecondViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF0277B3AC400C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78C20EF3277B401600C7EC65 /* DEBUG_Item.swift */,
+				78625644274635C200472228 /* DEBUG_UI.swift */,
+				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF7277B448F00C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78DD436F27425487006684D0 /* FirstUI.swift */,
+				78DD436D27425455006684D0 /* FirstViewController.swift */,
+				78DD436927425445006684D0 /* FirstViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF8277B458500C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78C20EEB277B360000C7EC65 /* LoginViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		78C20EF9277B459600C7EC65 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				78BA64CC2744F609005B2D61 /* BottomSheetUI.swift */,
+				78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		78DD432827423475006684D0 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +410,6 @@
 		78DD432927423489006684D0 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				78844F962743476B00A02E9B /* AppUtil */,
-				78BA64C62744DA52005B2D61 /* Extension */,
 				78DD433727423995006684D0 /* FirebaseProvider.swift */,
 				78DD4341274240A1006684D0 /* Layout.swift */,
 				78DD43432742440D006684D0 /* LoadingState.swift */,
@@ -352,6 +419,8 @@
 				78CB9D2A277705FF00AA8A94 /* UIControl+Publisher.swift */,
 				78A4E93A27786631005FBB36 /* UIViewController+Container.swift */,
 				78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */,
+				78844F962743476B00A02E9B /* AppUtil */,
+				78BA64C62744DA52005B2D61 /* Extension */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -359,7 +428,6 @@
 		78DD432A27423491006684D0 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				78844F9B27434ACD00A02E9B /* Support */,
 				78A3870427401A9F00DF51CF /* Assets.xcassets */,
 				78DD4349274246E1006684D0 /* Localizable.swift */,
 				78844F9D27434B3C00A02E9B /* Resources.swift */,
@@ -368,6 +436,7 @@
 				78844F9F27434B6100A02E9B /* Images.swift */,
 				78DD434B27424739006684D0 /* Strings.swift */,
 				78844FA327435C2800A02E9B /* ViewControllers.swift */,
+				78844F9B27434ACD00A02E9B /* Support */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -375,11 +444,10 @@
 		78DD432B27423496006684D0 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				78DD433927423A6A006684D0 /* Config */,
 				78DD4335274238DC006684D0 /* API.swift */,
-				78A386FB27401A9D00DF51CF /* AppDelegate.swift */,
 				78DD432C274234FE006684D0 /* Configuration.swift */,
 				78DD432E27423592006684D0 /* Package.swift */,
+				78DD433927423A6A006684D0 /* Config */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -397,6 +465,7 @@
 		78DD434F274247BF006684D0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				78C20EF5277B42F800C7EC65 /* FlowController.swift */,
 				78DD435727424842006684D0 /* UserInterface.swift */,
 				78DD4359274249CC006684D0 /* VCInjectable.swift */,
 				78DD435527424825006684D0 /* ViewModel.swift */,
@@ -427,8 +496,9 @@
 				78A4E9382778659F005FBB36 /* MainFlowController.swift */,
 				78DD437D27425E60006684D0 /* Launch */,
 				78BA64C12744C812005B2D61 /* BottomSheet */,
-				78DD435E27424E5C006684D0 /* Debug */,
+				78DD435E27424E5C006684D0 /* DEBUG */,
 				78DD435F27424E64006684D0 /* First */,
+				78C20EE8277B35E000C7EC65 /* Login */,
 				78DD436027424E69006684D0 /* Second */,
 			);
 			path = Screen;
@@ -442,25 +512,22 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		78DD435E27424E5C006684D0 /* Debug */ = {
+		78DD435E27424E5C006684D0 /* DEBUG */ = {
 			isa = PBXGroup;
 			children = (
+				78C20EF1277B3ADF00C7EC65 /* DEBUG_FlowController.swift */,
 				781F9C9D274758C40034F911 /* Contents */,
-				781F9C9B27474BBE0034F911 /* DEBUG_Routing.swift */,
-				78625644274635C200472228 /* DEBUG_UI.swift */,
-				78DD436127424E7C006684D0 /* DEBUG_ViewController.swift */,
+				78C20EF0277B3AC400C7EC65 /* Root */,
 			);
-			path = Debug;
+			path = DEBUG;
 			sourceTree = "<group>";
 		};
 		78DD435F27424E64006684D0 /* First */ = {
 			isa = PBXGroup;
 			children = (
-				78DD4371274254C5006684D0 /* Detail */,
 				786BC1B92779CD6D00F97732 /* FirstFlowController.swift */,
-				78DD436F27425487006684D0 /* FirstUI.swift */,
-				78DD436D27425455006684D0 /* FirstViewController.swift */,
-				78DD436927425445006684D0 /* FirstViewModel.swift */,
+				78DD4371274254C5006684D0 /* Detail */,
+				78C20EF7277B448F00C7EC65 /* Root */,
 			);
 			path = First;
 			sourceTree = "<group>";
@@ -468,9 +535,8 @@
 		78DD436027424E69006684D0 /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				78DD4367274251D3006684D0 /* SecondUI.swift */,
-				78DD436327424F55006684D0 /* SecondViewController.swift */,
-				78DD436527424F5E006684D0 /* SecondViewModel.swift */,
+				78C20EEE277B394800C7EC65 /* SecondFlowController.swift */,
+				78C20EED277B391100C7EC65 /* Root */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -659,8 +725,10 @@
 				78DD436227424E7C006684D0 /* DEBUG_ViewController.swift in Sources */,
 				78625645274635C200472228 /* DEBUG_UI.swift in Sources */,
 				781F9CA12747598F0034F911 /* DEBUG_BottomSheetListUI.swift in Sources */,
+				78C20EF6277B42F800C7EC65 /* FlowController.swift in Sources */,
 				78844FA227434B6E00A02E9B /* Colors.swift in Sources */,
 				78DD433827423995006684D0 /* FirebaseProvider.swift in Sources */,
+				78C20EE7277B35D200C7EC65 /* AppFlowController.swift in Sources */,
 				78DD437C27425D69006684D0 /* TabBarController.swift in Sources */,
 				78DD436A27425445006684D0 /* FirstViewModel.swift in Sources */,
 				78844FA427435C2800A02E9B /* ViewControllers.swift in Sources */,
@@ -671,24 +739,28 @@
 				78844FA7274367C900A02E9B /* TopViewControllerAccessible.swift in Sources */,
 				78CB9D2B277705FF00AA8A94 /* UIControl+Publisher.swift in Sources */,
 				78BA64CF2744FBB9005B2D61 /* IBDesignableView.swift in Sources */,
+				78C20EF4277B401600C7EC65 /* DEBUG_Item.swift in Sources */,
+				78C20EEF277B394800C7EC65 /* SecondFlowController.swift in Sources */,
 				78844F98274348C200A02E9B /* String+Util.swift in Sources */,
 				78DD432F27423592006684D0 /* Package.swift in Sources */,
 				78BA64D32744FD9D005B2D61 /* UIViewController+Extension.swift in Sources */,
 				78A386FC27401A9D00DF51CF /* AppDelegate.swift in Sources */,
+				78C20EEA277B35F800C7EC65 /* LoginFlowController.swift in Sources */,
 				78DD437027425487006684D0 /* FirstUI.swift in Sources */,
 				78DD432D274234FE006684D0 /* Configuration.swift in Sources */,
 				78DD436627424F5E006684D0 /* SecondViewModel.swift in Sources */,
+				78C20EEC277B360000C7EC65 /* LoginViewController.swift in Sources */,
 				78DD4342274240A1006684D0 /* Layout.swift in Sources */,
 				78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */,
 				78DD436427424F55006684D0 /* SecondViewController.swift in Sources */,
 				78DD43442742440D006684D0 /* LoadingState.swift in Sources */,
 				78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */,
-				781F9C9C27474BBE0034F911 /* DEBUG_Routing.swift in Sources */,
 				78DD434C27424739006684D0 /* Strings.swift in Sources */,
 				781F9C9F274758E00034F911 /* DEBUG_BottomSheetListViewController.swift in Sources */,
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
 				78DD4336274238DC006684D0 /* API.swift in Sources */,
+				78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */,
 				78DD435A274249CC006684D0 /* VCInjectable.swift in Sources */,
 				78DD4368274251D3006684D0 /* SecondUI.swift in Sources */,
 				78DD436E27425455006684D0 /* FirstViewController.swift in Sources */,

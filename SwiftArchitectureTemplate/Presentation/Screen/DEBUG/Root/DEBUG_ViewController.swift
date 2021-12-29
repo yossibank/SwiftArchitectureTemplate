@@ -1,5 +1,9 @@
 import UIKit
 
+protocol DEBUG_ViewControllerDelegate: AnyObject {
+    func didItemSelected(item: DEBUG_Item)
+}
+
 extension DEBUG_ViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = DEBUG_UI
@@ -8,8 +12,11 @@ extension DEBUG_ViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_ViewController: UIViewController {
+
     var viewModel: VM!
     var ui: UI!
+
+    weak var delegate: DEBUG_ViewControllerDelegate!
 }
 
 // MARK: - override methods
@@ -28,10 +35,6 @@ extension DEBUG_ViewController {
 private extension DEBUG_ViewController {
 
     func setupUI() {
-        ui.setupNavigationBar(
-            navigationBar: navigationController?.navigationBar,
-            navigationItem: navigationItem
-        )
         ui.setupView(rootView: view)
     }
 
@@ -50,7 +53,7 @@ extension DEBUG_ViewController: UITableViewDelegate {
         viewForHeaderInSection section: Int
     ) -> UIView? {
         let header = UITableViewHeaderFooterView()
-        let section = DEBUG_UI.SectionKind.allCases[section]
+        let section = DEBUG_Section.allCases[section]
 
         if #available(iOS 14.0, *) {
             var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
@@ -75,7 +78,9 @@ extension DEBUG_ViewController: UITableViewDelegate {
             animated: true
         )
 
-        let section = DEBUG_UI.SectionKind.allCases[indexPath.section]
+        let section = DEBUG_Section.allCases[indexPath.section]
         let item = section.initialItems[indexPath.row]
+
+        delegate.didItemSelected(item: item)
     }
 }

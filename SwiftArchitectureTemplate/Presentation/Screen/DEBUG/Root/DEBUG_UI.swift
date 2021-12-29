@@ -6,8 +6,8 @@ final class DEBUG_UI {
 
     private let tableView = UITableView()
 
-    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<SectionKind, ItemKind>()
-    private var dataSource: UITableViewDiffableDataSource<SectionKind, ItemKind>!
+    private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
+    private var dataSource: UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item>!
 }
 
 // MARK: - internal methods
@@ -26,9 +26,9 @@ extension DEBUG_UI {
     }
 
     func loadTableItems() {
-        dataSourceSnapshot.appendSections(SectionKind.allCases)
+        dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
 
-        SectionKind.allCases.forEach {
+        DEBUG_Section.allCases.forEach {
             self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
@@ -43,7 +43,7 @@ extension DEBUG_UI {
 
 private extension DEBUG_UI {
 
-    func configureDataSource() -> UITableViewDiffableDataSource<SectionKind, ItemKind> {
+    func configureDataSource() -> UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item> {
         .init(tableView: tableView) { [weak self] _, index, item in
             guard
                 let self = self
@@ -55,7 +55,7 @@ private extension DEBUG_UI {
         }
     }
 
-    func makeCell(index _: IndexPath, item: ItemKind) -> UITableViewCell? {
+    func makeCell(index _: IndexPath, item: DEBUG_Item) -> UITableViewCell? {
         let cell = UITableViewCell()
         cell.textLabel?.font = .italicSystemFont(ofSize: 18)
         cell.textLabel?.text = item.rawValue.addSpaceAfterUppercase().uppercased()
@@ -66,14 +66,6 @@ private extension DEBUG_UI {
 // MARK: - protocol
 
 extension DEBUG_UI: UserInterface {
-
-    func setupNavigationBar(
-        navigationBar: UINavigationBar?,
-        navigationItem: UINavigationItem?
-    ) {
-        navigationBar?.setupBackGroundColor(color: .random)
-        navigationItem?.title = "DEBUG"
-    }
 
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .white
@@ -87,34 +79,5 @@ extension DEBUG_UI: UserInterface {
             tableView.leadingAnchor.constraint(equalTo: rootView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: rootView.trailingAnchor)
         )
-    }
-}
-
-extension DEBUG_UI {
-
-    enum SectionKind: String, CaseIterable {
-        case view
-        case viewController
-
-        var initialItems: [ItemKind] {
-            switch self {
-                case .view:
-                    return [.bottomSheetContent]
-
-                case .viewController:
-                    return [.first, .firstDetail, .second]
-            }
-        }
-    }
-
-    enum ItemKind: String, Hashable {
-
-        /* View */
-        case bottomSheetContent
-
-        /* ViewController */
-        case first
-        case firstDetail
-        case second
     }
 }
