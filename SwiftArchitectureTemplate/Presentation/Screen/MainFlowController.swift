@@ -38,7 +38,7 @@ extension MainFlowController: FlowController {
     func start() {
         let flows: [FlowController]
 
-        #if !RELEASE
+        #if DEBUG
         flows = [FirstFlowController(), SecondFlowController(), DEBUG_FlowController()]
         #else
         flows = [FirstFlowController(), SecondFlowController()]

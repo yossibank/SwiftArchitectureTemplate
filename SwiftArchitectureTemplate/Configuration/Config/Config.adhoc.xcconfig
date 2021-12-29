@@ -1,8 +1,8 @@
 BUNDLE_DISPLAY_NAME = ADHOC
 PRODUCT_BUNDLE_IDENTIFIER = com.gmail.yossibank07.swift-architecture-template.adhoc
-OTHER_SWIFT_FLAGS = $(inherited) "-D" "ADHOC"
+OTHER_SWIFT_FLAGS = $(inherited) "-D" "ADHOC" "-D" "DEBUG"
 OTHER_LDFLAGS = -ObjC
-TEST_TARGET_NAME = swift-architecture-template
+TEST_TARGET_NAME = SwiftArchitectureTemplate
 
 // API Settings
 API_DOMAIN_URL = jsonplaceholder.typicode.com

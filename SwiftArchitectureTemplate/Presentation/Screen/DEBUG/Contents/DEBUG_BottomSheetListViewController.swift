@@ -1,3 +1,5 @@
+#if DEBUG
+
 import UIKit
 
 extension DEBUG_BottomSheetListViewController: VCInjectable {
@@ -123,3 +125,5 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
         }
     }
 }
+
+#endif
