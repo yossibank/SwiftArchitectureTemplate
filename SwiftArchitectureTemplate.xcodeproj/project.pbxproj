@@ -183,6 +183,7 @@
 		78DD4372274254D1006684D0 /* FirstDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailViewController.swift; sourceTree = "<group>"; };
 		78DD437727425B6F006684D0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		78DD437B27425D69006684D0 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		78E35E29277C2303002EDE43 /* SwiftArchitectureTemplate.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftArchitectureTemplate.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +262,7 @@
 		78A386EF27401A9D00DF51CF = {
 			isa = PBXGroup;
 			children = (
+				78E35E29277C2303002EDE43 /* SwiftArchitectureTemplate.xctestplan */,
 				789A4E5927413DA100DD4661 /* Packages */,
 				78A386FA27401A9D00DF51CF /* SwiftArchitectureTemplate */,
 				78A3871127401A9F00DF51CF /* SwiftArchitectureTemplateTests */,

@@ -1,0 +1,66 @@
+{
+  "configurations" : [
+    {
+      "id" : "73512964-443A-4FD1-9D33-64E9665598A9",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-noFIRAnalyticsDebugEnabled"
+      },
+      {
+        "argument" : "-FIRAnalyticsDebugEnabled",
+        "enabled" : false
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftArchitectureTemplate.xcodeproj",
+      "identifier" : "78A386F727401A9D00DF51CF",
+      "name" : "SwiftArchitectureTemplate"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:SwiftArchitectureTemplate.xcodeproj",
+        "identifier" : "78A3870D27401A9F00DF51CF",
+        "name" : "SwiftArchitectureTemplateTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:SwiftArchitectureTemplate.xcodeproj",
+        "identifier" : "78A3871727401A9F00DF51CF",
+        "name" : "SwiftArchitectureTemplateUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Data",
+        "identifier" : "DataTests",
+        "name" : "DataTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Domain",
+        "identifier" : "DomainTests",
+        "name" : "DomainTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/Utility",
+        "identifier" : "UtilityTests",
+        "name" : "UtilityTests"
+      }
+    }
+  ],
+  "version" : 1
+}

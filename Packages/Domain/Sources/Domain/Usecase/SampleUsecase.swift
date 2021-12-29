@@ -1,22 +1,9 @@
 import Combine
 import Data
 
-public protocol SampleUsecase {
-    func fetchSample(userId: Int?) -> AnyPublisher<[SampleEntity], APIError>
-}
+public extension UsecaseImpl where R == Repos.Sample.Get, M == SampleMapper {
 
-public extension SampleUsecase {
-
-    func fetchSample(userId: Int? = nil) -> AnyPublisher<[SampleEntity], APIError> {
-        fetchSample(userId: userId)
-    }
-}
-
-extension UsecaseImpl: SampleUsecase where R == Repos.Sample.Get, M == SampleMapper {
-
-    public func fetchSample(
-        userId: Int? = nil
-    ) -> AnyPublisher<[SampleEntity], APIError> {
+    func execute(userId: Int? = nil) -> AnyPublisher<[SampleEntity], APIError> {
         toPublisher { promise in
             analytics.sendEvent()
 
