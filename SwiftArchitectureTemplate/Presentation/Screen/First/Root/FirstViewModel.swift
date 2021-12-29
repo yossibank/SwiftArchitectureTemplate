@@ -6,13 +6,13 @@ final class FirstViewModel: ViewModel {
 
     typealias State = LoadingState<[SampleEntity], AppError>
 
-    private let usecase: SampleUsecase
-
     private var cancellables: Set<AnyCancellable> = []
+
+    private let usecase: FetchSampleUsecase
 
     @Published private(set) var state: State = .standby
 
-    init(usecase: SampleUsecase = Domain.Usecase.FetchSample()) {
+    init(usecase: FetchSampleUsecase = Domain.Usecase.FetchSample()) {
         self.usecase = usecase
     }
 }
@@ -24,7 +24,7 @@ extension FirstViewModel {
     func viewWillAppear() {
         state = .loading
 
-        usecase.fetchSample().sink { [weak self] completion in
+        usecase.execute().sink { [weak self] completion in
             switch completion {
                 case let .failure(error):
                     Logger.debug(message: error.localizedDescription)

@@ -6,7 +6,7 @@ final class UsecaseTests: XCTestCase {
 
     func testSampleUsecase() throws {
         let result = try awaitPublisher(
-            Domain.Usecase.FetchSample(useTestData: true).fetchSample(userId: nil)
+            Domain.Usecase.FetchSample(useTestData: true).execute(userId: nil)
         )
         let expect = try TestDataFetchRequest(
             testDataJsonPath: SampleGetRequest(parameters: .init(userId: nil)).testDataPath
