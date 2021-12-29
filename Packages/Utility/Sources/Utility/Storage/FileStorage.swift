@@ -1,31 +1,30 @@
 import Foundation
-import Utility
 
 @propertyWrapper
-class FileStorage<T: Codable> {
+public class FileStorage<T: Codable> {
 
     private var value: T?
-    private let file: FileName
+    private let file: String
 
-    init(file: FileName) {
-        self.file = file
+    public init(fileName: String) {
+        self.file = fileName
         self.value = LocalStorageManager.getObjectFromFile(fileName: file)
     }
 
-    var wrappedValue: T? {
+    public var wrappedValue: T? {
         get {
             value
         }
         set {
             value = newValue
 
-            let file = file
+            let fileName = file
 
             if let data = newValue {
-                LocalStorageManager.writeObjectToFile(fileName: file, jsonEncodable: data)
+                LocalStorageManager.writeObjectToFile(fileName: fileName, jsonEncodable: data)
             } else {
                 /// setting value to nil will clear cache
-                LocalStorageManager.deleteFile(fileName: file)
+                LocalStorageManager.deleteFile(fileName: fileName)
             }
         }
     }
@@ -44,18 +43,6 @@ private struct LocalStorageManager {
     private struct Constants {
         /* 0.2秒 */
         static let fileWritingDebounce = DispatchTimeInterval.milliseconds(200)
-    }
-
-    static func clearDiskCache(
-        dispatchQueue: DispatchQueue = DispatchQueue(
-            label: DispatchQueueLabel.localStorageManager.rawValue
-        )
-    ) {
-        dispatchQueue.async {
-            FileName.allCases.forEach { fileName in
-                Self.deleteFile(fileName: fileName)
-            }
-        }
     }
 
     static func removeAll() {
@@ -80,7 +67,7 @@ private struct LocalStorageManager {
         }
     }
 
-    static func getObjectFromFile<T: Decodable>(fileName: FileName) -> T? {
+    static func getObjectFromFile<T: Decodable>(fileName: String) -> T? {
         do {
             let fileURL = try retrieveConfiguredFileURL(fileName: fileName)
             let localData = try Data(contentsOf: fileURL, options: .alwaysMapped)
@@ -96,7 +83,7 @@ private struct LocalStorageManager {
     }
 
     static func writeObjectToFile<T: Encodable>(
-        fileName: FileName,
+        fileName: String,
         jsonEncodable: T,
         dispatchQueue: DispatchQueue = DispatchQueue(
             label: DispatchQueueLabel.localStorageManager.rawValue
@@ -124,7 +111,7 @@ private struct LocalStorageManager {
     }
 
     static func deleteFile(
-        fileName: FileName,
+        fileName: String,
         dispatchQueue: DispatchQueue = DispatchQueue(
             label: DispatchQueueLabel.localStorageManager.rawValue
         )
@@ -148,7 +135,7 @@ private struct LocalStorageManager {
 private extension LocalStorageManager {
 
     static func retrieveConfiguredFileURL(
-        fileName: FileName,
+        fileName: String,
         excludeFromBackup: Bool = true
     ) throws -> URL {
         let bundleId = Bundle.main.bundleIdentifier ?? ""
@@ -175,7 +162,7 @@ private extension LocalStorageManager {
             )
         }
 
-        var fullURL = dirURL.appendingPathComponent(fileName.rawValue, isDirectory: false)
+        var fullURL = dirURL.appendingPathComponent(fileName, isDirectory: false)
 
         if excludeFromBackup {
             var resourceValues = URLResourceValues()

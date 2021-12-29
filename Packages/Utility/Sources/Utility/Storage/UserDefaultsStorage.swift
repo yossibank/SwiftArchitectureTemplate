@@ -1,15 +1,15 @@
 import Foundation
 
 @propertyWrapper
-class UserDefaultsStorage<T: LosslessStringConvertible> {
+public class UserDefaultsStorage<T: LosslessStringConvertible> {
 
     private let key: String
 
-    init(key: String) {
+    public init(key: String) {
         self.key = key
     }
 
-    var wrappedValue: T? {
+    public var wrappedValue: T? {
         get {
             UserDefaults.standard.object(forKey: key) as? T
         }
