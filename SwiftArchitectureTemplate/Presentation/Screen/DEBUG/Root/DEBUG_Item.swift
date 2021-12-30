@@ -1,12 +1,12 @@
 #if DEBUG
 
 enum DEBUG_Section: String, CaseIterable {
-    case view
+    case component
     case viewController
 
     var initialItems: [DEBUG_Item] {
         switch self {
-            case .view:
+            case .component:
                 return [.bottomSheetContent]
 
             case .viewController:
@@ -17,7 +17,7 @@ enum DEBUG_Section: String, CaseIterable {
 
 enum DEBUG_Item: String, Hashable {
 
-    /* View */
+    /* Component */
     case bottomSheetContent
 
     /* ViewController */
