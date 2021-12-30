@@ -36,7 +36,8 @@ extension FirstFlowController {
 extension FirstFlowController: FlowController {
 
     func start() {
-        let vc = Resources.ViewControllers.App.first(flow: self)
+        let vc = Resources.ViewControllers.App.first()
+        vc.delegate = self
 
         tabBarItem.title = "FIRST"
         tabBarItem.image = UIImage(systemName: "a.circle")

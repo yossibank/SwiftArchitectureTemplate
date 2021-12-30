@@ -38,7 +38,8 @@ extension DEBUG_FlowController {
 extension DEBUG_FlowController: FlowController {
 
     func start() {
-        let vc = Resources.ViewControllers.App.debug(flow: self)
+        let vc = Resources.ViewControllers.App.debug()
+        vc.delegate = self
 
         tabBarItem.title = "DEBUG"
         tabBarItem.image = UIImage(systemName: "c.circle")
@@ -58,9 +59,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
                 navVC.present(vc, animated: true)
 
             case .first:
-                let flow = FirstFlowController()
-                flow.start()
-                navVC.pushViewController(flow, animated: true)
+                let vc = Resources.ViewControllers.App.first()
+                vc.delegate = self
+
+                navVC.pushViewController(vc, animated: true)
 
             case .firstDetail:
                 let vc = Resources.ViewControllers.App.firstDetail()
@@ -70,6 +72,14 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
                 let vc = Resources.ViewControllers.App.second()
                 navVC.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension DEBUG_FlowController: FirstViewControllerDelegate {
+
+    func didNextButtonTapped() {
+        let vc = Resources.ViewControllers.App.firstDetail()
+        navVC.pushViewController(vc, animated: true)
     }
 }
 
