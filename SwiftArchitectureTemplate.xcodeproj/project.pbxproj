@@ -31,6 +31,7 @@
 		78A4E9342777FC75005FBB36 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78A4E9362777FC75005FBB36 /* Localizable.strings */; };
 		78A4E9392778659F005FBB36 /* MainFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E9382778659F005FBB36 /* MainFlowController.swift */; };
 		78A4E93B27786631005FBB36 /* UIViewController+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A4E93A27786631005FBB36 /* UIViewController+Container.swift */; };
+		78A93CF2277D502D005A3DB2 /* LoginUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A93CF1277D502D005A3DB2 /* LoginUI.swift */; };
 		78B3D0BF2776F93500A8EC6F /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */; };
 		78BA64C32744C82A005B2D61 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */; };
 		78BA64C52744CEF5005B2D61 /* SelfLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */; };
@@ -140,6 +141,7 @@
 		78A4E9372777FC78005FBB36 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78A4E9382778659F005FBB36 /* MainFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFlowController.swift; sourceTree = "<group>"; };
 		78A4E93A27786631005FBB36 /* UIViewController+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Container.swift"; sourceTree = "<group>"; };
+		78A93CF1277D502D005A3DB2 /* LoginUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUI.swift; sourceTree = "<group>"; };
 		78B3D0BE2776F93500A8EC6F /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		78BA64C22744C82A005B2D61 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		78BA64C42744CEF5005B2D61 /* SelfLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfLoadingViewController.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 		78C20EF8277B458500C7EC65 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				78A93CF1277D502D005A3DB2 /* LoginUI.swift */,
 				78C20EEB277B360000C7EC65 /* LoginViewController.swift */,
 			);
 			path = Root;
@@ -766,6 +769,7 @@
 				78844F9E27434B3C00A02E9B /* Resources.swift in Sources */,
 				78DD435627424825006684D0 /* ViewModel.swift in Sources */,
 				78DD4336274238DC006684D0 /* API.swift in Sources */,
+				78A93CF2277D502D005A3DB2 /* LoginUI.swift in Sources */,
 				78C20EF2277B3ADF00C7EC65 /* DEBUG_FlowController.swift in Sources */,
 				78DD435A274249CC006684D0 /* VCInjectable.swift in Sources */,
 				78DD4368274251D3006684D0 /* SecondUI.swift in Sources */,

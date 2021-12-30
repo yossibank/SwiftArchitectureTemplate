@@ -14,6 +14,14 @@ extension Resources {
 
         struct AppControllers {
 
+            func login(flow: LoginFlowController) -> LoginViewController {
+                let instance = LoginViewController()
+                instance.inject(ui: LoginUI())
+                instance.title = "LOGIN"
+                instance.delegate = flow
+                return instance
+            }
+
             func first(flow: FirstFlowController) -> FirstViewController {
                 let instance = FirstViewController()
                 instance.inject(viewModel: FirstViewModel(), ui: FirstUI())

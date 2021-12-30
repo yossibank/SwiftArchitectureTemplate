@@ -38,8 +38,18 @@ extension AppFlowController: FlowController {
             add(mainFlowController)
             mainFlowController.start()
         } else {
+            loginFlowController.delegate = self
             add(loginFlowController)
             loginFlowController.start()
         }
+    }
+}
+
+// MARK: - delegate
+
+extension AppFlowController: LoginFlowControllerDelegate {
+
+    func didLoginButtonTapped() {
+        start()
     }
 }

@@ -1,10 +1,16 @@
 import UIKit
 
+protocol LoginFlowControllerDelegate: AnyObject {
+    func didLoginButtonTapped()
+}
+
 // MARK: - Stored Properties & Init
 
 final class LoginFlowController: UIViewController {
 
     private let navVC = NavigationController()
+
+    weak var delegate: LoginFlowControllerDelegate?
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -36,9 +42,16 @@ extension LoginFlowController {
 extension LoginFlowController: FlowController {
 
     func start() {
-        let vc = LoginViewController()
-        vc.title = "LOGIN"
-
+        let vc = Resources.ViewControllers.App.login(flow: self)
         navVC.viewControllers = [vc]
+    }
+}
+
+// MARK: - delegate
+
+extension LoginFlowController: LoginViewControllerDelegate {
+
+    func didLoginButtonTapped() {
+        delegate?.didLoginButtonTapped()
     }
 }
