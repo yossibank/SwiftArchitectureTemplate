@@ -152,7 +152,7 @@ private extension CommonBottomSheetContentView {
     func configureButtons(_ actions: [BottomSheetAction]) {
         actions.map { makeButton(by: $0) }.forEach {
             self.buttonContainerStackView.addArrangedSubview($0)
-            $0.layout { $0.heightConstant == 52 }
+            $0.heightAnchor.constraint(equalToConstant: 52).isActive = true
         }
     }
 
