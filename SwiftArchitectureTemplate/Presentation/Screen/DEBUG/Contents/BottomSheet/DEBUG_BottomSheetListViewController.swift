@@ -98,7 +98,7 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
                 let title = ui.titleAvailable ? "DEBUG TITLE" : nil
 
                 let body: String? = {
-                    switch self.ui.messageType {
+                    switch ui.messageType {
                         case .normal:
                             return "DEBUG Message"
 

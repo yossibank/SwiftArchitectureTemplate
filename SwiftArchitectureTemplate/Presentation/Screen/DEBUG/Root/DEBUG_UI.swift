@@ -33,7 +33,7 @@ extension DEBUG_UI {
         dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
 
         DEBUG_Section.allCases.forEach {
-            self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
+            dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
         dataSource.apply(
@@ -55,7 +55,11 @@ private extension DEBUG_UI {
                 return UITableViewCell()
             }
 
-            return self.makeCell(tableView: tableView, indexPath: indexPath, item: item)
+            return self.makeCell(
+                tableView: tableView,
+                indexPath: indexPath,
+                item: item
+            )
         }
     }
 
