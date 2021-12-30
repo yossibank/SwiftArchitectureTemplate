@@ -42,7 +42,9 @@ extension LoginFlowController {
 extension LoginFlowController: FlowController {
 
     func start() {
-        let vc = Resources.ViewControllers.App.login(flow: self)
+        let vc = Resources.ViewControllers.App.login()
+        vc.delegate = self
+
         navVC.viewControllers = [vc]
     }
 }

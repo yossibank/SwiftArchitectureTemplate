@@ -14,19 +14,17 @@ extension Resources {
 
         struct AppControllers {
 
-            func login(flow: LoginFlowController) -> LoginViewController {
+            func login() -> LoginViewController {
                 let instance = LoginViewController()
                 instance.inject(ui: LoginUI())
                 instance.title = "LOGIN"
-                instance.delegate = flow
                 return instance
             }
 
-            func first(flow: FirstFlowController) -> FirstViewController {
+            func first() -> FirstViewController {
                 let instance = FirstViewController()
                 instance.inject(viewModel: FirstViewModel(), ui: FirstUI())
                 instance.title = "FIRST"
-                instance.delegate = flow
                 return instance
             }
 
@@ -52,11 +50,10 @@ extension Resources {
 
             #if DEBUG
 
-            func debug(flow: DEBUG_FlowController) -> DEBUG_ViewController {
+            func debug() -> DEBUG_ViewController {
                 let instance = DEBUG_ViewController()
                 instance.inject(ui: DEBUG_UI())
                 instance.title = "DEBUG"
-                instance.delegate = flow
                 return instance
             }
 
