@@ -18,6 +18,10 @@ extension DEBUG_UI {
 
     func setupTableView(delegate: UITableViewDelegate) {
         dataSource = configureDataSource()
+        tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: UITableViewCell.resourceName
+        )
         tableView.dataSource = dataSource
         tableView.rowHeight = 60
         tableView.delegate = delegate
