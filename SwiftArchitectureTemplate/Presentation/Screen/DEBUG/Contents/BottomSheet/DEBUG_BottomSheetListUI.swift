@@ -39,7 +39,7 @@ extension DEBUG_BottomSheetListUI {
         dataSourceSnapshot.appendSections(SectionKind.allCases)
 
         SectionKind.allCases.forEach {
-            self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
+            dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
         dataSource.apply(

@@ -37,7 +37,7 @@ extension BottomSheetViewController {
         modalTransitionStyle = .coverVertical
         modalPresentationStyle = .formSheet
 
-        setupUI()
+        ui.setupView(rootView: view)
 
         if let view = contentView {
             ui.set(view: view)
@@ -66,10 +66,6 @@ extension BottomSheetViewController {
 // MARK: - private methods
 
 private extension BottomSheetViewController {
-
-    func setupUI() {
-        ui.setupView(rootView: view)
-    }
 
     @objc func viewTapped() {
         dismiss(animated: true) { [weak self] in

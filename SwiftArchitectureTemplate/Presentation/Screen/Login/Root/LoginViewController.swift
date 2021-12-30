@@ -28,7 +28,9 @@ extension LoginViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+
+        ui.setupView(rootView: view)
+
         setupEvent()
     }
 }
@@ -36,10 +38,6 @@ extension LoginViewController {
 // MARK: - private methods
 
 private extension LoginViewController {
-
-    func setupUI() {
-        ui.setupView(rootView: view)
-    }
 
     func setupEvent() {
         ui.buttonTapPublisher.sink { [weak self] _ in

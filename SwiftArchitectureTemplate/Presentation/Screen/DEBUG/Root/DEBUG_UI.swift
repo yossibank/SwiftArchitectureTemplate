@@ -18,6 +18,10 @@ extension DEBUG_UI {
 
     func setupTableView(delegate: UITableViewDelegate) {
         dataSource = configureDataSource()
+        tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: UITableViewCell.resourceName
+        )
         tableView.dataSource = dataSource
         tableView.rowHeight = 60
         tableView.delegate = delegate
@@ -25,13 +29,11 @@ extension DEBUG_UI {
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
         }
-    }
 
-    func loadTableItems() {
         dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
 
         DEBUG_Section.allCases.forEach {
-            self.dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
+            dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
         }
 
         dataSource.apply(
@@ -46,21 +48,33 @@ extension DEBUG_UI {
 private extension DEBUG_UI {
 
     func configureDataSource() -> UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item> {
-        .init(tableView: tableView) { [weak self] _, index, item in
+        .init(tableView: tableView) { [weak self] tableView, indexPath, item in
             guard
                 let self = self
             else {
                 return UITableViewCell()
             }
 
-            return self.makeCell(index: index, item: item)
+            return self.makeCell(
+                tableView: tableView,
+                indexPath: indexPath,
+                item: item
+            )
         }
     }
 
-    func makeCell(index _: IndexPath, item: DEBUG_Item) -> UITableViewCell? {
-        let cell = UITableViewCell()
+    func makeCell(
+        tableView: UITableView,
+        indexPath : IndexPath,
+        item: DEBUG_Item
+    ) -> UITableViewCell? {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: UITableViewCell.resourceName,
+            for: indexPath
+        )
         cell.textLabel?.font = .italicSystemFont(ofSize: 18)
         cell.textLabel?.text = item.rawValue.addSpaceAfterUppercase().uppercased()
+
         return cell
     }
 }

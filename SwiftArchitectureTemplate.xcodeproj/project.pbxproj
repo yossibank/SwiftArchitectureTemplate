@@ -223,8 +223,7 @@
 		781F9C9D274758C40034F911 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
-				781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */,
-				781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */,
+				78A93CF3277D69D1005A3DB2 /* BottomSheet */,
 			);
 			path = Contents;
 			sourceTree = "<group>";
@@ -317,6 +316,15 @@
 				78A3871E27401A9F00DF51CF /* SwiftArchitectureTemplateUITestsLaunchTests.swift */,
 			);
 			path = SwiftArchitectureTemplateUITests;
+			sourceTree = "<group>";
+		};
+		78A93CF3277D69D1005A3DB2 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				781F9CA02747598F0034F911 /* DEBUG_BottomSheetListUI.swift */,
+				781F9C9E274758E00034F911 /* DEBUG_BottomSheetListViewController.swift */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 		78BA64C12744C812005B2D61 /* BottomSheet */ = {

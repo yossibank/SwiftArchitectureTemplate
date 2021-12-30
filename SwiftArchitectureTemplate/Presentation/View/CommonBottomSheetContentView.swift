@@ -72,7 +72,7 @@ final class CommonBottomSheetContentView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.spacing = 16
-        self.baseStackView.addArrangedSubview(stackView)
+        baseStackView.addArrangedSubview(stackView)
         return stackView
     }()
 
