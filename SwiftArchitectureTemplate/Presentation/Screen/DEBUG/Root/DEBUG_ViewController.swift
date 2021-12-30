@@ -27,22 +27,8 @@ extension DEBUG_ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupTableView()
-    }
-}
-
-// MARK: - private methods
-
-private extension DEBUG_ViewController {
-
-    func setupUI() {
         ui.setupView(rootView: view)
-    }
-
-    func setupTableView() {
         ui.setupTableView(delegate: self)
-        ui.loadTableItems()
     }
 }
 
