@@ -18,15 +18,6 @@ extension SecondViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-    }
-}
-
-// MARK: - private methods
-
-private extension SecondViewController {
-
-    func setupUI() {
         ui.setupView(rootView: view)
     }
 }
