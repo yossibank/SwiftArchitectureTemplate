@@ -28,7 +28,7 @@
 - flag: DEBUG
 
 ### adhoc
-- flag: ADHOC
+- flag: ADHOC, DEBUG
 
 ### release
 - flag: RELEASE
@@ -37,7 +37,8 @@
 
 ### Presentation
 - ViewController: view logic of screen
-    - Routing: transition (if no transition, use NoRouting)
+    - [FlowController](https://github.com/onmyway133/blog/issues/106): transition logic
+    - ViewController: view logic of screen
     - ViewModel: data logic of screen (if no data logic, use NoViewModel) 
     - UserInterface: view component (if no view component, use NoUserInterface)
 
