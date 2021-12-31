@@ -6,7 +6,7 @@ final class BottomSheetUI {
 
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 16.0
         view.layer.masksToBounds = true
         return view

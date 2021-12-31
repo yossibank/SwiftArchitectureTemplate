@@ -84,7 +84,7 @@ private extension DEBUG_UI {
 extension DEBUG_UI: UserInterface {
 
     func setupView(rootView: UIView) {
-        rootView.backgroundColor = .white
+        rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
             tableView,

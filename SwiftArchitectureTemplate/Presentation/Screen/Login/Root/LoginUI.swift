@@ -20,7 +20,7 @@ final class LoginUI {
 extension LoginUI: UserInterface {
 
     func setupView(rootView: UIView) {
-        rootView.backgroundColor = .white
+        rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
             button,

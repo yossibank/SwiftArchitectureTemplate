@@ -113,6 +113,8 @@ private extension CommonBottomSheetContentView {
     func setupView() {}
 
     func setupLayout() {
+        backgroundColor = .systemBackground
+
         addSubViews(
             baseStackView,
             titleLabel,
