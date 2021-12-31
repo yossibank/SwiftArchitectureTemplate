@@ -15,7 +15,7 @@ final class SecondUI {
 extension SecondUI: UserInterface {
 
     func setupView(rootView: UIView) {
-        rootView.backgroundColor = .white
+        rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
             button,

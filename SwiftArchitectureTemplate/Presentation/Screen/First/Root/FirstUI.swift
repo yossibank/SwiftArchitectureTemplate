@@ -26,7 +26,7 @@ final class FirstUI {
 extension FirstUI: UserInterface {
 
     func setupView(rootView: UIView) {
-        rootView.backgroundColor = .white
+        rootView.backgroundColor = .systemBackground
 
         rootView.addSubViews(
             button,

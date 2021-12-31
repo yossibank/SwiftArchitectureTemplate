@@ -81,13 +81,11 @@ final class CommonBottomSheetContentView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
-        setupLayout()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
-        setupLayout()
     }
 }
 
@@ -110,9 +108,9 @@ extension CommonBottomSheetContentView {
 
 private extension CommonBottomSheetContentView {
 
-    func setupView() {}
+    func setupView() {
+        backgroundColor = .systemBackground
 
-    func setupLayout() {
         addSubViews(
             baseStackView,
             titleLabel,
