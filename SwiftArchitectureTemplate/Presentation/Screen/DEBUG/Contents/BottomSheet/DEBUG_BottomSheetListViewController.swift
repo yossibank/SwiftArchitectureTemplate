@@ -20,20 +20,7 @@ extension DEBUG_BottomSheetListViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupTableView()
-    }
-}
-
-// MARK: - private methods
-
-private extension DEBUG_BottomSheetListViewController {
-
-    func setupUI() {
         ui.setupView(rootView: view)
-    }
-
-    func setupTableView() {
         ui.setupTableView(delegate: self)
         ui.loadTableItems()
     }
