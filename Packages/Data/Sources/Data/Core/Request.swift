@@ -44,7 +44,6 @@ struct HTTPStatusCode {
 }
 
 public protocol Request {
-
     associatedtype Response: Decodable
     associatedtype Parameters: Encodable
     associatedtype PathComponent
