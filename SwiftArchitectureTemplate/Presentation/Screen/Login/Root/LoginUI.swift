@@ -4,7 +4,6 @@ import UIKit
 // MARK: - stored properties
 
 final class LoginUI {
-
     private let button: UIButton = .init(
         style: .someStyle,
         title: Resources.Strings.Button.loginTitle

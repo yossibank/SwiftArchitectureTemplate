@@ -5,7 +5,6 @@ import UIKit
 // MARK: - stored properties
 
 final class DEBUG_UI {
-
     private let tableView = UITableView()
 
     private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
@@ -49,9 +48,7 @@ private extension DEBUG_UI {
 
     func configureDataSource() -> UITableViewDiffableDataSource<DEBUG_Section, DEBUG_Item> {
         .init(tableView: tableView) { [weak self] tableView, indexPath, item in
-            guard
-                let self = self
-            else {
+            guard let self = self else {
                 return UITableViewCell()
             }
 
@@ -72,9 +69,9 @@ private extension DEBUG_UI {
             withIdentifier: UITableViewCell.resourceName,
             for: indexPath
         )
+
         cell.textLabel?.font = .italicSystemFont(ofSize: 18)
         cell.textLabel?.text = item.rawValue.addSpaceAfterUppercase().uppercased()
-
         return cell
     }
 }

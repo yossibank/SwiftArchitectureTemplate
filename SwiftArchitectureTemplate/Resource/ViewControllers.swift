@@ -7,7 +7,6 @@ extension Resources {
     }
 
     struct ViewController {
-
         var App: AppControllers {
             AppControllers()
         }

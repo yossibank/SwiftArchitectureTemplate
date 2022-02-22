@@ -1,11 +1,15 @@
 import UIKit
 
+// MARK: - override methods
+
 final class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
+
+// MARK: - extension
 
 extension UINavigationBar {
 

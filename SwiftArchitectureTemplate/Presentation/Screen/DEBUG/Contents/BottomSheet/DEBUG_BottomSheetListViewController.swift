@@ -2,6 +2,8 @@
 
 import UIKit
 
+// MARK: - inject
+
 extension DEBUG_BottomSheetListViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = DEBUG_BottomSheetListUI
@@ -47,7 +49,6 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
 
         header.textLabel?.textColor = .white
         header.textLabel?.text = section.rawValue.uppercased()
-
         return header
     }
 
@@ -73,9 +74,7 @@ extension DEBUG_BottomSheetListViewController: UITableViewDelegate {
                     ui.selectedStyles.append(style)
                 }
 
-                guard
-                    let item = ui.selectedTableItem(index: indexPath)
-                else {
+                guard let item = ui.selectedTableItem(index: indexPath) else {
                     return
                 }
 

@@ -2,10 +2,9 @@
 
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class DEBUG_FlowController: UIViewController {
-
     private let navVC = NavigationController()
 
     init() {

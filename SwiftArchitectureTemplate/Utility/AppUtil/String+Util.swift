@@ -7,12 +7,10 @@ extension String {
     }
 
     func contain(pattern: String) -> Bool {
-        guard
-            let regex = try? NSRegularExpression(
-                pattern: pattern,
-                options: .init()
-            )
-        else {
+        guard let regex = try? NSRegularExpression(
+            pattern: pattern,
+            options: .init()
+        ) else {
             return false
         }
 

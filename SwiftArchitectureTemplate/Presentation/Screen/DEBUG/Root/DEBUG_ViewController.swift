@@ -6,6 +6,8 @@ protocol DEBUG_ViewControllerDelegate: AnyObject {
     func didItemSelected(item: DEBUG_Item)
 }
 
+// MARK: - inject
+
 extension DEBUG_ViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = DEBUG_UI
@@ -14,7 +16,6 @@ extension DEBUG_ViewController: VCInjectable {
 // MARK: - stored properties
 
 final class DEBUG_ViewController: UIViewController {
-
     var viewModel: VM!
     var ui: UI!
 
@@ -53,7 +54,6 @@ extension DEBUG_ViewController: UITableViewDelegate {
 
         header.textLabel?.textColor = .white
         header.textLabel?.text = section.rawValue.uppercased()
-
         return header
     }
 

@@ -43,15 +43,6 @@ extension BottomSheetAction {
 }
 
 final class CommonBottomSheetContentView: UIView {
-
-    private lazy var baseStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabelBackView, messageBodyLabel])
-        stackView.axis = .vertical
-        stackView.distribution = .equalSpacing
-        stackView.spacing = 24
-        return stackView
-    }()
-
     private let titleLabelBackView = UIView()
 
     private let titleLabel: UILabel = {
@@ -73,6 +64,14 @@ final class CommonBottomSheetContentView: UIView {
         stackView.alignment = .fill
         stackView.spacing = 16
         baseStackView.addArrangedSubview(stackView)
+        return stackView
+    }()
+
+    private lazy var baseStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabelBackView, messageBodyLabel])
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 24
         return stackView
     }()
 

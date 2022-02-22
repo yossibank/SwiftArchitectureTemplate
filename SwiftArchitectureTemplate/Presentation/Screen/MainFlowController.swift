@@ -1,9 +1,8 @@
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class MainFlowController: UIViewController {
-
     private let tabController = TabBarController()
 
     init() {

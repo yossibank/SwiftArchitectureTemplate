@@ -6,6 +6,8 @@ protocol FirstViewControllerDelegate: AnyObject {
     func didNextButtonTapped()
 }
 
+// MARK: - inject
+
 extension FirstViewController: VCInjectable {
     typealias VM = FirstViewModel
     typealias UI = FirstUI
@@ -14,7 +16,6 @@ extension FirstViewController: VCInjectable {
 // MARK: - stored properties
 
 final class FirstViewController: UIViewController {
-
     var viewModel: VM!
     var ui: UI!
 
@@ -52,8 +53,7 @@ private extension FirstViewController {
 
     func setupEvent() {
         ui.buttonTapPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-            self.delegate.didNextButtonTapped()
+            self?.delegate.didNextButtonTapped()
         }
         .store(in: &cancellables)
 

@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - inject
+
 extension SecondViewController: VCInjectable {
     typealias VM = SecondViewModel
     typealias UI = SecondUI

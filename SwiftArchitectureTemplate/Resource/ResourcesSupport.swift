@@ -28,7 +28,6 @@ extension Initializable where Self: UIViewController {
         let finalStoryboardName = customStoryboard ?? resourceName
         let storyboard = UIStoryboard(name: finalStoryboardName, bundle: Bundle(for: self))
         let controller = storyboard.instantiateInitialViewController()
-
         return controller as! Self
     }
 

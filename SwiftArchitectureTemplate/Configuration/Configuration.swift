@@ -8,9 +8,7 @@ struct Configuration {
     }
 
     static func value<T>(for key: String) throws -> T where T: LosslessStringConvertible {
-        guard
-            let object = Bundle.main.object(forInfoDictionaryKey: key)
-        else {
+        guard let object = Bundle.main.object(forInfoDictionaryKey: key) else {
             throw Error.missingKey
         }
 
@@ -19,9 +17,7 @@ struct Configuration {
                 return value
 
             case let string as String:
-                guard
-                    let value = T(string)
-                else {
+                guard let value = T(string) else {
                     fallthrough
                 }
 

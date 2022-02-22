@@ -3,7 +3,6 @@ import UIKit
 // MARK: - stored properties
 
 final class SecondUI {
-
     private let button: UIButton = .init(
         style: .someStyle,
         title: Resources.Strings.Button.cancelButtonTitle

@@ -1,7 +1,6 @@
 import UIKit
 
 protocol VCInjectable: UIViewController {
-
     associatedtype VM: ViewModel
     associatedtype UI: UserInterface
 

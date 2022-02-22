@@ -1,9 +1,8 @@
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class AppFlowController: UIViewController {
-
     private let mainFlowController = MainFlowController()
     private let loginFlowController = LoginFlowController()
 
@@ -50,6 +49,7 @@ extension AppFlowController: FlowController {
 extension AppFlowController: LoginFlowControllerDelegate {
 
     func didLoginButtonTapped() {
+        AppDataHolder.isLogin = true
         start()
     }
 }

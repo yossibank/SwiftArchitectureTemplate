@@ -5,15 +5,13 @@ extension BottomSheetViewController: VCInjectable {
     typealias UI = BottomSheetUI
 }
 
-// MARK: - stored properties
+// MARK: - stored properties & init
 
 final class BottomSheetViewController: UIViewController {
-
     var viewModel: VM!
     var ui: UI!
 
     private var contentView: UIView?
-
     private var dismissCallback: VoidBlock?
 
     init(dismissCallBack: VoidBlock? = nil) {

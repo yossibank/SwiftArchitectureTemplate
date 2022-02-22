@@ -1,9 +1,8 @@
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class SecondFlowController: UIViewController {
-
     private let navVC = NavigationController()
 
     init() {
