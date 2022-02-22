@@ -8,7 +8,6 @@ extension UIControl {
         SubscriberType: Subscriber,
         Control: UIControl
     >: Combine.Subscription where SubscriberType.Input == Control {
-
         private var subscriber: SubscriberType?
         private let control: Control
 
@@ -41,7 +40,6 @@ extension UIControl {
     }
 
     struct Publisher<Control: UIControl>: Combine.Publisher {
-
         typealias Output = Control
         typealias Failure = Never
 
