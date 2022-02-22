@@ -2,7 +2,6 @@ import Foundation
 
 @propertyWrapper
 public class KeychainStorage<T: LosslessStringConvertible> {
-
     private let key: String
 
     public init(key: String) {
@@ -11,18 +10,14 @@ public class KeychainStorage<T: LosslessStringConvertible> {
 
     public var wrappedValue: T? {
         get {
-            guard
-                let result = Keychain().get(key)
-            else {
+            guard let result = Keychain().get(key) else {
                 return nil
             }
 
             return T(result)
         }
         set {
-            guard
-                let new = newValue
-            else {
+            guard let new = newValue else {
                 Keychain().remove(key)
                 return
             }
@@ -43,18 +38,8 @@ private struct Keychain {
         let status = SecItemCopyMatching(query as CFDictionary, &result)
 
         guard
-            errSecSuccess == status
-        else {
-            return nil
-        }
-
-        guard
-            let data = result as? Data
-        else {
-            return nil
-        }
-
-        guard
+            errSecSuccess == status,
+            let data = result as? Data,
             let string = String(data: data, encoding: .utf8)
         else {
             return nil
@@ -69,9 +54,7 @@ private struct Keychain {
     }
 
     func set(_ value: String, key: String) {
-        guard
-            let data = value.data(using: .utf8, allowLossyConversion: false)
-        else {
+        guard let data = value.data(using: .utf8, allowLossyConversion: false) else {
             return
         }
 

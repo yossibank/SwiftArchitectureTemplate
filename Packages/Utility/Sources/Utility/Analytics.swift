@@ -5,10 +5,9 @@ public protocol AnalyticsProvider {
 }
 
 public final class Analytics {
+    var provider: AnalyticsProvider?
 
     public static var shared: Analytics = .init()
-
-    var provider: AnalyticsProvider?
 
     private init() {}
 
