@@ -51,16 +51,19 @@ extension DEBUG_FlowController: FlowController {
 
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
-    func didItemSelected(item: DEBUG_Item) {
+    func didComponentSelected(item: DEBUG_Component) {
         switch item {
             case .bottomSheetContent:
                 let vc = Resources.ViewControllers.App.debugBottomSheetList()
                 navVC.present(vc, animated: true)
+        }
+    }
 
+    func didControllerSelected(item: DEBUG_Controller) {
+        switch item {
             case .first:
                 let vc = Resources.ViewControllers.App.first()
                 vc.delegate = self
-
                 navVC.pushViewController(vc, animated: true)
 
             case .firstDetail:

@@ -32,7 +32,7 @@ extension DEBUG_UI {
         dataSourceSnapshot.appendSections(DEBUG_Section.allCases)
 
         DEBUG_Section.allCases.forEach {
-            dataSourceSnapshot.appendItems($0.initialItems, toSection: $0)
+            dataSourceSnapshot.appendItems($0.items, toSection: $0)
         }
 
         dataSource.apply(
@@ -62,17 +62,30 @@ private extension DEBUG_UI {
 
     func makeCell(
         tableView: UITableView,
-        indexPath : IndexPath,
+        indexPath: IndexPath,
         item: DEBUG_Item
     ) -> UITableViewCell? {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: UITableViewCell.resourceName,
-            for: indexPath
-        )
+        switch item {
+            case let .component(content):
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: UITableViewCell.resourceName,
+                    for: indexPath
+                )
 
-        cell.textLabel?.font = .italicSystemFont(ofSize: 18)
-        cell.textLabel?.text = item.rawValue.addSpaceAfterUppercase().uppercased()
-        return cell
+                cell.textLabel?.font = .italicSystemFont(ofSize: 18)
+                cell.textLabel?.text = content.rawValue.addSpaceAfterUppercase().uppercased()
+                return cell
+
+            case let .controller(content):
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: UITableViewCell.resourceName,
+                    for: indexPath
+                )
+
+                cell.textLabel?.font = .italicSystemFont(ofSize: 18)
+                cell.textLabel?.text = content.rawValue.addSpaceAfterUppercase().uppercased()
+                return cell
+        }
     }
 }
 

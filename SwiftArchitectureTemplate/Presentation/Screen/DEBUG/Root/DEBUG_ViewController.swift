@@ -3,7 +3,8 @@
 import UIKit
 
 protocol DEBUG_ViewControllerDelegate: AnyObject {
-    func didItemSelected(item: DEBUG_Item)
+    func didComponentSelected(item: DEBUG_Component)
+    func didControllerSelected(item: DEBUG_Controller)
 }
 
 // MARK: - inject
@@ -67,9 +68,16 @@ extension DEBUG_ViewController: UITableViewDelegate {
         )
 
         let section = DEBUG_Section.allCases[indexPath.section]
-        let item = section.initialItems[indexPath.row]
 
-        delegate.didItemSelected(item: item)
+        switch section {
+            case .component:
+                let item = DEBUG_Component.allCases[indexPath.row]
+                delegate.didComponentSelected(item: item)
+
+            case .viewController:
+                let item = DEBUG_Controller.allCases[indexPath.row]
+                delegate.didControllerSelected(item: item)
+        }
     }
 }
 
