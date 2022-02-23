@@ -6,6 +6,7 @@ final class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.setupBackGroundColor(color: Resources.Colors.staticColor)
     }
 }
 
@@ -21,6 +22,7 @@ extension UINavigationBar {
             standardAppearance = appearance
             scrollEdgeAppearance = appearance
         } else {
+            isTranslucent = false
             barTintColor = color
         }
     }

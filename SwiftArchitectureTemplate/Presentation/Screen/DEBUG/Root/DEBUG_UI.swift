@@ -44,6 +44,7 @@ extension DEBUG_UI {
         tableView.dataSource = dataSource
         tableView.delegate = delegate
         tableView.rowHeight = 60
+        tableView.tableFooterView = UIView()
 
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0

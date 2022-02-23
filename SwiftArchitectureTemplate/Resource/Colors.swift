@@ -2,11 +2,8 @@ import UIKit
 
 struct ColorResources {
     static let sampleColor: UIColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
-
-    static let borderColor: UIColor = .dynamicColor(
-        light: .black,
-        dark: .lightGray
-    )
+    static let borderColor: UIColor = .dynamicColor(light: .black, dark: .lightGray)
+    static let staticColor: UIColor = .dynamicColor(light: .white, dark: .black)
 }
 
 extension UIColor {
