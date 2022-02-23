@@ -1,10 +1,19 @@
 #if DEBUG
 
+import Combine
 import UIKit
+
+// MARK: - debug UI event protocol
+
+protocol DEBUG_UI_Delegate: AnyObject {
+    func selectedThemeIndex(_ publisher: AnyPublisher<Int, Never>)
+}
 
 // MARK: - stored properties
 
 final class DEBUG_UI {
+    weak var delegate: DEBUG_UI_Delegate!
+
     private let tableView = UITableView()
 
     private var dataSourceSnapshot = NSDiffableDataSourceSnapshot<DEBUG_Section, DEBUG_Item>()
@@ -15,15 +24,26 @@ final class DEBUG_UI {
 
 extension DEBUG_UI {
 
+    func injectDelegate(_ delegate: DEBUG_UI_Delegate) {
+        self.delegate = delegate
+    }
+
     func setupTableView(delegate: UITableViewDelegate) {
         dataSource = configureDataSource()
+
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: UITableViewCell.resourceName
         )
+
+        tableView.register(
+            ThemeCell.self,
+            forCellReuseIdentifier: ThemeCell.resourceName
+        )
+
         tableView.dataSource = dataSource
-        tableView.rowHeight = 60
         tableView.delegate = delegate
+        tableView.rowHeight = 60
 
         if #available(iOS 15.0, *) {
             tableView.sectionHeaderTopPadding = 0
@@ -66,6 +86,24 @@ private extension DEBUG_UI {
         item: DEBUG_Item
     ) -> UITableViewCell? {
         switch item {
+            case let .development(content):
+                guard
+                    let cell = tableView.dequeueReusableCell(
+                        withIdentifier: ThemeCell.resourceName,
+                        for: indexPath
+                    ) as? ThemeCell
+                else {
+                    return UITableViewCell()
+                }
+
+                cell.configure(
+                    title: content.rawValue,
+                    themeStyle: AppDataHolder.colorTheme
+                )
+
+                delegate.selectedThemeIndex(cell.segmentPublisher)
+                return cell
+
             case let .component(content):
                 let cell = tableView.dequeueReusableCell(
                     withIdentifier: UITableViewCell.resourceName,

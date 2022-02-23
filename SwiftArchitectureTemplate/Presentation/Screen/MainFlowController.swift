@@ -1,8 +1,16 @@
 import UIKit
 
+// MARK: - received event main flow controller
+
+protocol MainFlowControllerDelegate: AnyObject {
+    func didChangeThemeSelected(value: Int)
+}
+
 // MARK: - stored properties & init
 
 final class MainFlowController: UIViewController {
+    weak var delegate: MainFlowControllerDelegate!
+
     private let tabController = TabBarController()
 
     init() {
@@ -38,7 +46,10 @@ extension MainFlowController: FlowController {
         let flows: [FlowController]
 
         #if DEBUG
-        flows = [FirstFlowController(), SecondFlowController(), DEBUG_FlowController()]
+        let debugFlowController = DEBUG_FlowController()
+        debugFlowController.delegate = self
+
+        flows = [FirstFlowController(), SecondFlowController(), debugFlowController]
         #else
         flows = [FirstFlowController(), SecondFlowController()]
         #endif
@@ -46,5 +57,14 @@ extension MainFlowController: FlowController {
         tabController.setViewControllers(flows, animated: false)
 
         flows.forEach { $0.start() }
+    }
+}
+
+// MARK: - delegate
+
+extension MainFlowController: MainFlowControllerDelegate {
+
+    func didChangeThemeSelected(value: Int) {
+        delegate.didChangeThemeSelected(value: value)
     }
 }

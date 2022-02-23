@@ -1,10 +1,18 @@
 import UIKit
 
+// MARK: - received event app delegate
+
+protocol AppFlowControllerDelegate: AnyObject {
+    func didChangeThemeSelected(value: Int)
+}
+
 // MARK: - stored properties & init
 
 final class AppFlowController: UIViewController {
     private let mainFlowController = MainFlowController()
     private let loginFlowController = LoginFlowController()
+
+    weak var delegate: AppFlowControllerDelegate!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -35,16 +43,24 @@ extension AppFlowController: FlowController {
 
         if AppDataHolder.isLogin ?? false {
             add(mainFlowController)
+            mainFlowController.delegate = self
             mainFlowController.start()
         } else {
-            loginFlowController.delegate = self
             add(loginFlowController)
+            loginFlowController.delegate = self
             loginFlowController.start()
         }
     }
 }
 
 // MARK: - delegate
+
+extension AppFlowController: MainFlowControllerDelegate {
+
+    func didChangeThemeSelected(value: Int) {
+        delegate.didChangeThemeSelected(value: value)
+    }
+}
 
 extension AppFlowController: LoginFlowControllerDelegate {
 
