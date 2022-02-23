@@ -1,7 +1,6 @@
 import Foundation
 
 public struct SamplePostRequest: Request {
-
     public typealias Response = SampleResponse
     public typealias PathComponent = EmptyPathComponent
 
@@ -12,10 +11,10 @@ public struct SamplePostRequest: Request {
     }
 
     public let parameters: Parameters
+
     public var queryItems: [URLQueryItem]?
     public var method: HTTPMethod { .post }
     public var path: String { "/posts" }
-
     public var testDataPath: URL? {
         Bundle.module.url(forResource: "PostSample", withExtension: "json")
     }

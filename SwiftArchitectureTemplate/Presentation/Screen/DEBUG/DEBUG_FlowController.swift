@@ -2,9 +2,10 @@
 
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class DEBUG_FlowController: UIViewController {
+    weak var delegate: MainFlowControllerDelegate!
 
     private let navVC = NavigationController()
 
@@ -52,16 +53,26 @@ extension DEBUG_FlowController: FlowController {
 
 extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
 
-    func didItemSelected(item: DEBUG_Item) {
+    func didDevelopmentSelected(item: DEBUG_Development) {
+        switch item {
+            case .theme:
+                print("tapped theme")
+        }
+    }
+
+    func didComponentSelected(item: DEBUG_Component) {
         switch item {
             case .bottomSheetContent:
                 let vc = Resources.ViewControllers.App.debugBottomSheetList()
                 navVC.present(vc, animated: true)
+        }
+    }
 
+    func didControllerSelected(item: DEBUG_Controller) {
+        switch item {
             case .first:
                 let vc = Resources.ViewControllers.App.first()
                 vc.delegate = self
-
                 navVC.pushViewController(vc, animated: true)
 
             case .firstDetail:
@@ -72,6 +83,10 @@ extension DEBUG_FlowController: DEBUG_ViewControllerDelegate {
                 let vc = Resources.ViewControllers.App.second()
                 navVC.pushViewController(vc, animated: true)
         }
+    }
+
+    func didChangeThemeSelected(value: Int) {
+        delegate.didChangeThemeSelected(value: value)
     }
 }
 

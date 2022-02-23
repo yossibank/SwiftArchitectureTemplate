@@ -4,7 +4,6 @@
 import XCTest
 
 final class FirstViewModelTests: XCTestCase {
-
     private var viewModel: FirstViewModel!
 
     override func setUpWithError() throws {

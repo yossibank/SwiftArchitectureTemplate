@@ -3,14 +3,13 @@ import Domain
 import Utility
 
 final class FirstViewModel: ViewModel {
-
     typealias State = LoadingState<[SampleEntity], AppError>
 
-    private var cancellables: Set<AnyCancellable> = []
+    @Published private(set) var state: State = .standby
 
     private let usecase: FetchSampleUsecase
 
-    @Published private(set) var state: State = .standby
+    private var cancellables: Set<AnyCancellable> = []
 
     init(usecase: FetchSampleUsecase = Domain.Usecase.FetchSample()) {
         self.usecase = usecase

@@ -1,7 +1,4 @@
-import Foundation
-
 public struct SetOnboardingFinishedRequest: LocalRequest {
-
     public typealias Response = EmptyResponse
     public typealias Parameters = Bool
     public typealias PathComponent = EmptyPathComponent

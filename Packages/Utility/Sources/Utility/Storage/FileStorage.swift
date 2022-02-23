@@ -2,9 +2,8 @@ import Foundation
 
 @propertyWrapper
 public class FileStorage<T: Codable> {
-
-    private var value: T?
     private let file: String
+    private var value: T?
 
     public init(fileName: String) {
         self.file = fileName
@@ -92,9 +91,7 @@ private struct LocalStorageManager {
         dispatchQueue.async {
             let jsonEncoder = JSONEncoder()
 
-            guard
-                let jsonData = try? jsonEncoder.encode(jsonEncodable)
-            else {
+            guard let jsonData = try? jsonEncoder.encode(jsonEncodable) else {
                 return
             }
 

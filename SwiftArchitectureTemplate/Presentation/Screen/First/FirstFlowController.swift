@@ -1,9 +1,8 @@
 import UIKit
 
-// MARK: - Stored Properties & Init
+// MARK: - stored properties & init
 
 final class FirstFlowController: UIViewController {
-
     private let navVC = NavigationController()
 
     init() {
@@ -46,7 +45,7 @@ extension FirstFlowController: FlowController {
     }
 }
 
-// MARK: - Delegate
+// MARK: - delegate
 
 extension FirstFlowController: FirstViewControllerDelegate {
 

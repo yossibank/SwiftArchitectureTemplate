@@ -3,7 +3,6 @@ import Data
 import Utility
 
 protocol Usecase {
-
     associatedtype Repository
     associatedtype Mapper
 
@@ -13,7 +12,6 @@ protocol Usecase {
 }
 
 public struct UsecaseImpl<R, M>: Usecase {
-
     var repository: R
     var mapper: M
     var analytics: Analytics = .shared

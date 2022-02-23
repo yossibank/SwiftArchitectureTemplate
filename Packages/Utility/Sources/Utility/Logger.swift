@@ -1,7 +1,6 @@
 import OSLog
 
 public struct Logger {
-
     private static var osLog = OSLog.default
 
     public static func info(

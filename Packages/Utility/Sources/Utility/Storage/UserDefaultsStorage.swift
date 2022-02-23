@@ -2,7 +2,6 @@ import Foundation
 
 @propertyWrapper
 public class UserDefaultsStorage<T: LosslessStringConvertible> {
-
     private let key: String
 
     public init(key: String) {

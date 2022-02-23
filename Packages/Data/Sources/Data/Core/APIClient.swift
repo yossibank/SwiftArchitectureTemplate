@@ -16,9 +16,7 @@ struct APIClient {
         }
         #endif
 
-        guard
-            let urlRequest = createURLRequest(item)
-        else {
+        guard let urlRequest = createURLRequest(item) else {
             completion(.failure(.invalidRequest))
             return
         }
@@ -30,9 +28,7 @@ struct APIClient {
         }
 
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, _ in
-            guard
-                let data = data
-            else {
+            guard let data = data else {
                 completion(.failure(.responseError))
                 return
             }
@@ -56,9 +52,7 @@ struct APIClient {
     }
 
     private func createURLRequest<R: Request>(_ requestItem: R) -> URLRequest? {
-        guard
-            let fullPath = URL(string: requestItem.baseURL + requestItem.path)
-        else {
+        guard let fullPath = URL(string: requestItem.baseURL + requestItem.path) else {
             return nil
         }
 
@@ -69,9 +63,7 @@ struct APIClient {
         urlComponents.port = fullPath.port
         urlComponents.queryItems = requestItem.queryItems
 
-        guard
-            let url = urlComponents.url
-        else {
+        guard let url = urlComponents.url else {
             return nil
         }
 

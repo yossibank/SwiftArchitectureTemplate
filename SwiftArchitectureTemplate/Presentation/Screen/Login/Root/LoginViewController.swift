@@ -5,6 +5,8 @@ protocol LoginViewControllerDelegate: AnyObject {
     func didLoginButtonTapped()
 }
 
+// MARK: - inject
+
 extension LoginViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = LoginUI
@@ -13,7 +15,6 @@ extension LoginViewController: VCInjectable {
 // MARK: - stored properties
 
 final class LoginViewController: UIViewController {
-
     var viewModel: VM!
     var ui: UI!
 
@@ -41,9 +42,7 @@ private extension LoginViewController {
 
     func setupEvent() {
         ui.buttonTapPublisher.sink { [weak self] _ in
-            guard let self = self else { return }
-            AppDataHolder.isLogin = true
-            self.delegate.didLoginButtonTapped()
+            self?.delegate.didLoginButtonTapped()
         }
         .store(in: &cancellables)
     }

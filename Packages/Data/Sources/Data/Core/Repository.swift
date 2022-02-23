@@ -1,7 +1,6 @@
 import Foundation
 
 public protocol Repo {
-
     associatedtype T: Request
 
     func request(
@@ -18,7 +17,6 @@ public protocol Repo {
 }
 
 public struct Repository<T: Request>: Repo {
-
     public init() {}
 
     public func request(

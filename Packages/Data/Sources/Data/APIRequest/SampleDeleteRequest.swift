@@ -1,18 +1,17 @@
 import Foundation
 
 public struct SampleDeleteRequest: Request {
-
     public typealias Parameters = EmptyParameters
     public typealias Response = EmptyResponse
 
     private let id: Int
 
     public let parameters: Parameters
+
     public var queryItems: [URLQueryItem]?
     public var method: HTTPMethod { .delete }
     public var path: String { "/posts/\(id)" }
     public var body: Data?
-
     public var testDataPath: URL? { nil }
 
     public init(

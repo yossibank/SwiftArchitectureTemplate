@@ -1,5 +1,7 @@
 import UIKit
 
+// MARK: - inject
+
 extension FirstDetailViewController: VCInjectable {
     typealias VM = NoViewModel
     typealias UI = NoUserInterface

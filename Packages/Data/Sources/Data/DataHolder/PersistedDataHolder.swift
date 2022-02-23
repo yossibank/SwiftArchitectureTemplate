@@ -1,7 +1,6 @@
 import Utility
 
 struct PersistedDataHolder {
-
     @UserDefaultsStorage(key: UserDefaultKey.onboardingFinished)
     static var onboardingFinished: Bool?
 

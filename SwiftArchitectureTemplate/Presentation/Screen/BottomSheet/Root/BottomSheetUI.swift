@@ -3,7 +3,6 @@ import UIKit
 // MARK: - stored properties
 
 final class BottomSheetUI {
-
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBackground
@@ -12,11 +11,9 @@ final class BottomSheetUI {
         return view
     }()
 
-    private let bottomSheetLineImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = Resources.Images.General.bottomSheetBar
-        return imageView
-    }()
+    private let bottomSheetLineImageView: UIImageView = .init(
+        image: Resources.Images.General.bottomSheetBar
+    )
 
     private let baseView = UIView()
 }
@@ -59,7 +56,6 @@ extension BottomSheetUI: UserInterface {
             bottomSheetLineImageView.widthAnchor.constraint(equalToConstant: 30),
             bottomSheetLineImageView.heightAnchor.constraint(equalToConstant: 5),
 
-            baseView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             baseView.topAnchor.constraint(equalTo: bottomSheetLineImageView.bottomAnchor, constant: 16),
             baseView.bottomAnchor.constraint(equalTo: rootView.bottomAnchor, constant: -40),
             baseView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
