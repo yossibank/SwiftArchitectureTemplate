@@ -1,20 +1,18 @@
 import UIKit
 
 extension Stylable where Self == UIButton {
-
     init(
         style: ViewStyle<Self>,
         title: String,
         for state: UIControl.State = .normal
     ) {
         self.init()
-        self.setTitle(title, for: state)
+        setTitle(title, for: state)
         apply(style)
     }
 }
 
 extension ViewStyle where T: UIButton {
-
     static var someStyle: ViewStyle<T> {
         ViewStyle<T> {
             $0.setTitleColor(.white, for: .normal)

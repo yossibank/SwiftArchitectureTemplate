@@ -2,18 +2,17 @@ import Foundation
 import Utility
 
 struct APIClient {
-
     func request<R: Request, T>(
         item: R,
         useTestData: Bool = false,
         completion: @escaping (Result<T, APIError>) -> Void
     ) where R.Response == T {
         #if DEBUG
-        if useTestData {
-            let testDataFetchRequest = TestDataFetchRequest(testDataJsonPath: item.testDataPath)
-            completion(testDataFetchRequest.fetchLocalTestData(responseType: T.self))
-            return
-        }
+            if useTestData {
+                let testDataFetchRequest = TestDataFetchRequest(testDataJsonPath: item.testDataPath)
+                completion(testDataFetchRequest.fetchLocalTestData(responseType: T.self))
+                return
+            }
         #endif
 
         guard let urlRequest = createURLRequest(item) else {

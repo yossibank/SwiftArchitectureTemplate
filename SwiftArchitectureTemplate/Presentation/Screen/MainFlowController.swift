@@ -27,7 +27,6 @@ final class MainFlowController: UIViewController {
 // MARK: - override methods
 
 extension MainFlowController {
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -41,17 +40,16 @@ extension MainFlowController {
 // MARK: - protocol
 
 extension MainFlowController: FlowController {
-
     func start() {
         let flows: [FlowController]
 
         #if DEBUG
-        let debugFlowController = DEBUG_FlowController()
-        debugFlowController.delegate = self
+            let debugFlowController = DEBUG_FlowController()
+            debugFlowController.delegate = self
 
-        flows = [FirstFlowController(), SecondFlowController(), debugFlowController]
+            flows = [FirstFlowController(), SecondFlowController(), debugFlowController]
         #else
-        flows = [FirstFlowController(), SecondFlowController()]
+            flows = [FirstFlowController(), SecondFlowController()]
         #endif
 
         tabController.setViewControllers(flows, animated: false)
@@ -63,7 +61,6 @@ extension MainFlowController: FlowController {
 // MARK: - delegate
 
 extension MainFlowController: MainFlowControllerDelegate {
-
     func didChangeThemeSelected(value: Int) {
         delegate.didChangeThemeSelected(value: value)
     }

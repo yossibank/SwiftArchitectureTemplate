@@ -10,7 +10,6 @@ protocol Initializable: AnyObject {
 protocol ClassInitializable: Initializable {}
 
 extension NSObject: ClassInitializable {
-
     static var className: String {
         String(describing: self)
     }
@@ -21,7 +20,6 @@ extension NSObject: ClassInitializable {
 }
 
 extension Initializable where Self: UIViewController {
-
     static func instantiateInitialViewController(
         fromStoryboardOrNil customStoryboard: String? = nil
     ) -> Self {

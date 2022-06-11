@@ -1,7 +1,6 @@
 import XCTest
 
 class SwiftArchitectureTemplateUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

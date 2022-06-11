@@ -1,7 +1,6 @@
 import Foundation
 
 public struct TestDataFetchRequest {
-
     private let testDataJsonPath: URL?
 
     public init(testDataJsonPath: URL?) {

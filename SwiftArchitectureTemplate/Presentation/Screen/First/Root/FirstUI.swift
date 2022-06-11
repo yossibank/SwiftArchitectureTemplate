@@ -23,7 +23,6 @@ final class FirstUI {
 // MARK: - protocol
 
 extension FirstUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

@@ -17,7 +17,6 @@ final class FirstDetailViewController: UIViewController {
 // MARK: - override methods
 
 extension FirstDetailViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground

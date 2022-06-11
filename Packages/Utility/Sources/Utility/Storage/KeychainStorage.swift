@@ -28,7 +28,6 @@ public class KeychainStorage<T: LosslessStringConvertible> {
 }
 
 private struct Keychain {
-
     func get(_ key: String) -> String? {
         var query = query(key: key)
         query[String(kSecMatchLimit)] = kSecMatchLimitOne

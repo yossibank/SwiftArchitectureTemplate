@@ -12,7 +12,6 @@ final class SecondUI {
 // MARK: - protocol
 
 extension SecondUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

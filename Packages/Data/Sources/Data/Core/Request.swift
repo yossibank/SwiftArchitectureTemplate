@@ -35,9 +35,9 @@ public enum HTTPMethod: String {
     case connect = "CONNECT"
 }
 
-struct HTTPStatusCode {
+enum HTTPStatusCode {
     static let noContent: Int = 204
-    static let successRange: ClosedRange<Int> = 200...299
+    static let successRange: ClosedRange<Int> = 200 ... 299
     static let unauthorized: Int = 401
     static let notFound: Int = 404
     static let unprocessableEntity: Int = 422
@@ -58,10 +58,10 @@ public protocol Request {
     var wantCache: Bool { get }
     var localDataInterceptor: (Parameters) -> Response? { get }
     var successHandler: (Response) -> Void { get }
-    var failureHandler: (Error) -> Void  { get }
+    var failureHandler: (Error) -> Void { get }
 
     #if DEBUG
-    var testDataPath: URL? { get }
+        var testDataPath: URL? { get }
     #endif
 
     init(
@@ -71,7 +71,6 @@ public protocol Request {
 }
 
 public extension Request {
-
     var baseURL: String {
         DataConfig.baseURL
     }
@@ -118,7 +117,6 @@ public extension Request {
 }
 
 private extension Encodable {
-
     var dictionary: [String: CustomStringConvertible?] {
         (
             try? JSONSerialization.jsonObject(

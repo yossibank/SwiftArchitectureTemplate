@@ -17,7 +17,6 @@ final class LoginUI {
 // MARK: - protocol
 
 extension LoginUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

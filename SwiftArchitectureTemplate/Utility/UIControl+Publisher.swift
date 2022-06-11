@@ -3,7 +3,6 @@ import Foundation
 import UIKit
 
 extension UIControl {
-
     final class Subscription<
         SubscriberType: Subscriber,
         Control: UIControl
@@ -48,12 +47,12 @@ extension UIControl {
 
         init(control: Control, events: UIControl.Event) {
             self.control = control
-            self.controlEvents = events
+            controlEvents = events
         }
 
         func receive<S>(
             subscriber: S
-        ) where S : Subscriber, Failure == S.Failure, Output == S.Input {
+        ) where S: Subscriber, Failure == S.Failure, Output == S.Input {
             let subscription = Subscription(
                 subscriber: subscriber,
                 control: control,
@@ -70,28 +69,21 @@ protocol CombineCompatible {}
 extension UIControl: CombineCompatible {}
 
 extension CombineCompatible where Self: UIControl {
-
     func publisher(for events: UIControl.Event) -> UIControl.Publisher<Self> {
         UIControl.Publisher(control: self, events: events)
     }
 }
 
 extension CombineCompatible where Self: UISwitch {
-
     var isOnPublisher: AnyPublisher<Bool, Never> {
-        publisher(for: [.allEditingEvents, .valueChanged]).map {
-            $0.isOn
-        }
-        .eraseToAnyPublisher()
+        publisher(for: [.allEditingEvents, .valueChanged]).map(\.isOn)
+            .eraseToAnyPublisher()
     }
 }
 
 extension CombineCompatible where Self: UISegmentedControl {
-
     var selectedIndexPublisher: AnyPublisher<Int, Never> {
-        publisher(for: [.allEditingEvents, .valueChanged]).map {
-            $0.selectedSegmentIndex
-        }
-        .eraseToAnyPublisher()
+        publisher(for: [.allEditingEvents, .valueChanged]).map(\.selectedSegmentIndex)
+            .eraseToAnyPublisher()
     }
 }

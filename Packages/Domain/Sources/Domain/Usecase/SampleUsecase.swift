@@ -2,7 +2,6 @@ import Combine
 import Data
 
 public extension UsecaseImpl where R == Repos.Sample.Get, M == SampleMapper {
-
     func execute(userId: Int? = nil) -> AnyPublisher<[SampleEntity], APIError> {
         toPublisher { promise in
             analytics.sendEvent()

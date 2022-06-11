@@ -1,7 +1,6 @@
 import UIKit
 
 extension Resources {
-
     static var ViewControllers: ViewController {
         ViewController()
     }
@@ -12,7 +11,6 @@ extension Resources {
         }
 
         struct AppControllers {
-
             func login() -> LoginViewController {
                 let instance = LoginViewController()
                 instance.inject(ui: LoginUI())
@@ -49,18 +47,18 @@ extension Resources {
 
             #if DEBUG
 
-            func debug() -> DEBUG_ViewController {
-                let instance = DEBUG_ViewController()
-                instance.inject(ui: DEBUG_UI())
-                instance.title = "DEBUG"
-                return instance
-            }
+                func debug() -> DEBUG_ViewController {
+                    let instance = DEBUG_ViewController()
+                    instance.inject(ui: DEBUG_UI())
+                    instance.title = "DEBUG"
+                    return instance
+                }
 
-            func debugBottomSheetList() -> DEBUG_BottomSheetListViewController {
-                let instance = DEBUG_BottomSheetListViewController()
-                instance.inject(ui: DEBUG_BottomSheetListUI())
-                return instance
-            }
+                func debugBottomSheetList() -> DEBUG_BottomSheetListViewController {
+                    let instance = DEBUG_BottomSheetListViewController()
+                    instance.inject(ui: DEBUG_BottomSheetListUI())
+                    return instance
+                }
 
             #endif
         }

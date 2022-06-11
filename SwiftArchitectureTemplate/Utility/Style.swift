@@ -5,7 +5,6 @@ struct ViewStyle<T> {
 }
 
 extension ViewStyle {
-
     func compose(with style: ViewStyle<T>) -> ViewStyle<T> {
         ViewStyle<T> {
             self.style($0)
@@ -21,7 +20,6 @@ protocol Stylable {
 extension UIView: Stylable {}
 
 extension Stylable {
-
     init(style: ViewStyle<Self>) {
         self.init()
         apply(style)

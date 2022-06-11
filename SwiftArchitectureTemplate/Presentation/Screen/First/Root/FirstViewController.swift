@@ -27,7 +27,6 @@ final class FirstViewController: UIViewController {
 // MARK: - override methods
 
 extension FirstViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +49,6 @@ extension FirstViewController {
 // MARK: - private methods
 
 private extension FirstViewController {
-
     func setupEvent() {
         ui.buttonTapPublisher.sink { [weak self] _ in
             self?.delegate.didNextButtonTapped()
@@ -82,4 +80,3 @@ private extension FirstViewController {
         .store(in: &cancellables)
     }
 }
-

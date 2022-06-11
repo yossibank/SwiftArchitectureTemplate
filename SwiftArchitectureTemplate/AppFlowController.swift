@@ -27,7 +27,6 @@ final class AppFlowController: UIViewController {
 // MARK: - override methods
 
 extension AppFlowController {
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         children.first?.view.frame = view.bounds
@@ -37,7 +36,6 @@ extension AppFlowController {
 // MARK: - protocol
 
 extension AppFlowController: FlowController {
-
     func start() {
         removeFirstChild()
 
@@ -56,14 +54,12 @@ extension AppFlowController: FlowController {
 // MARK: - delegate
 
 extension AppFlowController: MainFlowControllerDelegate {
-
     func didChangeThemeSelected(value: Int) {
         delegate.didChangeThemeSelected(value: value)
     }
 }
 
 extension AppFlowController: LoginFlowControllerDelegate {
-
     func didLoginButtonTapped() {
         AppDataHolder.isLogin = true
         start()

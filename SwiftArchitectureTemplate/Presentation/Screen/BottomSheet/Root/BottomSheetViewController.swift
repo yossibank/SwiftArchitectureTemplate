@@ -15,12 +15,12 @@ final class BottomSheetViewController: UIViewController {
     private var dismissCallback: VoidBlock?
 
     init(dismissCallBack: VoidBlock? = nil) {
-        self.dismissCallback = dismissCallBack
+        dismissCallback = dismissCallBack
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
-        self.dismissCallback = nil
+        dismissCallback = nil
         super.init(coder: coder)
     }
 }
@@ -28,7 +28,6 @@ final class BottomSheetViewController: UIViewController {
 // MARK: - override methods
 
 extension BottomSheetViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,7 +54,6 @@ extension BottomSheetViewController {
 // MARK: - internal methods
 
 extension BottomSheetViewController {
-
     func set(view: UIView) {
         contentView = view
     }
@@ -64,7 +62,6 @@ extension BottomSheetViewController {
 // MARK: - private methods
 
 private extension BottomSheetViewController {
-
     @objc func viewTapped() {
         dismiss(animated: true) { [weak self] in
             self?.dismissCallback?()
@@ -75,7 +72,6 @@ private extension BottomSheetViewController {
 // MARK: - delegate
 
 extension BottomSheetViewController: UIAdaptivePresentationControllerDelegate {
-
     func presentationControllerDidDismiss(_: UIPresentationController) {
         dismiss(animated: true) { [weak self] in
             self?.dismissCallback?()

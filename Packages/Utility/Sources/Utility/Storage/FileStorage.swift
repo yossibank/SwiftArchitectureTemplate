@@ -6,8 +6,8 @@ public class FileStorage<T: Codable> {
     private var value: T?
 
     public init(fileName: String) {
-        self.file = fileName
-        self.value = LocalStorageManager.getObjectFromFile(fileName: file)
+        file = fileName
+        value = LocalStorageManager.getObjectFromFile(fileName: file)
     }
 
     public var wrappedValue: T? {
@@ -29,8 +29,7 @@ public class FileStorage<T: Codable> {
     }
 }
 
-private struct LocalStorageManager {
-
+private enum LocalStorageManager {
     private enum PathSearchError: Error {
         case pathNotFound
     }
@@ -39,7 +38,7 @@ private struct LocalStorageManager {
         case localStorageManager
     }
 
-    private struct Constants {
+    private enum Constants {
         /* 0.2秒 */
         static let fileWritingDebounce = DispatchTimeInterval.milliseconds(200)
     }
@@ -130,7 +129,6 @@ private struct LocalStorageManager {
 }
 
 private extension LocalStorageManager {
-
     static func retrieveConfiguredFileURL(
         fileName: String,
         excludeFromBackup: Bool = true

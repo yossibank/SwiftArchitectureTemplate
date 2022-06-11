@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension UIWindow: AppFlowControllerDelegate {
-
     func didChangeThemeSelected(value: Int) {
         guard let style = UIUserInterfaceStyle(rawValue: value) else {
             return

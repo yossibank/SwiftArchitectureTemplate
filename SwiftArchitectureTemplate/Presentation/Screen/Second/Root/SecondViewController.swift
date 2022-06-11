@@ -17,7 +17,6 @@ final class SecondViewController: UIViewController {
 // MARK: - override methods
 
 extension SecondViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         ui.setupView(rootView: view)

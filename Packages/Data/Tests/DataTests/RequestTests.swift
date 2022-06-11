@@ -2,7 +2,6 @@
 import XCTest
 
 final class RequestTests: XCTestCase {
-
     override func setUpWithError() throws {
         PersistedDataHolder.onboardingFinished = nil
     }

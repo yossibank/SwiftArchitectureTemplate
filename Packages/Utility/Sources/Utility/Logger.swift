@@ -1,6 +1,6 @@
 import OSLog
 
-public struct Logger {
+public enum Logger {
     private static var osLog = OSLog.default
 
     public static func info(
@@ -76,22 +76,21 @@ public struct Logger {
         line: Int
     ) {
         #if DEBUG
-        os_log(
-            "❗️[%@] %@ %@ L:%d %@",
-            log: osLog,
-            type: logType,
-            String(describing: logType),
-            file.split(separator: "/").last! as CVarArg,
-            function,
-            line,
-            message
-        )
+            os_log(
+                "❗️[%@] %@ %@ L:%d %@",
+                log: osLog,
+                type: logType,
+                String(describing: logType),
+                file.split(separator: "/").last! as CVarArg,
+                function,
+                line,
+                message
+            )
         #endif
     }
 }
 
 extension OSLogType: CustomStringConvertible {
-
     public var description: String {
         switch self {
             case .info:
