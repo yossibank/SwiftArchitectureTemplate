@@ -21,7 +21,6 @@ final class BottomSheetUI {
 // MARK: - internal methods
 
 extension BottomSheetUI {
-
     func set(view: UIView) {
         baseView.addSubViews(
             view,
@@ -38,7 +37,6 @@ extension BottomSheetUI {
 // MARK: - protocol
 
 extension BottomSheetUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.addSubViews(
             containerView,

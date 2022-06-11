@@ -19,7 +19,6 @@ final class FirstViewModel: ViewModel {
 // MARK: - internal methods
 
 extension FirstViewModel {
-
     func viewWillAppear() {
         state = .loading
 

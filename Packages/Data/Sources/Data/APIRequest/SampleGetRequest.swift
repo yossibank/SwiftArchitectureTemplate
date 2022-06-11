@@ -12,20 +12,21 @@ public struct SampleGetRequest: Request {
         }
     }
 
+    // requirements
+    public var path: String { "/posts" }
+    public var method: HTTPMethod { .get }
     public let parameters: Parameters
 
-    public var method: HTTPMethod { .get }
-    public var path: String { "/posts" }
+    // options
     public var body: Data?
     public var wantCache: Bool { true }
+
+    // test
     public var testDataPath: URL? {
         Bundle.module.url(forResource: "GetSample", withExtension: "json")
     }
 
-    public init(
-        parameters: Parameters,
-        pathComponent _: EmptyPathComponent = .init()
-    ) {
+    public init(parameters: Parameters, pathComponent _: EmptyPathComponent = .init()) {
         self.parameters = parameters
     }
 }

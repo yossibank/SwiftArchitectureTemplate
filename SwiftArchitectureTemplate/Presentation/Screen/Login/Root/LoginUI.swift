@@ -4,20 +4,16 @@ import UIKit
 // MARK: - stored properties
 
 final class LoginUI {
-    private let button: UIButton = .init(
-        style: .someStyle,
-        title: Resources.Strings.Button.loginTitle
-    )
-
     lazy var buttonTapPublisher: UIControl.Publisher<UIButton> = {
         button.publisher(for: .touchUpInside)
     }()
+
+    private let button: UIButton = .init(style: .login)
 }
 
 // MARK: - protocol
 
 extension LoginUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

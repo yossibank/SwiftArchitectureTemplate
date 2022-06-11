@@ -8,7 +8,6 @@ struct BottomSheetAction {
 }
 
 extension BottomSheetAction {
-
     enum ButtonStyle: CaseIterable {
         case `default`
         case cancel
@@ -91,7 +90,6 @@ final class CommonBottomSheetContentView: UIView {
 // MARK: - internal methods
 
 extension CommonBottomSheetContentView {
-
     func set(
         title: String?,
         body: String?,
@@ -106,7 +104,6 @@ extension CommonBottomSheetContentView {
 // MARK: - private methods
 
 private extension CommonBottomSheetContentView {
-
     func setupView() {
         backgroundColor = .systemBackground
 

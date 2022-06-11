@@ -27,7 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension UIWindow: AppFlowControllerDelegate {
-
     func didChangeThemeSelected(value: Int) {
         guard let style = UIUserInterfaceStyle(rawValue: value) else {
             return
@@ -37,7 +36,7 @@ extension UIWindow: AppFlowControllerDelegate {
     }
 
     func settingTheme() {
-        guard let style = UIUserInterfaceStyle(rawValue: AppDataHolder.colorTheme ?? 0) else {
+        guard let style = UIUserInterfaceStyle(rawValue: AppDataHolder.colorTheme) else {
             return
         }
         overrideUserInterfaceStyle = style

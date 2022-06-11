@@ -1,22 +1,8 @@
 import UIKit
 
-extension Stylable where Self == UIButton {
-
-    init(
-        style: ViewStyle<Self>,
-        title: String,
-        for state: UIControl.State = .normal
-    ) {
-        self.init()
-        self.setTitle(title, for: state)
-        apply(style)
-    }
-}
-
 extension ViewStyle where T: UIButton {
-
     static var someStyle: ViewStyle<T> {
-        ViewStyle<T> {
+        .init {
             $0.setTitleColor(.white, for: .normal)
             $0.backgroundColor = .random
             $0.layer.cornerRadius = 4.0
@@ -24,7 +10,7 @@ extension ViewStyle where T: UIButton {
     }
 
     static var bottomSheetDefaultStyle: ViewStyle<T> {
-        ViewStyle<T> {
+        .init {
             $0.titleLabel?.font = .systemFont(ofSize: 19)
             $0.layer.borderColor = Resources.Colors.borderColor.cgColor
             $0.layer.borderWidth = 1.0
@@ -38,7 +24,7 @@ extension ViewStyle where T: UIButton {
     }
 
     static var bottomSheetCanceltStyle: ViewStyle<T> {
-        ViewStyle<T> {
+        .init {
             $0.titleLabel?.font = .systemFont(ofSize: 19)
             $0.layer.borderColor = Resources.Colors.borderColor.cgColor
             $0.layer.borderWidth = 1.0
@@ -52,7 +38,7 @@ extension ViewStyle where T: UIButton {
     }
 
     static var bottomSheetAlertStyle: ViewStyle<T> {
-        ViewStyle<T> {
+        .init {
             $0.titleLabel?.font = .systemFont(ofSize: 19)
             $0.layer.borderColor = Resources.Colors.borderColor.cgColor
             $0.layer.borderWidth = 1.0
@@ -62,6 +48,33 @@ extension ViewStyle where T: UIButton {
             $0.disabledTitleColor = .white
             $0.highlightedTitleColor = .white
             $0.focusedTitleColor = .white
+        }
+    }
+
+    static var cancel: ViewStyle<T> {
+        .init {
+            $0.setTitle(Resources.Strings.Button.cancelButtonTitle, for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .random
+            $0.layer.cornerRadius = 4.0
+        }
+    }
+
+    static var next: ViewStyle<T> {
+        .init {
+            $0.setTitle(Resources.Strings.Button.nextTitle, for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .random
+            $0.layer.cornerRadius = 4.0
+        }
+    }
+
+    static var login: ViewStyle<T> {
+        .init {
+            $0.setTitle(Resources.Strings.Button.loginTitle, for: .normal)
+            $0.setTitleColor(.white, for: .normal)
+            $0.backgroundColor = .random
+            $0.layer.cornerRadius = 4.0
         }
     }
 }

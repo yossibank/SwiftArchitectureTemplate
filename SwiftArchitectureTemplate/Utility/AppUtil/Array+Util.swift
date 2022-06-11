@@ -1,5 +1,4 @@
 extension Array where Element: Any {
-
     func any(at position: Int) -> Element? {
         if position < startIndex || position >= endIndex {
             return nil
@@ -18,7 +17,6 @@ extension Array where Element: Any {
 }
 
 extension Array where Element: Equatable {
-
     mutating func remove(value: Element) {
         if let i = firstIndex(of: value) {
             remove(at: i)

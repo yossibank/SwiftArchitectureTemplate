@@ -3,7 +3,6 @@
 import XCTest
 
 final class UsecaseTests: XCTestCase {
-
     func testSampleUsecase() throws {
         let result = try awaitPublisher(
             Domain.Usecase.FetchSample(useTestData: true).execute(userId: nil)

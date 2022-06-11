@@ -5,7 +5,6 @@ protocol TopViewControllerAccessible {}
 extension UIViewController: TopViewControllerAccessible {}
 
 extension TopViewControllerAccessible {
-
     var rootViewController: UIViewController? {
         UIApplication.shared.windows.first {
             $0.isKeyWindow
@@ -44,11 +43,7 @@ extension TopViewControllerAccessible {
         }
 
         if let tabBarController = rootViewController as? UITabBarController {
-
-            if
-                let navigationController
-                = tabBarController.selectedViewController as? UINavigationController
-            {
+            if let navigationController = tabBarController.selectedViewController as? UINavigationController {
                 let visible = navigationController.visibleViewController
 
                 if visible is UISearchController || visible is UIAlertController {

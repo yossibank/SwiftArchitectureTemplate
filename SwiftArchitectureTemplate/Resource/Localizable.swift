@@ -2,7 +2,6 @@ import Foundation
 
 @propertyWrapper
 struct Localizable {
-
     init(wrappedValue: String) {
         self.wrappedValue = NSLocalizedString(wrappedValue, comment: "")
     }

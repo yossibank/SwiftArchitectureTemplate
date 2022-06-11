@@ -4,13 +4,6 @@ import UIKit
 // MARK: - stored properties
 
 final class FirstUI {
-    private let button: UIButton = .init(
-        style: .someStyle,
-        title: Resources.Strings.Button.nextTitle
-    )
-
-    private let someSwitch: UISwitch = .init()
-
     lazy var buttonTapPublisher: UIControl.Publisher<UIButton> = {
         button.publisher(for: .touchUpInside)
     }()
@@ -18,12 +11,14 @@ final class FirstUI {
     lazy var someSwitchPublisher: AnyPublisher<Bool, Never> = {
         someSwitch.isOnPublisher
     }()
+
+    private let button: UIButton = .init(style: .next)
+    private let someSwitch: UISwitch = .init()
 }
 
 // MARK: - protocol
 
 extension FirstUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

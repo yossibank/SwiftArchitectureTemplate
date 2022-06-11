@@ -1,12 +1,11 @@
 import UIKit
 
 struct ImageResources {
-
-    struct App {
+    enum App {
         static let appIcon: UIImage = #imageLiteral(resourceName: "Icon")
     }
 
-    struct General {
+    enum General {
         static let bottomSheetBar: UIImage = #imageLiteral(resourceName: "BottomSheet")
     }
 }

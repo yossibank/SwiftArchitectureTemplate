@@ -26,7 +26,6 @@ final class LoginViewController: UIViewController {
 // MARK: - override methods
 
 extension LoginViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +38,6 @@ extension LoginViewController {
 // MARK: - private methods
 
 private extension LoginViewController {
-
     func setupEvent() {
         ui.buttonTapPublisher.sink { [weak self] _ in
             self?.delegate.didLoginButtonTapped()

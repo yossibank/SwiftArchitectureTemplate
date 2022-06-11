@@ -25,7 +25,6 @@ final class LoginFlowController: UIViewController {
 // MARK: - override methods
 
 extension LoginFlowController {
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -39,7 +38,6 @@ extension LoginFlowController {
 // MARK: - protocol
 
 extension LoginFlowController: FlowController {
-
     func start() {
         let vc = Resources.ViewControllers.App.login()
         vc.delegate = self
@@ -51,7 +49,6 @@ extension LoginFlowController: FlowController {
 // MARK: - delegate
 
 extension LoginFlowController: LoginViewControllerDelegate {
-
     func didLoginButtonTapped() {
         delegate?.didLoginButtonTapped()
     }

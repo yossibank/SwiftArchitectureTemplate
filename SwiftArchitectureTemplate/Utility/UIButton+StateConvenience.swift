@@ -1,7 +1,6 @@
 import UIKit
 
 extension UIButton {
-
     var normalTitleColor: UIColor? {
         get {
             titleColor(for: .normal)

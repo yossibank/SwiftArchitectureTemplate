@@ -10,19 +10,20 @@ public struct SamplePostRequest: Request {
         let body: String
     }
 
+    // requirements
+    public var path: String { "/posts" }
+    public var method: HTTPMethod { .post }
     public let parameters: Parameters
 
+    // options
     public var queryItems: [URLQueryItem]?
-    public var method: HTTPMethod { .post }
-    public var path: String { "/posts" }
+
+    // test
     public var testDataPath: URL? {
         Bundle.module.url(forResource: "PostSample", withExtension: "json")
     }
 
-    public init(
-        parameters: Parameters,
-        pathComponent _: EmptyPathComponent = .init()
-    ) {
+    public init(parameters: Parameters, pathComponent _: EmptyPathComponent = .init()) {
         self.parameters = parameters
     }
 }

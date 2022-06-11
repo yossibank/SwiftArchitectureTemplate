@@ -19,7 +19,6 @@ final class SecondFlowController: UIViewController {
 // MARK: - override methods
 
 extension SecondFlowController {
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -33,7 +32,6 @@ extension SecondFlowController {
 // MARK: - protocol
 
 extension SecondFlowController: FlowController {
-
     func start() {
         let vc = Resources.ViewControllers.App.second()
 

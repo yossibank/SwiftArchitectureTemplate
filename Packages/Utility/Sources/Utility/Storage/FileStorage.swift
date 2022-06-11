@@ -22,15 +22,14 @@ public class FileStorage<T: Codable> {
             if let data = newValue {
                 LocalStorageManager.writeObjectToFile(fileName: fileName, jsonEncodable: data)
             } else {
-                /// setting value to nil will clear cache
+                // setting value to nil will clear cache
                 LocalStorageManager.deleteFile(fileName: fileName)
             }
         }
     }
 }
 
-private struct LocalStorageManager {
-
+private enum LocalStorageManager {
     private enum PathSearchError: Error {
         case pathNotFound
     }
@@ -39,8 +38,8 @@ private struct LocalStorageManager {
         case localStorageManager
     }
 
-    private struct Constants {
-        /* 0.2秒 */
+    private enum Constants {
+        /// 0.2秒
         static let fileWritingDebounce = DispatchTimeInterval.milliseconds(200)
     }
 
@@ -130,7 +129,6 @@ private struct LocalStorageManager {
 }
 
 private extension LocalStorageManager {
-
     static func retrieveConfiguredFileURL(
         fileName: String,
         excludeFromBackup: Bool = true

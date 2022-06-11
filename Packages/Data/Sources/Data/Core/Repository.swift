@@ -57,7 +57,6 @@ public struct Repository<T: Request>: Repo {
 }
 
 public extension Repository where T.Parameters == EmptyParameters {
-
     func request(
         useTestData: Bool = false,
         pathComponent: T.PathComponent,
@@ -85,7 +84,6 @@ public extension Repository where T.Parameters == EmptyParameters {
 }
 
 public extension Repository where T.PathComponent == EmptyPathComponent {
-
     func request(
         useTestData: Bool = false,
         parameters: T.Parameters,
@@ -113,7 +111,6 @@ public extension Repository where T.PathComponent == EmptyPathComponent {
 }
 
 public extension Repository where T.Parameters == EmptyParameters, T.PathComponent == EmptyPathComponent {
-
     func request(
         useTestData: Bool,
         completion: @escaping (Result<T.Response, APIError>) -> Void

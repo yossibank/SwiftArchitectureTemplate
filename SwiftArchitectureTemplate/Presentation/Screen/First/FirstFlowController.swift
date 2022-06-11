@@ -19,7 +19,6 @@ final class FirstFlowController: UIViewController {
 // MARK: - override methods
 
 extension FirstFlowController {
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -33,7 +32,6 @@ extension FirstFlowController {
 // MARK: - protocol
 
 extension FirstFlowController: FlowController {
-
     func start() {
         let vc = Resources.ViewControllers.App.first()
         vc.delegate = self
@@ -48,7 +46,6 @@ extension FirstFlowController: FlowController {
 // MARK: - delegate
 
 extension FirstFlowController: FirstViewControllerDelegate {
-
     func didNextButtonTapped() {
         navVC.pushViewController(
             Resources.ViewControllers.App.firstDetail(),

@@ -3,7 +3,6 @@
 import XCTest
 
 final class MapperTests: XCTestCase {
-
     func testSampleMapper() {
         let result = SampleMapper().convert(
             response: [

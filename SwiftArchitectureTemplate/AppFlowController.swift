@@ -9,10 +9,10 @@ protocol AppFlowControllerDelegate: AnyObject {
 // MARK: - stored properties & init
 
 final class AppFlowController: UIViewController {
+    weak var delegate: AppFlowControllerDelegate!
+
     private let mainFlowController = MainFlowController()
     private let loginFlowController = LoginFlowController()
-
-    weak var delegate: AppFlowControllerDelegate!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -27,7 +27,6 @@ final class AppFlowController: UIViewController {
 // MARK: - override methods
 
 extension AppFlowController {
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         children.first?.view.frame = view.bounds
@@ -37,11 +36,10 @@ extension AppFlowController {
 // MARK: - protocol
 
 extension AppFlowController: FlowController {
-
     func start() {
         removeFirstChild()
 
-        if AppDataHolder.isLogin ?? false {
+        if AppDataHolder.isLogin {
             add(mainFlowController)
             mainFlowController.delegate = self
             mainFlowController.start()
@@ -56,14 +54,12 @@ extension AppFlowController: FlowController {
 // MARK: - delegate
 
 extension AppFlowController: MainFlowControllerDelegate {
-
     func didChangeThemeSelected(value: Int) {
         delegate.didChangeThemeSelected(value: value)
     }
 }
 
 extension AppFlowController: LoginFlowControllerDelegate {
-
     func didLoginButtonTapped() {
         AppDataHolder.isLogin = true
         start()

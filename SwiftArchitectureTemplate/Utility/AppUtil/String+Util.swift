@@ -1,7 +1,6 @@
 import Foundation
 
 extension String {
-
     static var blank: String {
         ""
     }

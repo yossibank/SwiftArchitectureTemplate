@@ -3,16 +3,12 @@ import UIKit
 // MARK: - stored properties
 
 final class SecondUI {
-    private let button: UIButton = .init(
-        style: .someStyle,
-        title: Resources.Strings.Button.cancelButtonTitle
-    )
+    private let button: UIButton = .init(style: .cancel)
 }
 
 // MARK: - protocol
 
 extension SecondUI: UserInterface {
-
     func setupView(rootView: UIView) {
         rootView.backgroundColor = .systemBackground
 

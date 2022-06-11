@@ -2,7 +2,6 @@ import Combine
 import XCTest
 
 extension XCTestCase {
-
     func awaitPublisher<T: Publisher>(
         _ publisher: T,
         timeout: TimeInterval = 10,
