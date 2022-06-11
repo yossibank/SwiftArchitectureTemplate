@@ -2,6 +2,7 @@
 --header strip
 --indentcase true
 --redundanttype inferred
+--self init-only
 --wraparguments before-first
 --wrapcollections before-first
 --wrapconditions before-first

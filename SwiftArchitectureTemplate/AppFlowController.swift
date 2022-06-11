@@ -9,10 +9,10 @@ protocol AppFlowControllerDelegate: AnyObject {
 // MARK: - stored properties & init
 
 final class AppFlowController: UIViewController {
+    weak var delegate: AppFlowControllerDelegate!
+
     private let mainFlowController = MainFlowController()
     private let loginFlowController = LoginFlowController()
-
-    weak var delegate: AppFlowControllerDelegate!
 
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -39,7 +39,7 @@ extension AppFlowController: FlowController {
     func start() {
         removeFirstChild()
 
-        if AppDataHolder.isLogin ?? false {
+        if AppDataHolder.isLogin {
             add(mainFlowController)
             mainFlowController.delegate = self
             mainFlowController.start()

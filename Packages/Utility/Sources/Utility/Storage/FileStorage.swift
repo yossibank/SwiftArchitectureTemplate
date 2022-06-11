@@ -6,8 +6,8 @@ public class FileStorage<T: Codable> {
     private var value: T?
 
     public init(fileName: String) {
-        file = fileName
-        value = LocalStorageManager.getObjectFromFile(fileName: file)
+        self.file = fileName
+        self.value = LocalStorageManager.getObjectFromFile(fileName: file)
     }
 
     public var wrappedValue: T? {
@@ -22,7 +22,7 @@ public class FileStorage<T: Codable> {
             if let data = newValue {
                 LocalStorageManager.writeObjectToFile(fileName: fileName, jsonEncodable: data)
             } else {
-                /// setting value to nil will clear cache
+                // setting value to nil will clear cache
                 LocalStorageManager.deleteFile(fileName: fileName)
             }
         }
@@ -39,7 +39,7 @@ private enum LocalStorageManager {
     }
 
     private enum Constants {
-        /* 0.2秒 */
+        /// 0.2秒
         static let fileWritingDebounce = DispatchTimeInterval.milliseconds(200)
     }
 

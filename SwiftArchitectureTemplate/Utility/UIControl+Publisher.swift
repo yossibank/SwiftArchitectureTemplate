@@ -47,7 +47,7 @@ extension UIControl {
 
         init(control: Control, events: UIControl.Event) {
             self.control = control
-            controlEvents = events
+            self.controlEvents = events
         }
 
         func receive<S>(
@@ -76,14 +76,16 @@ extension CombineCompatible where Self: UIControl {
 
 extension CombineCompatible where Self: UISwitch {
     var isOnPublisher: AnyPublisher<Bool, Never> {
-        publisher(for: [.allEditingEvents, .valueChanged]).map(\.isOn)
+        publisher(for: [.allEditingEvents, .valueChanged])
+            .map(\.isOn)
             .eraseToAnyPublisher()
     }
 }
 
 extension CombineCompatible where Self: UISegmentedControl {
     var selectedIndexPublisher: AnyPublisher<Int, Never> {
-        publisher(for: [.allEditingEvents, .valueChanged]).map(\.selectedSegmentIndex)
+        publisher(for: [.allEditingEvents, .valueChanged])
+            .map(\.selectedSegmentIndex)
             .eraseToAnyPublisher()
     }
 }

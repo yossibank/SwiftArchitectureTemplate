@@ -46,7 +46,6 @@ extension Resources {
             }
 
             #if DEBUG
-
                 func debug() -> DEBUG_ViewController {
                     let instance = DEBUG_ViewController()
                     instance.inject(ui: DEBUG_UI())
@@ -59,7 +58,6 @@ extension Resources {
                     instance.inject(ui: DEBUG_BottomSheetListUI())
                     return instance
                 }
-
             #endif
         }
     }

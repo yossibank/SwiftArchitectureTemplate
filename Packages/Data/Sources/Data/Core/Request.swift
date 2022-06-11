@@ -48,31 +48,44 @@ public protocol Request {
     associatedtype Parameters: Encodable
     associatedtype PathComponent
 
-    var headers: [String: String] { get }
+    // requirements
+    var path: String { get }
     var method: HTTPMethod { get }
     var parameters: Parameters { get }
-    var queryItems: [URLQueryItem]? { get }
+
+    // options
     var body: Data? { get }
     var baseURL: String { get }
-    var path: String { get }
     var wantCache: Bool { get }
-    var localDataInterceptor: (Parameters) -> Response? { get }
-    var successHandler: (Response) -> Void { get }
+    var headers: [String: String] { get }
+    var queryItems: [URLQueryItem]? { get }
     var failureHandler: (Error) -> Void { get }
+    var successHandler: (Response) -> Void { get }
+    var localDataInterceptor: (Parameters) -> Response? { get }
 
+    // test
     #if DEBUG
         var testDataPath: URL? { get }
     #endif
 
-    init(
-        parameters: Parameters,
-        pathComponent: PathComponent
-    )
+    init(parameters: Parameters, pathComponent: PathComponent)
 }
 
 public extension Request {
-    var baseURL: String {
-        DataConfig.baseURL
+    var body: Data? { try? JSONEncoder().encode(parameters) }
+
+    var baseURL: String { DataConfig.baseURL }
+
+    var wantCache: Bool { false }
+
+    var headers: [String: String] {
+        var ret: [String: String] = [:]
+
+        APIRequestHeader.allCases.forEach { header in
+            ret[header.rawValue] = header.value
+        }
+
+        return ret
     }
 
     var queryItems: [URLQueryItem]? {
@@ -93,27 +106,11 @@ public extension Request {
         }
     }
 
-    var body: Data? {
-        try? JSONEncoder().encode(parameters)
-    }
-
-    var headers: [String: String] {
-        var ret: [String: String] = [:]
-
-        APIRequestHeader.allCases.forEach { header in
-            ret[header.rawValue] = header.value
-        }
-
-        return ret
-    }
-
-    var wantCache: Bool { false }
-
-    var localDataInterceptor: (Parameters) -> Response? {{ _ in nil }}
+    var failureHandler: (Error) -> Void {{ _ in }}
 
     var successHandler: (Response) -> Void {{ _ in }}
 
-    var failureHandler: (Error) -> Void {{ _ in }}
+    var localDataInterceptor: (Parameters) -> Response? {{ _ in nil }}
 }
 
 private extension Encodable {

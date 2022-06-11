@@ -1,3 +1,3 @@
-enum KeychainKey {
-    static let accessToken: String = "access_token"
+enum KeychainKey: String, CaseIterable {
+    case accessToken = "access_token"
 }

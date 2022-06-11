@@ -12,19 +12,20 @@ public struct SamplePutRequest: Request {
 
     private let id: Int
 
+    // requirements
+    public var path: String { "/posts/\(id)" }
+    public var method: HTTPMethod { .put }
     public let parameters: Parameters
 
+    // options
     public var queryItems: [URLQueryItem]?
-    public var method: HTTPMethod { .put }
-    public var path: String { "/posts/\(id)" }
+
+    // test
     public var testDataPath: URL? {
         Bundle.module.url(forResource: "PutSample", withExtension: "json")
     }
 
-    public init(
-        parameters: Parameters,
-        pathComponent id: Int
-    ) {
+    public init(parameters: Parameters, pathComponent id: Int) {
         self.parameters = parameters
         self.id = id
     }

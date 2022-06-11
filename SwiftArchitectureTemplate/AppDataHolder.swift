@@ -1,9 +1,9 @@
 import Utility
 
 struct AppDataHolder {
-    @UserDefaultsStorage(key: "is_Login")
-    static var isLogin: Bool?
+    @UserDefaultsStorage(key: AppDataHolderKey.isLogin.rawValue, defaultValue: false)
+    static var isLogin: Bool
 
-    @UserDefaultsStorage(key: "color_theme")
-    static var colorTheme: Int?
+    @UserDefaultsStorage(key: AppDataHolderKey.colorTheme.rawValue, defaultValue: 0)
+    static var colorTheme: Int
 }

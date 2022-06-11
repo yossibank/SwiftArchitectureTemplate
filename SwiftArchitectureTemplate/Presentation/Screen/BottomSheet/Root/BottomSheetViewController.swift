@@ -15,12 +15,12 @@ final class BottomSheetViewController: UIViewController {
     private var dismissCallback: VoidBlock?
 
     init(dismissCallBack: VoidBlock? = nil) {
-        dismissCallback = dismissCallBack
+        self.dismissCallback = dismissCallBack
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder: NSCoder) {
-        dismissCallback = nil
+        self.dismissCallback = nil
         super.init(coder: coder)
     }
 }
