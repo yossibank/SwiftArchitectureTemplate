@@ -2,10 +2,6 @@
 import XCTest
 
 final class RequestTests: XCTestCase {
-    override func setUpWithError() throws {
-        PersistedDataHolder.onboardingFinished = nil
-    }
-
     func testGetSample() {
         let expectation = XCTestExpectation(description: "get sample")
 
@@ -71,7 +67,7 @@ final class RequestTests: XCTestCase {
     }
 
     func testGetIsFinished() {
-        XCTAssertNil(Repos.Onboarding.GetIsFinished().request())
+        XCTAssertFalse(Repos.Onboarding.GetIsFinished().request()!)
 
         PersistedDataHolder.onboardingFinished = true
 
@@ -83,14 +79,14 @@ final class RequestTests: XCTestCase {
     }
 
     func testSetIsFinished() {
-        XCTAssertNil(PersistedDataHolder.onboardingFinished)
+        XCTAssertFalse(PersistedDataHolder.onboardingFinished)
 
         Repos.Onboarding.SetIsFinished().request(parameters: true)
 
-        XCTAssertTrue(PersistedDataHolder.onboardingFinished!)
+        XCTAssertTrue(PersistedDataHolder.onboardingFinished)
 
         Repos.Onboarding.SetIsFinished().request(parameters: false)
 
-        XCTAssertFalse(PersistedDataHolder.onboardingFinished!)
+        XCTAssertFalse(PersistedDataHolder.onboardingFinished)
     }
 }
